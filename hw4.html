@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>CNIT133</title>
+ <!-- This is webpage that contains links to completed homework assignment for CNIT133 JavaScript, jQuery and AJAX -->
+        <meta name="description" content="This is main page that links to assingment for CNIT133 using HTML5 and inline CSS">
+        <style>
+            .button {
+                background-color:#417bcb; border-radius:20px; color: white; text-align:center; text-decoration: none; 
+                display: inline-block; font-size: 20px; margin: 3px 3px; cursor: pointer; outline:none; transition:0.3s; 
+                border: 1px solid transparent; padding: 10px 20px;
+            }
+            .button:hover,
+            .button:focus {
+                background-color: #e33c3c; border-color: #080808  /* changes colors as user move mouse */ 
+            }
+            .center-text {
+                font-size: 40px; /* make the font larger */
+            }
+            .costruction-container {
+                text-align: center;
+                width:100%
+            }
+            .header-container {
+                display: flex;
+                align-items: center; /* vertically center items */
+                justify-content: space-between; /* push items to edges */
+            }
+            .header-text {
+                color:#417bcb; font-size: 70px;
+                flex: 0 0 80%; /* set text to 80% available page width */
+                text-align: center;
+            }
+            .image-construction {
+                display: inline-block;
+            }
+            .image-text-container {
+                display:flex; align-items:center; /* vertically center items */
+            } 
+            .image-text-container img {
+                max-width:100%; margin-right:10px /* space between image and text */
+            }
+            .right-image {
+                max-width: 100%; /* push image to right */
+            }
+            .right-text {
+                text-align: right; /* align text to the right */
+            }
+            .rounded-image {
+                border-radius:50% /* round photo image */
+            }   
+        </style>
+    </head>
+
+    <body >
+
+        <header style="background-color:#e33c3c">
+            <div class="header-container">
+                <h1 class="header-text">Looping Statements</h1> 
+                <figure>
+                <img src="ccsf_ram.gif" alt="ccsf ram logo" width="139" class="right-image">
+                </figure>
+            </div>     
+        </header>
+        <section style="background-color:#cccccc67">
+            <h2 class="center-text" style="color:rgb(232, 41, 41)">Pick a topic:</h2>   
+            <nav>
+            <a href="index.html" class="button">Course Basics</a>
+            <a href="hw2.html" class="button">JS Basics</a>
+            <a href="hw3.html" class="button">Functions</a>
+            <a href="hw4.html" class="button">Looping Statements</a>
+            <a href="hw5.html" class="button">Arrays</a>
+            <a href="hw6.html" class="button">Objects</a>
+            <a href="hw7.html" class="button">DOM and jQuery</a>
+            <a href="hw8.html" class="button">Ajax Applications</a>
+            </nav>
+            <br>
+        </section>
+                 
+        <article>
+            <br>
+            <div class="costruction-container">
+                <h2>Assignment available by 10/17/2023</h2>
+                <img class="image-construction" src="under_construction.jpg" alt="website coming soon" width="400"> 
+            </div>
+            <br>
+        </article>
+
+        <footer style="background-color:#cccccc67">
+            <br>
+            <figure>
+            <div class="image-text-container">
+                <img src="op.jpg" alt="self" width="80" class="rounded-image">
+                <p>Teresita Anselm<br>
+                City College of San Francisco<br>
+                tanselm@mail.ccsf.edu<br></p>   
+            </div>
+            </figure>
+            
+            <p class="right-text">Copyright of Teresita Anselm &copy; 2023</p>
+        </footer>
+
+    </body>
+</html>

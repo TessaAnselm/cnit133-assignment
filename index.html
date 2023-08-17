@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>CNIT133</title>
+ <!-- This is webpage that contains links to completed homework assignment for CNIT133 JavaScript, jQuery and AJAX -->
+        <meta name="description" content="This is main page that links to assingment for CNIT133 using HTML5 and inline CSS">
+        <style>
+            .button {
+                background-color:#417bcb; border-radius:20px; color: white; text-align:center; text-decoration: none; 
+                display: inline-block; font-size: 20px; margin: 3px 3px; cursor: pointer; outline:none; transition:0.3s; 
+                border: 1px solid transparent; padding: 10px 20px;
+            }
+            .button:hover,
+            .button:focus {
+                background-color: #e33c3c; border-color: #080808  /* changes colors as user move mouse */ 
+            }
+            .center-text {
+                font-size: 40px; /* make the font larger */
+            }
+            .header-container {
+                display: flex;
+                align-items: center; /* vertically center items */
+                justify-content: space-between; /* push items to edges */
+            }
+            .header-text {
+                color:#417bcb; font-size: 70px;
+                flex: 0 0 80%; /* set text to 80% available page width */
+                text-align: center;
+            }
+            .image-text-container {
+                display:flex; align-items:center; /* vertically center items */
+            } 
+            .image-text-container img {
+                max-width:100%; margin-right:10px /* space between image and text */
+            }    
+            .right-text {
+                text-align: right; /* align text to the right */
+            }
+            .right-image {
+                max-width: 100%; /* push image to right */
+            }
+            .rounded-image {
+                border-radius:50% /* round photo image */
+            }   
+            
+        </style>
+    </head>
+
+    <body >
+
+        <header style="background-color:#e33c3c">
+            <div class="header-container">
+                <h1 class="header-text">CNIT 133 Homework</h1> 
+                <figure>
+                <img src="ccsf_ram.gif" alt="ccsf ram logo" width="139" class="right-image">
+                </figure>
+            </div>     
+        </header>
+        <section style="background-color:#cccccc67">
+            <h2 class="center-text" style="color:rgb(232, 41, 41)">Pick a topic:</h2>   
+            <nav>
+            <a href="index.html" class="button">Course Basics</a>
+            <a href="hw2.html" class="button">JS Basics</a>
+            <a href="hw3.html" class="button">Functions</a>
+            <a href="hw4.html" class="button">Looping Statements</a>
+            <a href="hw5.html" class="button">Arrays</a>
+            <a href="hw6.html" class="button">Objects</a>
+            <a href="hw7.html" class="button">DOM and jQuery</a>
+            <a href="hw8.html" class="button">Ajax Applications</a>
+            </nav>
+            <br>
+        </section>
+        <article>
+            <header>
+                <br>
+                <h2 style="color:brown">Course Basics - Homework 1 - CNIT 133 Homework Page</h2>
+                
+            </header>
+            <h3>Objective:</h3>
+            <dl>
+                <dt>Be able to create a simple web page with hyperlinks and valid HTML and CSS according to latest standards</dt>
+                <dd>- this web page will act like the front page of an e-portfolio for this course</dd>
+            </dl>
+            <h3>What you will do:</h3>
+            <ol>
+            <li>Create a web page, using HTML5, with the heading CNIT 133 Homework.</li>
+            <li>Embellish this page with some CSS.</li>
+            <li>Create the files hw2.html through hw8.html.</li>
+            </ol>
+        </article>
+        <article>
+            <header>
+                <h2 style="color:brown">Homework 1 Code Solution</h2>
+            </header>
+                <iframe src="hw1.pdf#toolbar=0" height="400" width="1000"></iframe>
+            <br><br>    
+        </article>
+
+        <footer style="background-color:#cccccc67">
+            <br>
+            <figure>
+            <div class="image-text-container">
+                <img src="op.jpg" alt="self" width="80" class="rounded-image">
+                <p>Teresita Anselm<br>
+                City College of San Francisco<br>
+                tanselm@mail.ccsf.edu<br></p>   
+            </div>
+            </figure>
+            
+            <p class="right-text">Copyright of Teresita Anselm &copy; 2023</p>
+        </footer>
+
+    </body>
+</html>
