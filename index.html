@@ -8,16 +8,26 @@
         <meta name="description" content="This is main page that links to assingment for CNIT133 using HTML5 and inline CSS">
         <style>
             .button {
-                background-color:#417bcb; border-radius:20px; color: white; text-align:center; text-decoration: none; 
-                display: inline-block; font-size: 20px; margin: 3px 3px; cursor: pointer; outline:none; transition:0.3s; 
-                border: 1px solid transparent; padding: 10px 20px;
+                background-color:#417bcb; border-radius:20px; color: white; text-align:center; 
+                text-decoration: none; display: inline-block; font-size: 20px; margin: 3px 3px; cursor: pointer; 
+                outline:none; transition:0.3s; border: 1px solid transparent; padding: 10px 20px;
             }
-            .button:hover,
+            .button:hover, 
             .button:focus {
-                background-color: #e33c3c; border-color: #080808  /* changes colors as user move mouse */ 
+                background-color: #e33c3c; border-color: #b64e57  /* changes colors as user move mouse */ 
             }
-            .center-text {
+            .center-text{
                 font-size: 40px; /* make the font larger */
+            }
+            .footer-text-container { /*footer*/
+                display:flex; align-items:center; /* vertically center items */
+            } 
+            .footer-text-container img {
+                max-width:100%; margin-right:10px  /*space between image and text */
+            }
+            .header-background {
+                background-color: #e33c3c;
+                text-align: center;
             }
             .header-container {
                 display: flex;
@@ -25,37 +35,32 @@
                 justify-content: space-between; /* push items to edges */
             }
             .header-text {
-                color:#417bcb; font-size: 70px;
-                flex: 0 0 80%; /* set text to 80% available page width */
+                color:#417bcb; font-size: 55px;
+                flex: 0 0 85%; /* set text to 85% available page width */
                 text-align: center;
-            }
-            .image-text-container {
-                display:flex; align-items:center; /* vertically center items */
-            } 
-            .image-text-container img {
-                max-width:100%; margin-right:10px /* space between image and text */
-            }    
-            .right-text {
-                text-align: right; /* align text to the right */
             }
             .right-image {
                 max-width: 100%; /* push image to right */
             }
-            .rounded-image {
+            .right-text {
+                text-align: right; /* align text to the right */
+            }
+            .rounded-image { /*photo*/
                 border-radius:50% /* round photo image */
-            }   
-            
+            }  
         </style>
     </head>
 
     <body >
 
-        <header style="background-color:#e33c3c">
-            <div class="header-container">
+        <header class="header-background">
+           <div class="header-container">
                 <h1 class="header-text">CNIT 133 Homework</h1> 
                 <figure>
-                <img src="ccsf_ram.gif" alt="ccsf ram logo" width="139" class="right-image">
-                </figure>
+                    <a href="https://www.ccsf.edu/" target="_self">
+                    <img src="ccsf_ram.gif" alt="ccsf ram logo" width="139" class="right-image">
+                    </a>
+                    </figure>
             </div>     
         </header>
         <section style="background-color:#cccccc67">
@@ -101,7 +106,7 @@
         <footer style="background-color:#cccccc67">
             <br>
             <figure>
-            <div class="image-text-container">
+            <div class="footer-text-container">
                 <img src="op.jpg" alt="self" width="80" class="rounded-image">
                 <p>Teresita Anselm<br>
                 City College of San Francisco<br>

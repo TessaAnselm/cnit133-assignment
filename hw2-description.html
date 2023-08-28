@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>CNIT133 Homework 2 Description</title>
+ <!-- This is webpage that contains links to CNIT 133 Homework 2 - Basic Operations -->
+        <meta name="description" content="This is homework 2 Description to show description of parts">
+        <style>
+            .button-two {
+                width: 150px; background-color: #417bcb; border-radius: 20px; color: white; 
+                font-size: 22px; margin: 34px 3px; cursor: pointer; display: inline-block; 
+                padding: 10px; text-decoration: none; overflow: hidden;
+            }
+            .button-two:hover,
+            .button-two:focus {
+                background-color: #e33c3c; border-color: #1d0e6b  /* changes colors as user move mouse */
+            } 
+            footer {
+                border: 2px solid #e20707;  background-color:#cccccc67
+            }
+            .footer-text-container { /*footer*/
+                display:flex; align-items:center; /* vertically center items */
+            } 
+            .footer-text-container img {
+                max-width:100%; margin-right:10px  /*space between image and text */
+            }
+            .header-background {
+                background-color: #e33c3c;  text-align: center;
+            }
+            .header-container { /*header/top most */
+                display: flex;
+                align-items: center; /* vertically center items */
+                justify-content: space-between; /* push items to edges */
+            }
+            .header-text {
+                color:#417bcb; font-size: 55px;
+                flex: 0 0 85%; /* set text to 85% available page width */
+                text-decoration: none;
+            }
+            .header-text:hover {
+                color: white ; /* changes colors as user move mouse */
+            }
+            .hwk2box-box {
+                background-color:  #e33c3c; height: 250px; padding: 20px; 
+                display: flex;
+                align-items:center; /* vertically center align content */
+                justify-content: center; /* horizontally center align content */
+            }
+            @keyframes rainbow {
+                0% { color: red; }
+                14% { color: orange; }
+                28% { color: yellow; }
+                42% { color: green; }
+                57% { color: blue; }
+                71% { color: indigo; }
+                85% { color: violet; }
+                100% { color: red; }
+            }
+            .hwk2box {
+                border: #1d0e6b; height: 100%; width: 800px; 
+                background-color: white; 
+                font-size: larger; 
+                animation: rainbow 10s linear infinite; /* apply rainbow animation */ 
+                text-align: center; display: flex;
+                align-items:center; /* vertically center align content */
+                justify-content: center; /* horizontally center align content */
+            }
+            .right-image {
+                max-width: 100%; /* push image to right */
+            }
+            .right-text {
+                text-align: right; /* align text to the right */
+            }
+            .rounded-image { /*photo*/
+                border-radius:50% /* round photo image */
+            }  
+            .solution-box {
+                border: 2px solid #e20707; padding: 0; margin: 0; display: flex;
+                flex-direction: column;
+                align-items: center; text-align: center;
+                height: 70vh;
+            }
+            .solution-box header {
+                width: 100%; padding: 10px; color:brown;
+            }
+            .solution-frame {    
+                width: 80%; display: flex;
+                flex-grow: 1; /* allow to grow and fill available verticle space */
+                justify-content: center; align-items: center;
+                margin: 0 auto; /* center solution-frame within solution box */ 
+            }
+            .solution-frame iframe {    
+                width:180%; height: 100%; 
+            }
+            .submenu-container {
+                background-color: black; text-align: center; margin: 0;
+                display: flex;
+                align-items:center; /* vertically center align content */
+                justify-content: center; /* horizontally center align content */
+            }
+        </style>
+    </head>
+
+    <body >
+        <header class = "header-background">
+            <div class="header-container">
+                <a href="hw2.html" target="_self" class="header-text">CNIT 133 Homework 2 - Basic Operations</a> 
+                <figure>
+                <a href="https://www.ccsf.edu/" target="_self">
+                <img src="ccsf_ram.gif" alt="ccsf ram logo" width="139" class="right-image">
+                </a>
+                </figure>
+            </div>     
+        </header>
+
+        <div class="submenu-container">  
+            <nav>
+            <a href="hw2-description.html" target="_self" class="button-two">Desciption</a>
+            <a href="hw2-part1.html" target="_self" class="button-two">Part I</a>
+            <a href="hw2-part2.html" target="_self" class="button-two">Part II</a>
+            <a href="hw2-extra-credit.html" target="_self" class="button-two">Extra Credit</a>
+            </nav>
+        </div>   
+
+        <div class="hwk2box-box">      
+            <div class="hwk2box">
+                <!-- Apply the rainbow effect to this text -->
+            <p class="rainbow-text">Part I:<br> 
+            JavaScript using document.write statements<br>
+            Part II:<br>
+            JavaScript that gets user inputs and outputs sum, average, product, min and max of user inputs<br>
+            Extra Credit:<br>
+            Javascript that gets user input and outputs currency exchange rates in table format<br></p>
+            </div>
+        </div> 
+                
+        <article class="solution-box">
+            <header>
+                <h2>Homework 2 Description Code Solution</h2>
+            </header>
+            <div class="solution-frame">
+            <iframe src="hw2desc.pdf"></iframe>
+            </div>
+            <br><br>    
+        </article>
+
+        <footer>
+            <br>
+            <figure>
+            <div class="footer-text-container">
+                <img src="op.jpg" alt="self" width="80" class="rounded-image">
+                <p>Teresita Anselm<br>
+                City College of San Francisco<br>
+                tanselm@mail.ccsf.edu<br></p>   
+            </div>
+            </figure>
+            <p class="right-text">Copyright of Teresita Anselm &copy; 2023</p>
+        </footer>
+
+    </body>
+</html>

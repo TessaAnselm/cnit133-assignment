@@ -25,20 +25,20 @@
             .button-two:focus {
                 background-color: #cccccc67; border-color: #1d0e6b  /* changes colors as user move mouse */
             } 
-            .button-two-container {
-                display: flex;
-                gap: 10px;
-                background-color: #e33c3c;
-                padding: 2px;
-                text-align: center;
-            }
             .center-text{
                 font-size: 40px; /* make the font larger */
+                color:rgb(232, 41, 41);
             }
             .colored-section {
                 background-color: #e33c3c;
                 padding: 2px;
                 text-align: center;
+            }
+            .footer-text-container { /*footer*/
+                display:flex; align-items:center; /* vertically center items */
+            } 
+            .footer-text-container img {
+                max-width:100%; margin-right:10px  /*space between image and text */
             }
             .header-container {
                 display: flex;
@@ -50,11 +50,8 @@
                 flex: 0 0 85%; /* set text to 85% available page width */
                 text-align: center;
             }
-            .image-text-container { /*footer*/
-                display:flex; align-items:center; /* vertically center items */
-            } 
-            .image-text-container img {
-                max-width:100%; margin-right:1px  /*space between image and text */
+            .menu-container {
+                background-color:#cccccc67;
             }
             .right-image {
                 max-width: 100%; /* push image to right */
@@ -65,6 +62,13 @@
             .rounded-image { /*photo*/
                 border-radius:50% /* round photo image */
             }  
+            .submenu-container {
+                display: flex;
+                gap: 10px;
+                background-color: #e33c3c;
+                padding: 2px;
+                text-align: center;
+            }
         </style>
     </head>
 
@@ -79,8 +83,8 @@
                 </figure>
             </div>     
         </header>
-        <section style="background-color:#cccccc67">
-            <h2 class="center-text" style="color:rgb(232, 41, 41)">Pick CNIT 133 topic:</h2>   
+        <section class="menu-container">
+            <h2 class="center-text">Pick CNIT 133 topic:</h2>   
             <nav>
             <a href="index.html" target="_self" class="button">Course Basics</a>
             <a href="hw2.html" target="_self" class="button">JS Basics</a>
@@ -94,12 +98,13 @@
             <br>
         </section>
 
-        <div class="button-two-container">
-            <h2 class="center-text" style="color:#417bcb">Pick Homework 2 part:</h2>   
+        <div class="submenu-container">
+            <h2 class="center-text" style="color:#417bcb">Pick Homework 2 Part:</h2>   
             <nav>
-            <a href="hw2/part1.html" target="_self" class="button-two">Part I</a>
-            <a href="hw2/part2.html" target="_self" class="button-two">Part II</a>
-            <a href="hw2/extra-credit.html" target="_self" class="button-two">Extra Credit</a>
+            <a href="hw2-description.html" target="_self" class="button-two">Description</a>
+            <a href="hw2-part1.html" target="_self" class="button-two">Part I</a>
+            <a href="hw2-part2.html" target="_self" class="button-two">Part II</a>
+            <a href="hw2-extra-credit.html" target="_self" class="button-two">Extra Credit</a>
             </nav>
             <br>
         </div>   
@@ -107,22 +112,23 @@
         <article>
             <header>
                 <br>
-                <h2 style="color:brown">Homework 2 - Basic Operations</h2>
+                <h2 style="color:brown">Homework 2 Instructions on Topic "JS Basic"</h2>
             </header>
             <section>
             <h3>What you should do:</h3>
-                <br>Create a web page using HTML5 with the heading CNIT 133 Homework 2 - Basic Operations heading. This page should contain:<br>
+                Create a web page using HTML5 with the heading CNIT 133 Homework 2 - Basic Operations heading. This page should contain:<br>
                 <ul class="square-list">
                     <li>Part 1 with a brief description of what you will present in this part</li>
                     <li>Part 2 with a brief description of what you will present in this part</li>
                     <li>Extra Credit</li>
                     <li>Hyperlink to go back to the Homework 1 web page (the main page)</li>
                 </ul>
+                <br>
             </section>
             
             <section>    
             <h3>Part I:</h3>
-                <br>Create a webpage that contains a script to display the following (using document.write()):<br>
+                Create a webpage that contains a script to display the following (using document.write()):<br>
                 <ul>     
                     <li>The letters xy in strong (bold) font, with font family Times New Roman, and the color red.</li>
                     <li>The numbers 12 that should be written in blue color, and font family Arial.</li>
@@ -130,11 +136,12 @@
                     <li>Each of these pairs should be separated by one blank space.</li>
                     <li>Hyperlink to go back to the Homework 2 main web page </li>
                 </ul>
+                <br>
             </section>  
 
             <section>
             <h3>Part II:</h3>
-                <br>Create a webpage with a form that will have: <br>
+                Create a webpage with a form that will have: <br>
                 <ul>
                     <li>Three input boxes for the user to type three integers (numbers)</li>
                     <li>A button to process the data (numbers) typed by the user.</li>
@@ -152,11 +159,12 @@
                 </ul>
                 JQuery will be triggered by a button that you will include in the form and when the user clicks on that button, fade results in the textarea. <br>
                 If the user clicks on the button to calculate the operations, you should remove fade to present the new set of results or the error message.
+                <br><br>
             </section>
 
             <section>
             <h3>Extra Credit:</h3>    
-                <br>This web page should have a script that:<br>
+                This web page should have a script that:<br>
                 <ul>  
                     <li>The user will input an amount in U.S. dollars.</li>
                     <li>The script will calculate (do the currency conversion) for each of the currencies displayed in the table above.</li>
@@ -168,16 +176,16 @@
 
         <article>
             <header>
-                <h2 style="color:brown">Homework 1 Code Solution</h2>
+                <h2 style="color:brown">Homework 2 Part II Code Solution</h2>
             </header>
-                <iframe src="hw1.pdf#toolbar=0" height="400" width="1000"></iframe>
+                <iframe src="hw2.pdf" height="400" width="1000"></iframe>
             <br><br>    
         </article>
 
         <footer style="background-color:#cccccc67">
             <br>
             <figure>
-            <div class="image-text-container">
+            <div class="footer-text-container">
                 <img src="op.jpg" alt="self" width="80" class="rounded-image">
                 <p>Teresita Anselm<br>
                 City College of San Francisco<br>
