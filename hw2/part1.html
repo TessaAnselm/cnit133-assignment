@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>CNIT133</title>
+ <!-- This is webpage that contains links to completed homework assignment for CNIT133 JavaScript, jQuery and AJAX -->
+        <meta name="description" content="This is main page that links to assingment for CNIT133 using HTML5 and inline CSS">
+        <style>
+            .button {
+                background-color:#417bcb; border-radius:20px; color: white; text-align:center; text-decoration: none; 
+                display: inline-block; font-size: 20px; margin: 3px 3px; cursor: pointer; outline:none; transition:0.3s; 
+                border: 1px solid transparent; padding: 10px 20px;
+            }
+            .button:hover,
+            .button:focus {
+                background-color: #e33c3c; border-color: #080808  /* changes colors as user move mouse */ 
+            }
+            .center-text {
+                font-size: 40px; /* make the font larger */
+            }
+            .costruction-container {
+                text-align: center;
+                width:100%
+            }
+            .header-container {
+                display: flex;
+                align-items: center; /* vertically center items */
+                justify-content: space-between; /* push items to edges */
+            }
+            .header-text {
+                color:#417bcb; font-size: 70px;
+                flex: 0 0 80%; /* set text to 80% available page width */
+                text-align: center;
+            }
+            .image-construction {
+                display: inline-block;
+            }
+            .image-text-container {
+                display:flex; align-items:center; /* vertically center items */
+            } 
+            .image-text-container img {
+                max-width:100%; margin-right:10px /* space between image and text */
+            }
+            .right-image {
+                max-width: 100%; /* push image to right */
+            }
+            .right-text {
+                text-align: right; /* align text to the right */
+            }
+            .rounded-image {
+                border-radius:50% /* round photo image */
+            }   
+        </style>
+    </head>
+
+    <body >
+
+        <header style="background-color:#e33c3c">
+            <div class="header-container">
+                <h1 class="header-text">CNIT 133 Homework</h1> 
+                <figure>
+                <img src="ccsf_ram.gif" alt="ccsf ram logo" width="139" class="right-image">
+                </figure>
+            </div>     
+        </header>
+
+        <section style="background-color:#cccccc67">
+            <h2 class="center-text" style="color:rgb(232, 41, 41)">Pick Homework 2 part:</h2>   
+            <nav>
+            <a href="hw2/part1.html" class="button">Part I</a>
+            <a href="hw2/part2.html" class="button">Part II</a>
+            <a href="hw2/extra-credit.html" class="button">Extra Credit</a>
+            </nav>
+            <br>
+        </section>
+                 
+        <article>
+            <header>
+                <br>
+                <h2 style="color:brown">Homework 2 - Basic Operations</h2>
+                
+            </header>
+            <h3>What you should do:</h3>
+            <dl>
+                <dt>Create a web page using HTML5 with the heading CNIT 133 Homework 2 - Basic Operations heading</dt>
+                <dt>This page should contain:</dt>
+                <dd>- Part 1 with a brief description of what you will present in this part</dd>
+                <dd>- Part 2 with a brief description of what you will present in this part</dd>
+                <dd>- Extra Credit</dd>
+                <dd>- Hyperlink to go back to the Homework 1 web page (the main page)</dd>
+            </dl>
+      
+        
+            <section>      
+            <h3>Part I:</h3>
+                <ol>
+                <li>Create a web page, using HTML5, with the heading CNIT 133 Homework.</li>
+                <li>Embellish this page with some CSS.</li>
+                <li>Create the files hw2.html through hw8.html.</li>
+                </ol>
+            </section>
+            <section>
+            <h3>Part II:</h3>
+                <ol>
+                <li>Create a web page, using HTML5, with the heading CNIT 133 Homework.</li>
+                <li>Embellish this page with some CSS.</li>
+                <li>Create the files hw2.html through hw8.html.</li>
+                </ol>
+            </section>
+            <section>
+            <h3>Extra Credit:</h3>    
+            </section>
+        </article>
+        <article>
+            <header>
+                <h2 style="color:brown">Homework 1 Code Solution</h2>
+            </header>
+                <iframe src="hw1.pdf#toolbar=0" height="400" width="1000"></iframe>
+            <br><br>    
+        </article>
+
+        <footer style="background-color:#cccccc67">
+            <br>
+            <figure>
+            <div class="image-text-container">
+                <img src="op.jpg" alt="self" width="80" class="rounded-image">
+                <p>Teresita Anselm<br>
+                City College of San Francisco<br>
+                tanselm@mail.ccsf.edu<br></p>   
+            </div>
+            </figure>
+            
+            <p class="right-text">Copyright of Teresita Anselm &copy; 2023</p>
+        </footer>
+
+    </body>
+</html>
