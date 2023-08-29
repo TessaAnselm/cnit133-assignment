@@ -48,14 +48,8 @@
                 justify-content: center; /* horizontally center align content */
             }
             @keyframes rainbow {
-                0% { color: red; }
-                14% { color: orange; }
-                28% { color: yellow; }
-                42% { color: green; }
-                57% { color: blue; }
-                71% { color: indigo; }
-                85% { color: violet; }
-                100% { color: red; }
+                0% { background-position: 0% 50%;}
+                100% { background-position: 100% 50%;}
             }
             .hwk2box {
                 border: #1d0e6b; height: 100%; width: 800px; 
@@ -65,6 +59,14 @@
                 text-align: center; display: flex;
                 align-items:center; /* vertically center align content */
                 justify-content: center; /* horizontally center align content */
+            }
+            .rainbow-text {
+                font-size: 20px;
+                background: linear-gradient(45deg, #f06, #3cf, #f06);
+                background-size: 200% 200%;
+                -webkit-background-clip: text;
+                color: transparent;
+                animation:rainbow 5s linear infinite;
             }
             .right-image {
                 max-width: 100%; /* push image to right */

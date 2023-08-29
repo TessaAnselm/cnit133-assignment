@@ -3,9 +3,101 @@
 
     <head>
         <meta charset="utf-8">
-        <title>CNIT133 Homework 2 Part I</title>
+        <title>CNIT133 Homework 2 Part II</title>
  <!-- This is webpage that contains links to CNIT 133 Homework 2 - Basic Operations -->
-        <meta name="description" content="This is homework 2 Part 1 to show JS code into innerHTML property">
+        <meta name="description" content="This is homework 2 Part 2 to show JS code into innerHTML property that computes inclusing using ajax">
+   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+        <script>
+        $(document).ready(function() {
+        var resultTextArea = $("#result");
+        var form2Button = $("#form2");
+        var clearButton = $("#clear");
+        var isFaded = false;
+
+        form2Button.click(function() {
+            if (!isFaded) {
+                resultTextArea.fadeOut(1000, function() {
+                // display "New set of result was executed"
+                resultTextArea.val("New set of result was executed");
+                resultTextArea.css("color", "");
+                resultTextArea.fadeIn(1000, function() {
+                // after fading in, trigger form2 function
+                form2();
+                });
+            });
+            } else {
+                resultTextArea.fadeOut("slow", function() {
+                // clear the textarea and remove the fade
+                resultTextArea.css("opacity", 1);
+                resultTextArea.val("");
+                isFaded = false;
+                });
+            }
+        });
+
+        clearButton.click(function() {
+            resultTextArea.fadeIn(100, function() {
+                setTimeout(function() {
+                    // display "You have successfully cleared the form"
+                    resultTextArea.val("You have successfully cleared the form");
+                    resultTextArea.css("color", "");
+                    // after a short delay, fade out the message and clear textarea content
+                    resultTextArea.fadeOut(1500, function() {
+                    // after fading out, clear the textarea content and show textarea
+                    resultTextArea.val("");
+                    resultTextArea.fadeIn(200);
+                    isFaded = false;
+                    });
+                },200); // adjust the delay duration
+            });
+        });
+
+        function form2() {
+        var number1 = document.getElementById("input1").value;
+        var number2 = document.getElementById("input2").value;
+        var number3 = document.getElementById("input3").value;
+     
+        var num1 = parseInt(number1);
+        var num2 = parseInt(number2);
+        var num3 = parseInt(number3);
+     
+        if (// if input is empty after clicking submit
+            (number1 === "" || number2 === "" || number3 === "")
+            ) { 
+            resultTextArea.val("Please enter into all the input fields!");
+            resultTextArea.css("color", "red");
+            resultTextArea.css("font-weight", "bold");
+        } else if ( // if input has NaN
+            (!Number.isInteger(num1) || !Number.isInteger(num2) || !Number.isInteger(num3))
+            ) {
+            resultTextArea.val("Please make sure to enter integer numbers only!");
+            resultTextArea.css("color", "red");
+            resultTextArea.css("font-weight", "bold");
+        } else { // computation of sum, average, product, min and max
+            var sumnum = num1 + num2 + num3;
+            var average = sumnum / 3;
+            var product = num1 * num2 * num3;
+            var smallest = Math.min(num1, num2, num3);
+            var largest = Math.max(num1, num2, num3);
+       
+            var form2Result = "Results from form2 function";
+            resultTextArea.val(form2Result);
+
+            var resultText =`
+    The inputted numbers: ${num1}, ${num2}, ${num3}
+    The sum of the numbers: ${sumnum}
+    The average of the numbers: ${average.toFixed(2)}
+    The product of the integers: ${product}
+    The min of the numbers: ${smallest}
+    The max of the numbers: ${largest}`;
+            resultTextArea.val(resultText); // change font to default if red text exist from prior condition
+            resultTextArea.css("color", "");
+            resultTextArea.css("font-weight", "");
+            }
+            }
+        });
+        </script> 
         <style>
             .button-two {
                 width: 150px; background-color: #417bcb; border-radius: 20px; color: white; 
@@ -15,7 +107,7 @@
             .button-two:hover,
             .button-two:focus {
                 background-color: #e33c3c; border-color: #1d0e6b  /* changes colors as user move mouse */
-            } 
+            }
             footer {
                 border: 2px solid #e20707;  background-color:#cccccc67
             }
@@ -49,7 +141,7 @@
             }
             .hwk2box {
                 border: #1d0e6b; height: 100%; width: 800px; 
-                background-color: white; 
+                background-color: white; padding-top :17px; padding-bottom: 17px;
                 text-align:center; display: flex;
                 align-items:center; /* vertically center align content */
                 justify-content: center; /* horizontally center align content */
@@ -88,6 +180,7 @@
                 justify-content: center; /* horizontally center align content */
             }
         </style>
+
     </head>
 
     <body >
@@ -112,21 +205,39 @@
         </div>   
 
         <div class="hwk2box-box">      
+            <div > 
             <div class="hwk2box">
-                <script>
-                    document.write('<p><span style="font-weight:bold; color: red; font-family: Times New Roman;">xy </span> ');
-                    document.write('<span style="color: blue; font-family: Arial;">12 </span> ');
-                    document.write('<span style="font-style: italic; color: green; font-family: Impact;">89</span><p>');
-                </script>
+                <form id="part2form">
+                    <table>
+                        <tr>
+                            <td><label for="input1">First Number</label></td>
+                            <td><input type="text" id="input1" size="20"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="input2">Second Number</label></td>
+                            <td><input type="text" id="input2" size="20"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="input3">Third Number</label></td>
+                            <td><input type="text" id="input3" size="20"></td>
+                        </tr>
+                    </table>
+                  
+                    Results
+                    <textarea rows="8" cols="40" id="result" readonly></textarea>
+                    <input type="button" id="form2" value="SUBMIT">
+                    <input type="reset" id="clear" value="RESET">                  
+                </form>
+            </div>
             </div>
         </div> 
                 
         <article class="solution-box">
             <header>
-                <h2>Homework 2 Part I Code Solution</h2>
+                <h2>Homework 2 Part II Code Solution</h2>
             </header>
             <div class="solution-frame">
-            <iframe src="hw2pt1.pdf"></iframe>
+            <iframe src="hw2pt2.pdf"></iframe>
             </div>
             <br><br>    
         </article>
