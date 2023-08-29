@@ -5,7 +5,8 @@
         <meta charset="utf-8">
         <title>CNIT133 Homework 2 Part II</title>
  <!-- This is webpage that contains links to CNIT 133 Homework 2 - Basic Operations -->
-        <meta name="description" content="This is homework 2 Part 2 to show JS code into innerHTML property that computes inclusing using ajax">
+        <meta name="description" content="This is homework 2 Part 2 to show JS code into innerHTML property 
+        that computes sum, average, product, min and max using fade in and fade out function from ajax">
    
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
         <script>
@@ -84,14 +85,18 @@
             var form2Result = "Results from form2 function";
             resultTextArea.val(form2Result);
 
-            var resultText =`
-    The inputted numbers: ${num1}, ${num2}, ${num3}
-    The sum of the numbers: ${sumnum}
-    The average of the numbers: ${average.toFixed(2)}
-    The product of the integers: ${product}
-    The min of the numbers: ${smallest}
-    The max of the numbers: ${largest}`;
-            resultTextArea.val(resultText); // change font to default if red text exist from prior condition
+            var line1, line2, line3, line4, line5, line6, tab;
+            tab = "   "
+            line1 = ` The inputted numbers: ${num1}, ${num2}, ${num3}`;
+            line2 = `${tab}The sum of the numbers: ${sumnum}`;
+            line3 = `${tab}The average of the numbers: ${average.toFixed(2)}`;
+            line4 = `${tab}The product of the integers: ${product}`;
+            line5 = `${tab}The min of the numbers: ${smallest}`;
+            line6 = `${tab}The max of the numbers: ${largest}`;
+            var resultText = "\n"+ line1 + "\n" + line2 + "\n" + line3 + "\n" + line4 + "\n" + line5 + "\n" + line6; 
+            resultTextArea.val(resultText); 
+            resultTextArea.val(resultText); 
+            // change font to default if red text exist from prior condition
             resultTextArea.css("color", "");
             resultTextArea.css("font-weight", "");
             }
