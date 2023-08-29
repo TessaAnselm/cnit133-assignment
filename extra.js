@@ -1,14 +1,15 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // DOM is fully loaded
-    var calculateButton = document.getElementById("calculateButton");
-    
-      calculateButton.addEventListener("click", function() {
-        var number6 = document.getElementById("userInput").value;
-        // Perform calculations in exchange function
-        calculateExchange(number6);
-      });
-   
-  });
+	var calculateButton = document.getElementById("calculateButton");
+
+	calculateButton.addEventListener("click",function() {
+		var inputValue = parseFloat(document.getElementById("userInput").value);
+		
+		// call function calculateExchange to compute
+		calculateExchange(inputValue);
+
+
+	});
+}); 
 
 function calculateExchange(inputValue) {
         
@@ -28,17 +29,18 @@ function calculateExchange(inputValue) {
 	n5 = parseFloat(number5);
 	n6 = parseFloat(inputValue);
 
-	
+	//multiple input with exchange rate
 	euroVal = n6 * n1;
 	canadaVal = n6 * n2;
 	hongkongVal = n6 * n3;
 	japanVal = n6 * n4;
 	mexicoVal = n6 * n5;
 
+	//display results into respective fields
     document.getElementById("euro").innerHTML = euroVal.toFixed(2);
     document.getElementById("canada").innerHTML = canadaVal.toFixed(2);
     document.getElementById("hongkong").innerHTML = hongkongVal.toFixed(2);
     document.getElementById("japan").innerHTML = japanVal.toFixed(2);
     document.getElementById("mexico").innerHTML = mexicoVal.toFixed(2);
 
-}
+};
