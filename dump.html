@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="homework #2 Javascript CNIT133">
+    <title>Hw#2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="../../css/homeworkBoilerPlate.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<nav>
+    <ul>
+        <li style="float:right"><a href="hw8.html">Hw#8</a></li>
+        <li style="float:right"><a href="hw7.html">Hw#7</a></li>
+        <li style="float:right"><a href="hw6.html">Hw#6</a></li>
+        <li style="float:right"><a href="hw5.html">Hw#5</a></li>
+        <li style="float:right"><a href="hw4.html">Hw#4</a></li>
+        <li style="float:right"><a href="hw3.html">Hw#3</a></li>
+        <li class="active" style="float:right"><a href="hw2.html">Hw#2</a></li>
+        <li style="float:right"><a href="../index.html">Home</a></li>
+    </ul>
+</nav>
+<div class="wrapper wrapper-orange">
+    <h1>CNIT 133 Homework 2 Basic Operations</h1>
+    <div class="subMenu">
+        <button id="overviewButton" class="showSingle" data-target="overview">Overview</button>
+        <button class="showSingle" data-target="hwPart1">Part 1</button>
+        <button class="showSingle" data-target="hwPart2">Part 2</button>
+        <button class="showSingle" data-target="hwPart3">Part 3</button>
+        <button class="showSingle" data-target="extraCredit">Extra credit</button>
+    </div>
+    <div class="inner-wrapper">
+        <div id="overview" class="hwParts">
+            <ol>
+                <li>Part 1 - document.write statements</li>
+                <li>Part 2 - Inputs and integers</li>
+                <li>Part 3 - jQuery</li>
+                <li>Part 4 - Calculation Table</li>
+                <li>Extra Credit - Exchanges Rates</li>
+            </ol>
+        </div>
+        <div id="hwPart1" class="hwParts">
+            <script>
+                let a = "x",
+                    b = "y",
+                    num1 = 12,
+                    num2 = 89
+                document.write(
+                    `<p><strong><span class="red">${a}${b} </span><span class="blue">${num1} </span><span class="green">${num2}</span></strong></p>`);
+            </script>
+        </div>
+        <div id="hwPart2" class="hwParts">
+            <form name="integersAndInputsForm">
+                <p>
+                    <label>
+                        First Number:
+                        <input type="number" name="num1" required>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        Second Number:
+                        <input type="number" name="num2" required>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        Third Number:
+                        <input type="number" name="num3" required>
+                    </label>
+                </p>
+                <br>
+                <button type="button" onclick="calculate()" id="submitButton">Submit</button>
+                <button id="resetButton" type="reset">Reset</button>
+            </form>
+            <div id="part2FormResults"></div>
+        </div>
+        <div id="hwPart3" class="hwParts">
+            <form name="numbersAndInputsForm">
+                <p>
+                    <label>
+                        First Number:
+                        <input type="number" name="num1" required>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        Second Number:
+                        <input type="number" name="num2" required>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        Third Number:
+                        <input type="number" name="num3" required>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        Fourth Number:
+                        <input type="number" name="num4" required>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        Fifth Number:
+                        <input type="number" name="num5" required>
+                    </label>
+                </p>
+                <br>
+                <button type="button" onclick="part3Calculate()" id="part3SubmitButton">Submit</button>
+                <button id="part3ResetButton" type="reset">Reset</button>
+            </form>
+            <div id="part3FormResults"></div>
+        </div>
+        <div id="extraCredit" class="hwParts">
+            <div class="panel">
+                <p>Input an amount in U.S. dollars and press enter. <br>Table will display its equivalent in each of the foreign currencies</p>
+                <p>Refresh page to try a different U.S dollar amount.</p>
+            </div>
+            <p class="flip">Click to Show/Hide Instructions</p>
+            <div class="pannelInnerWrapper">
+            </div>
+            <button type="button" onclick="extraCreditCalculate()" id="extraCreditCalculateSubmitButton">Calculate Exchange</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        // Script for submenu:
+        $('.hwParts').hide();
+        $('#overview').show();
+        $('#overviewButton').addClass('activeSubMenuButton');
+
+        $('.showSingle').click(function () {
+            $('.hwParts').hide();
+            $('.showSingle').removeClass('activeSubMenuButton');
+            $('#' + $(this).attr('data-target')).show();
+            $($(this)).addClass('activeSubMenuButton');
+        });
+    });
+
+    // Script for part2:
+    function calculate() {
+        document.getElementById("part2FormResults").innerHTML = "";
+
+        let number1, number2, number3, n1, n2, n3, sum, average, product, minNum, maxNum;
+        number1 = document.forms["integersAndInputsForm"].elements["num1"].value;
+        number2 = document.forms["integersAndInputsForm"].elements["num2"].value;
+        number3 = document.forms["integersAndInputsForm"].elements["num3"].value;
+
+        if ((number1 !== "" && typeof parseInt(number1) === "number") &&
+            (number2 !== "" && typeof parseInt(number2) === "number") &&
+            (number3 !== "" && typeof parseInt(number3) === "number")) {
+            n1 = parseInt(number1);
+            n2 = parseInt(number2);
+            n3 = parseInt(number3);
+            sum = n1 + n2 + n3;
+            average = parseInt(sum / 3);
+            product = n1 * n2 * n3;
+            minNum = Math.min(n1, n2, n3);
+            maxNum = Math.max(n1, n2, n3);
+
+            document.getElementById("part2FormResults").innerHTML +=
+                `<p><br>Sum = ${sum}<br>Average = ${average}<br>Product = ${product}<br>Largest number = ${maxNum}<br>Smallest number = ${minNum}</p>`;
+
+        } else {
+            document.getElementById("part2FormResults").innerHTML +=
+                `<p class="red">Please enter integer numbers only into all the input fields</p>`;
+        }
+
+        $(function () {
+            $("#part2FormResults").fadeIn('slow');
+        })
+    }
+
+    $(function () {
+        $("#resetButton").click(function () {
+            $("#part2FormResults").fadeOut('slow');
+        })
+    })
+
+    // Script for part3:
+    function part3Calculate() {
+        document.getElementById("part3FormResults").innerHTML = "";
+
+        let number1, number2, number3, number4, number5, n1, n2, n3, n4, n5, negativeNumSum = 0, positiveNumSum = 0, zeroNumSum = 0;
+        number1 = document.forms["numbersAndInputsForm"].elements["num1"].value;
+        number2 = document.forms["numbersAndInputsForm"].elements["num2"].value;
+        number3 = document.forms["numbersAndInputsForm"].elements["num3"].value;
+        number4 = document.forms["numbersAndInputsForm"].elements["num4"].value;
+        number5 = document.forms["numbersAndInputsForm"].elements["num5"].value;
+
+        if ((number1 !== "" && typeof parseFloat(number1) === "number") &&
+            (number2 !== "" && typeof parseFloat(number1) === "number") &&
+            (number3 !== "" && typeof parseFloat(number1) === "number") &&
+            (number4 !== "" && typeof parseFloat(number1) === "number") &&
+            (number5 !== "" && typeof parseFloat(number1) === "number")) {
+
+            n1 = parseFloat(number1);
+            n2 = parseFloat(number2);
+            n3 = parseFloat(number3);
+            n4 = parseFloat(number4);
+            n5 = parseFloat(number5);
+
+            let numbers = [n1, n2, n3, n4, n5];
+            for(let i = 0; i < numbers.length; i++) {
+                if (numbers[i] === 0) {
+                    zeroNumSum++;
+                } else if (numbers[i] < 0) {
+                    negativeNumSum += numbers[i];
+                } else {
+                    positiveNumSum += numbers[i];
+                }
+            }
+
+            document.getElementById("part3FormResults").innerHTML +=
+                `<p><br>Sum of positive numbers = ${positiveNumSum} <br>Sum of negative numbers = ${negativeNumSum} <br>Number of zeros = ${zeroNumSum}</p>`
+
+        } else {
+            document.getElementById("part3FormResults").innerHTML +=
+                `<p class="red">Please enter numbers into all the input fields</p>`;
+        }
+
+        $(function () {
+            $("#part3FormResults").fadeIn('slow');
+        })
+    }
+
+    $(function () {
+        $("#part3ResetButton").click(function () {
+            $("#part3FormResults").fadeOut('slow');
+        })
+    })
+
+    // Script for extra credit
+    let textfieldInput, britishPound, canadianDollar, euro, japaneseYen, mexicanPeso;
+
+    function drawTable(){
+        let table = '';
+        table += '<caption>' + "Monetary Exchange Rates" + '</caption>';
+
+        table += '<thead>';
+        table += '<tr><th scope="col">Currency</th>';
+        table += '<th scope="col">Rate</th>';
+        table += '<th scope="col">Value</th>';
+        table += '</tr></thead>';
+
+        table += '<tbody>';
+
+        table += '<tr><th scope="row">'+ "British Pound" + '</th>';
+        table += '<td>'+ "0.77" +'</td>';
+        table += '<td class="conversion">';
+        if(britishPound){
+            table += britishPound;
+        }
+        table += '</td></tr>'
+
+        table += '<tr><th scope="row">'+ "Canadian Dollar" + '</th>';
+        table += '<td>'+ "1.31" +'</td>';
+        table += '<td class="conversion">';
+        if(canadianDollar){
+            table += canadianDollar;
+        }
+        table += '</td></tr>'
+
+        table += '<tr><th scope="row">'+ "Euro" + '</th>';
+        table += '<td>'+ "0.89" +'</td></td>';
+        table += '<td class="conversion">';
+        if(euro){
+            table += euro;
+        }
+        table += '</td></tr>'
+
+        table += '<tr><th scope="row">'+ "Japanese Yen" + '</th>';
+        table += '<td>'+ "108.38" +'</td></td>';
+        table += '<td class="conversion">';
+        if(japaneseYen){
+            table += japaneseYen;
+        }
+        table += '</td></tr>'
+
+        table += '<tr><th scope="row">'+ "Mexican Peso" + '</th>';
+        table += '<td>'+ "19.11" +'</td></td>';
+        table += '<td class="conversion">';
+        if(mexicanPeso){
+            table += mexicanPeso;
+        }
+        table += '</td></tr>'
+
+        table += '<tr><th scope="row" colspan="2" id="dollars">'+ "Enter Amount of U.S Dollars: " + '</th>';
+        if(textfieldInput){
+            table += '<td><input name="textfield" id="textfield" type="number" placeholder="'+ textfieldInput +'"/>';
+        } else {
+            table += '<td><input name="textfield" id="textfield" type="number"/>';
+        }
+        table += '</td></tr>'
+
+        table += '</tbody>';
+        $(".pannelInnerWrapper").html('<table id="monetaryExchange"' + table + '</table>');
+    }
+
+    drawTable();
+
+    $(".flip").click(function(){
+        $(".panel").slideToggle("slow");
+    });
+
+    $("#textfield").click(function(){
+        $(this).css("background-color","yellow");
+    });
+
+    function extraCreditCalculate() {
+        textfieldInput = $("#textfield").val();
+        if ($.isNumeric(textfieldInput)) {
+            britishPound = (0.77 * textfieldInput).toFixed(2);
+            canadianDollar = (1.31 * textfieldInput).toFixed(2);
+            euro = (0.89 * textfieldInput).toFixed(2);
+            japaneseYen = (108.38 * textfieldInput).toFixed(2);
+            mexicanPeso = (19.11 * textfieldInput).toFixed(2);
+            drawTable();
+        } else {
+            $("#textfield").css("background-color", "red")
+        }
+    }
+
+</script>
+</body>
+
+</html>

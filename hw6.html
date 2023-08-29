@@ -8,20 +8,23 @@
         <meta name="description" content="This is main page that links to assingment for CNIT133 using HTML5 and inline CSS">
         <style>
             .button {
-                background-color:#417bcb; border-radius:20px; color: white; text-align:center; text-decoration: none; 
-                display: inline-block; font-size: 20px; margin: 3px 3px; cursor: pointer; outline:none; transition:0.3s; 
-                border: 1px solid transparent; padding: 10px 20px;
+                width: 120px; height: 60px; background-color:#417bcb; border-radius: 20px; color: white; 
+                font-size: 22px; cursor: pointer; display: inline-block; text-align: center; 
+                padding: 10px; text-decoration: none; overflow: hidden;
             }
-            .button:hover,
+            .button:hover, 
             .button:focus {
-                background-color: #e33c3c; border-color: #080808  /* changes colors as user move mouse */ 
+                background-color: #e33c3c; border-color: #b64e57;  /* changes colors as user move mouse */ 
             }
-            .center-text {
-                font-size: 40px; /* make the font larger */
+            .footer-text-container { /*footer*/
+                display:flex; align-items:center; /* vertically center items */
+            } 
+            .footer-text-container img {
+                max-width:100%; margin-right:10px  /*space between image and text */
             }
-            .costruction-container {
+            .header-background {
+                background-color: #e33c3c;
                 text-align: center;
-                width:100%
             }
             .header-container {
                 display: flex;
@@ -29,8 +32,8 @@
                 justify-content: space-between; /* push items to edges */
             }
             .header-text {
-                color:#417bcb; font-size: 70px;
-                flex: 0 0 80%; /* set text to 80% available page width */
+                color:#417bcb; font-size: 55px;
+                flex: 0 0 85%; /* set text to 85% available page width */
                 text-align: center;
             }
             .image-construction {
@@ -42,15 +45,31 @@
             .image-text-container img {
                 max-width:100%; margin-right:10px /* space between image and text */
             }
+            .menu-container {
+                background-color:#cccccc67; padding: 20px 50px; justify-content: center;
+                align-items: center;
+            }
             .right-image {
                 max-width: 100%; /* push image to right */
             }
             .right-text {
                 text-align: right; /* align text to the right */
             }
-            .rounded-image {
+            .rounded-image { /*photo*/
                 border-radius:50% /* round photo image */
-            }   
+            }  
+            .solution-box header {
+                width: 100%; padding: 10px; color:brown; text-align:center;
+            }
+            .solution-frame {    
+                width: 80%; display: flex;
+                flex-grow: 1; /* allow to grow and fill available verticle space */
+                justify-content: center; align-items: center;
+                margin: 0 auto; /* center solution-frame within solution box */ 
+            }
+            .solution-frame iframe {    
+                width:180%; height: 100%; 
+            } 
         </style>
     </head>
 
@@ -64,20 +83,18 @@
                 </figure>
             </div>     
         </header>
-        <section style="background-color:#cccccc67">
-            <h2 class="center-text" style="color:rgb(232, 41, 41)">Pick a topic:</h2>   
+        <div class="menu-container">
             <nav>
-            <a href="index.html" class="button">Course Basics</a>
-            <a href="hw2.html" class="button">JS Basics</a>
-            <a href="hw3.html" class="button">Functions</a>
-            <a href="hw4.html" class="button">Looping Statements</a>
-            <a href="hw5.html" class="button">Arrays</a>
-            <a href="hw6.html" class="button">Objects</a>
-            <a href="hw7.html" class="button">DOM and jQuery</a>
-            <a href="hw8.html" class="button">Ajax Applications</a>
+            <a href="index.html" target="_self" class="button">Course Basics</a>
+            <a href="hw2.html" target="_self" class="button">JS Basics</a>
+            <a href="hw3.html" target="_self" class="button">Functions</a>
+            <a href="hw4.html" target="_self" class="button">Looping Statements</a>
+            <a href="hw5.html" target="_self" class="button">Arrays</a>
+            <a href="hw6.html" target="_self" class="button">Objects</a>
+            <a href="hw7.html" target="_self" class="button">DOM and jQuery</a>
+            <a href="hw8.html" target="_self" class="button">Ajax Applications</a>
             </nav>
-            <br>
-        </section>
+        </div>
                  
         <article>
             <br>
