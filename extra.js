@@ -1,19 +1,12 @@
-document.addEventListener("DOMContentLoaded", function() {
-	var calculateButton = document.getElementById("calculateButton");
-
-	calculateButton.addEventListener("click",function() {
-		var inputValue = parseFloat(document.getElementById("userInput").value);
-		
-		// call function calculateExchange to compute
-		calculateExchange(inputValue);
-
-
+$(document).ready(function() {
+ var calculateButton = $("#calculateButton");
+	calculateButton.click(function() {
+		calculateExchange();
 	});
-}); 
-
-function calculateExchange(inputValue) {
+});
+function calculateExchange() {
         
-	var number1, number2, number3, number4, number5, n1, n2, n3, n4, n5, n6;
+	var number1, number2, number3, number4, number5, number6, n1, n2, n3, n4, n5, n6;
 	var euroVal, canadaVal, hongkongVal, japanVal, mexicoVal;
 
 	number1 = document.getElementById("euroRate").value;
@@ -21,13 +14,14 @@ function calculateExchange(inputValue) {
 	number3 = document.getElementById("hkRate").value;
 	number4 = document.getElementById("japanRate").value;
 	number5 = document.getElementById("pesoRate").value;
+	number6 = document.getElementById("userInput").value;
 
 	n1 = parseFloat(number1);
 	n2 = parseFloat(number2);
 	n3 = parseFloat(number3);
 	n4 = parseFloat(number4);
 	n5 = parseFloat(number5);
-	n6 = parseFloat(inputValue);
+	n6 = parseFloat(number6);
 
 	//multiple input with exchange rate
 	euroVal = n6 * n1;

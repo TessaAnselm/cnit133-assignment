@@ -1,14 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="utf-8">
-        <title>CNIT133 Homework 2 Part Extra Credit</title>
- <!-- This is webpage that contains links to CNIT 133 Homework 2 Extra Credit - JS Basic Operations -->
-        <meta name="description" content="This is homework 2 Part extra credit to show money exchange computed using JS and scroll flip using ajax">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-        <script src="extra.js"></script>
-        
+<head>
+  <meta charset="utf-8">
+  <title>CNIT133 Homework 2 Part Extra Credit</title>
+  <meta name="description" content="This is homework 2 Part extra credit to show money exchange computed using JS and scroll flip using ajax">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <script>
+   $(document).ready(function() {
+    $("#flip").click(function() {
+        $("#instructions").toggle("slow");
+    });
+
+    var calculateButton = $("#calculateButton");
+    var resetButton = $("#resetButton");
+    resetButton.click(function() {
+        resetValues();
+    });
+
+    calculateButton.click(function() {
+    var userInput = $("#userInput").val();
+    var userInputElement = $("#userInput");
+
+    if (isNaN(userInput)) {
+      userInputElement.val("Numbers only!").css("color", "red");
+      fadeOutAfterDelay(userInputElement);
+    } else if (userInput === "") {
+      userInputElement.val("Number here!").css("color", "red");
+      fadeOutAfterDelay(userInputElement);
+    } else {
+      calculateExchange();
+        }
+      });
+    });
+
+    function fadeOutAfterDelay(element) {
+      setTimeout(function() {
+      element.val("").css("color", ""); // Clear error message and color
+    }, 1000); 
+    }
+    function resetValues() {
+        $("#euro").val(""); // Clear input values
+        $("#canada").val("");
+        $("#hongkong").val("");
+        $("#japan").val("");
+        $("#mexico").val("");
+        $("#userInput").val("");
+    }
+
+    function calculateExchange() {
+      var n1, n2, n3, n4, n5, n6;
+      var euroVal, canadaVal, hongkongVal, japanVal, mexicoVal;
+
+      n1 = parseFloat($("#euroRate").text());
+      n2 = parseFloat($("#canadaRate").text());
+      n3 = parseFloat($("#hkRate").text());
+      n4 = parseFloat($("#japanRate").text());
+      n5 = parseFloat($("#pesoRate").text());
+      n6 = parseFloat($("#userInput").val());
+
+      euroVal = n6 * n1;
+      canadaVal = n6 * n2;
+      hongkongVal = n6 * n3;
+      japanVal = n6 * n4;
+      mexicoVal = n6 * n5;
+
+      $("#euro").val(euroVal.toFixed(2));
+      $("#canada").val(canadaVal.toFixed(2));
+      $("#hongkong").val(hongkongVal.toFixed(2));
+      $("#japan").val(japanVal.toFixed(2));
+      $("#mexico").val(mexicoVal.toFixed(2));
+    }
+    </script>
         <style>
             .button-two {
                 width: 150px; background-color: #417bcb; border-radius: 20px; color: white; 
@@ -19,9 +82,12 @@
             .button-two:focus {
                 background-color: #e33c3c; border-color: #1d0e6b  /* changes colors as user move mouse */
             }
+            .calButton {
+                background-color: #417bcb; color:white;
+            }
             .custom-table {
-                border-collapse: collapse;
-                width: 400px;
+                table-layout: fixed;
+                width: 100%;
             }
             .custom-table th, .custom-table td {
                 border: 4px solid #e33c3c;
@@ -30,6 +96,15 @@
             }
             .custom-table th{
                 background-color:#cccccc67; text-align: center;
+            }
+            .custom-table td{ /* center columns in table */
+                text-align: center;
+            }
+            .custom-table th:nth-chile(2),
+            .custom-table td:nth-chile(2),
+            .custom-table th:nth-chile(3),
+            .custom-table td:nth-chile(3) {
+                width: 25%;
             }
             .extra-form {
                 align-items: flex-end;
@@ -71,6 +146,18 @@
                 text-align:center; display: flex;
                 align-items:center; /* vertically center align content */
                 justify-content: center; /* horizontally center align content */
+            }
+            .input-field {
+                width: 95px;
+                text-align: center
+            }
+            #instructions, #flip {
+                padding: 5px; text-align: center; background-color:#417bcb; border: solid 1px #c3c3c3;
+                color: white;
+            }
+            #instructions {
+                padding: 1px;
+                display: none;
             }
             .right-image {
                 max-width: 100%; /* push image to right */
@@ -130,54 +217,60 @@
             </nav>
         </div>   
 
-       
         <div class="hwk2box-box">      
             <div > 
             <div class="hwk2box">
-                <p class="flip">Click to Show/Hide Instructions</p>
-               
+
+                <div id="flip">Click to get instuctions</div>
+                <div id="instructions">
+                    <p>The foreign exchange rates in June 2021.</p>
+                    <p>Enter a dollar amount in the table below to see the corresponding foreign exchange values.</p>
+                </div>
+              
                 <table class ="custom-table">    
                  
                 <tr>
                 <th colspan="3" scope="row">Monetary Exchange Rates</th>
                 </tr>
                 <tr>
-                <th scope="row" style="width: 70%;">Currency</th>
-                <th scope="row" style="width: 30%;">Rate</th>
+                <th scope="row">Currency</th>
+                <th scope="row">Rate</th>
                 <th scope="row">Value</th>
                 </tr>
                 <tr>
                 <td>Euro</td>
                 <td id="euroRate">0.84</td>
-                <td><input type="text" id="euro"></td>
+                <td><input type="text" id="euro" readonly class="input-field"></td>
                 </tr>
                 <tr>
                 <td>Canadian Dollar</td>
                 <td id="canadaRate">1.23</td>
-                <td><input type="text" id="canada"></td>
+                <td><input type="text" id="canada" readonly class="input-field"></td>
                 </tr>
                 <tr>
                 <td>Hong Kong Dollar</td>
                 <td id="hkRate">7.76</td>
-                <td><input type="text" id="hongkong"></td>
+                <td><input type="text" id="hongkong" readonly class="input-field"></td>
                 </tr>
                 <tr>
                 <td>Japanese Yen</td>
                 <td id="japanRate">110.80</td>
-                <td><input type="text" id="japan"></td>
+                <td><input type="text" id="japan" readonly class="input-field"></td>
                 </tr>
                 <tr>
                 <td>Mexican Peso</td>
                 <td id="pesoRate">19.82</td>
-                <td><input type="text" id="mexico"></td>
+                <td><input type="text" id="mexico" readonly class="input-field"></td>
                 </tr>
                 <tr>
                 <td colspan="2"><strong>Enter Amount of U.S. Dollars</strong></td>
-                <td><input type="text" id="userInput"></td>
+                <td><input type="text" id="userInput" class="input-field"></td>
                 </tr>
                 
                 </table>
-                <button type="button" id="calculateButton">Calculate Exchange</button>
+                <button type="button" id="calculateButton" class="calButton">Calculate Exchange</button>
+                <br>
+                <button type="button" id="resetButton" class="calButton">Reset</button>
              
             </div>
             </div>
