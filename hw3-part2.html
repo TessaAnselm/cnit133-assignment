@@ -6,9 +6,32 @@
     <title>CNIT133 Homework 3 Part II</title>
     <!-- This is a webpage that contains links to CNIT 133 Homework 2 - Basic Operations -->
     <meta name="description" content="This is homework 3 Part 1 to compute student grade using fade in and fade out function from ajax">
-
+    <link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <script src="hw3script.js"></script>
+
+    <!-- the following script is needed for jquery validation of input -->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+    <!-- <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script> -->
+    <script>
+        // just for the demos, avoids form submit
+        jQuery.validator.setDefaults({
+          debug: true,
+          success: "valid"
+        });
+        $( "#inputForm" ).validate({
+          rules: {
+            item: {
+              required: true,
+              number: true
+            }
+          }
+        });
+        </script>
+
+   
 
     <style>
         .blackBold {
@@ -262,34 +285,32 @@
             
             <div class="hwk2box">
                 <div class="input-box">
-                    <label for="seller">Seller's Name:</label>
-                    <input type="text" id="sellerName" class="nameField" value="">
+                    <form id="inputForm"> <br>
+                    <label for="sellerName">Seller's Name:</label>
+                    <input type="text" id="sellerName" class="nameField" value="" required>
+                    <br>
                     <h4>For each item type the quantity sold by the seller</h4>
-                    <table>
-                        <tr>
-                            <td>Item 1: </td>
-                            <td><input type="number" id="item1" class="numField" min="0"></td>
-                        </tr>
-                        <tr>
-                            <td>Item 2: </td>
-                            <td><input type="number" id="item2" class="numField" min="0"></td>
-                        </tr>
-                        <tr>
-                            <td>Item 3: </td>
-                            <td><input type="number" id="item3" class="numField" min="0"></td>
-                        </tr>
-                        <tr>
-                            <td>Item 4: </td>
-                            <td><input type="number" id="item4" class="numField" min="0"></td>
-                        </tr>
-                        
-                    </table>
+                    
+                    <label for="item">Item 1: </label>
+                    <input class="left" id="item1" name="item">
+                    <br>
+                    <label for="item">Item 2: </label>
+                    <input class="left" id="item2" name="item">
+                    <br>
+                    <label for="item">Item 3: </label>
+                    <input class="left" id="item3" name="item">
+                    <br>
+                    <label for="item">Item 4: </label>
+                    <input class="left" id="item4" name="item"><br>
+
+                </form>
                     
                     <div class="submit-reset">
-                    &nbsp;&nbsp;
-                    <input type="button" id="form2" class="buttonSubmit" value="SUBMIT"> &nbsp;&nbsp;
+                    <input type="submit" class="buttonSubmit" value="SUBMIT"> &nbsp;&nbsp;
                     <input type="reset" id="clear" class="buttonSubmit" value="CLEAR FORM">    
-                    </div>              
+                    </div>    
+                    <div id="messageOut">
+                    </div>          
                 </div>
                 <div class="output-box">
                     <table id="outputTable" class="outputTable">
@@ -329,14 +350,14 @@
                         <tr>
                             
                           
-                            <td class="left-table">Total Amount Sold:</td>
+                            <td class="left-table">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total Amount Sold:</td>
                            
                             <td><input type="text" id="totalSold" class="right-table" readonly></td>
                         </tr>
                         <tr>
                             
                         
-                            <td class="left-table">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total Weekly Earnings:</td>
+                            <td class="left-table">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total Weekly Earnings:</td>
                            
                             <td><input type="text" id="totalEarn" class="right-table" readonly></td>
                         </tr>
