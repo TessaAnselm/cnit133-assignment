@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>CNIT133 Homework 3 Part II</title>
+    <!-- This is a webpage that contains links to CNIT 133 Homework 2 - Basic Operations -->
+    <meta name="description" content="This is homework 3 Part 1 to compute student grade using fade in and fade out function from ajax">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="hw3script.js"></script>
+
+    <style>
+        .blackBold {
+            font-weight: bolder;
+            font-size: 18px;
+            color: black;
+
+        }
+        .blackBold2 {
+            font-weight: bolder; width:25%;
+            font-size: 18px;
+            color: black;
+        }
+        .blackBold3 {
+            font-weight: bolder; width:30%;
+            font-size: 18px;
+            color: black;
+        }
+        .button-two {
+            width: 150px;
+            background-color: #417bcb;
+            border-radius: 20px;
+            color: white;
+            font-size: 22px;
+            margin: 34px 3px;
+            cursor: pointer;
+            display: inline-block;
+            padding: 10px;
+            text-decoration: none;
+            overflow: hidden;
+        }
+
+        .button-two:hover,
+        .button-two:focus {
+            background-color: #e33c3c;
+            border-color: #1d0e6b;
+            /* changes colors as user move mouse */
+        }
+        .buttonSubmit {
+            width:120px; color:aliceblue;
+            background-color: #417bcb; border-radius: 20px; padding: 2px
+        }
+        footer {
+            border: 2px solid #e20707;
+            background-color: #cccccc67;
+        }
+
+        .footer-text-container {
+            /* footer */
+            display: flex;
+            align-items: center;
+            /* vertically center items */
+        }
+
+        .footer-text-container img {
+            max-width: 100%;
+            margin-right: 10px;
+            /* space between image and text */
+        }
+
+        .header-background {
+            background-color: #e33c3c;
+            text-align: center;
+        }
+
+        .header-container {
+            /* header/top most */
+            display: flex;
+            align-items: center;
+            /* vertically center items */
+            justify-content: space-between;
+            /* push items to edges */
+        }
+
+        .header-text {
+            color: #417bcb;
+            font-size: 55px;
+            flex: 0 0 85%;
+            /* set text to 85% available page width */
+            text-decoration: none;
+        }
+
+        .header-text:hover {
+            color: white;
+            /* changes colors as user move mouse */
+        }
+
+        .hwk2box-box {
+            background-color: #e33c3c;
+            height: 275px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            /* vertically center align content */
+            justify-content: center;
+            /* horizontally center align content */
+        }
+
+        .hwk2box {
+            width: 100%;
+            background-color: white;
+         
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .input-box {
+            flex-grow: 1;
+            padding: 5px;
+            border-right: 1px solid red;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .input-box label{
+            font-weight: bolder;
+        }
+     
+        .left-table{
+            text-align: left; width: 70%; margin-right: 30px;
+        }
+        .nameField {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+        }
+        .numField{
+            width:60%; text-align: center;
+        }
+
+        .output-box {
+            flex-grow: 1;
+            padding: 20px;
+            border: 1px solid pink;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .right-image {
+            max-width: 100%;
+            /* push image to the right */
+        }
+
+        .right-text {
+            text-align: right;
+            /* align text to the right */
+        }
+        .right-table {
+            width:90%;
+        }
+
+        .rounded-image {
+            /* photo */
+            border-radius: 50%;
+            /* round photo image */
+        }
+
+        .solution-box {
+            border: 2px solid #e20707;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            height: 70vh;
+        }
+
+        .solution-box header {
+            width: 100%;
+            padding: 10px;
+            color: brown;
+        }
+
+        .solution-frame {
+            width: 80%;
+            display: flex;
+            flex-grow: 1;
+            /* allow to grow and fill available vertical space */
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            /* center solution-frame within solution box */
+        }
+
+        .solution-frame iframe {
+            width: 180%;
+            height: 100%;
+        }
+
+        .submenu-container {
+            background-color: black;
+            text-align: center;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            /* vertically center align content */
+            justify-content: center;
+            /* horizontally center align content */
+        }
+        .submit-reset{
+            margin-top: 10px; display: flex; justify-content: space-between;
+            text-align: center;
+        }
+        .textResult {
+            text-align: center;
+        }
+
+        .title {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bolder;
+            color: aliceblue;
+            font-size: 22px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <header class="header-background">
+        <div class="header-container">
+            <a href="hw3.html" target="_self" class="header-text">CNIT 133 Homework 3 - Functions</a>
+            <figure>
+                <a href="https://www.ccsf.edu/" target="_self">
+                    <img src="ccsf_ram.gif" alt="ccsf ram logo" width="139" class="right-image">
+                </a>
+            </figure>
+        </div>
+    </header>
+
+    <div class="submenu-container">
+        <nav>
+            <a href="hw3-description.html" target="_self" class="button-two">Description</a>
+            <a href="hw3-part1.html" target="_self" class="button-two">Part I</a>
+            <a href="hw3-part2.html" target="_self" class="button-two">Part II</a>
+            <a href="hw3-extra-credit.html" target="_self" class="button-two">Extra Credit</a>
+        </nav>
+    </div>
+
+    <div class="hwk2box-box">
+
+        <div>
+            <header class="title">Sales Commissions</header>
+            
+            <div class="hwk2box">
+                <div class="input-box">
+                    <label for="seller">Seller's Name:</label>
+                    <input type="text" id="sellerName" class="nameField" value="">
+                    <h4>For each item type the quantity sold by the seller</h4>
+                    <table>
+                        <tr>
+                            <td>Item 1: </td>
+                            <td><input type="number" id="item1" class="numField" min="0"></td>
+                        </tr>
+                        <tr>
+                            <td>Item 2: </td>
+                            <td><input type="number" id="item2" class="numField" min="0"></td>
+                        </tr>
+                        <tr>
+                            <td>Item 3: </td>
+                            <td><input type="number" id="item3" class="numField" min="0"></td>
+                        </tr>
+                        <tr>
+                            <td>Item 4: </td>
+                            <td><input type="number" id="item4" class="numField" min="0"></td>
+                        </tr>
+                        
+                    </table>
+                    
+                    <div class="submit-reset">
+                    &nbsp;&nbsp;
+                    <input type="button" id="form2" class="buttonSubmit" value="SUBMIT"> &nbsp;&nbsp;
+                    <input type="reset" id="clear" class="buttonSubmit" value="CLEAR FORM">    
+                    </div>              
+                </div>
+                <div class="output-box">
+                    <table id="outputTable" class="outputTable">
+                        <tr>
+                            <td class="blackBold">Item #</td>
+                            <td class="blackBold">Price</td>
+                            <td class="blackBold2">Qty Sold</td>
+                            <td class="blackBold3">Total</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>$20.99</td>
+                            <td><input type="text" id="numSold1" class="numField" readonly></td>
+                            <td><input type="text" id="total1" class="right-table" readonly></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>$12.75</td>
+                            <td><input type="text" id="numSold2" class="numField" readonly></td>
+                            <td><input type="text" id="total2" class="right-table" readonly></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>$9.95</td>
+                            <td><input type="text" id="numSold3" class="numField" readonly></td>
+                            <td><input type="text" id="total3" class="right-table" readonly></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>$35.89</td>
+                            <td><input type="text" id="numSold4" class="numField" readonly></td>
+                            <td><input type="text" id="total4" class="right-table" readonly></td>
+                        </tr>
+                        
+                    </table>
+                    <table>
+                        <tr>
+                            
+                          
+                            <td class="left-table">Total Amount Sold:</td>
+                           
+                            <td><input type="text" id="totalSold" class="right-table" readonly></td>
+                        </tr>
+                        <tr>
+                            
+                        
+                            <td class="left-table">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total Weekly Earnings:</td>
+                           
+                            <td><input type="text" id="totalEarn" class="right-table" readonly></td>
+                        </tr>
+                    </table>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <article class="solution-box">
+        <header>
+            <h2>Homework 3 Part I Function solution</h2>
+        </header>
+        <div class="solution-frame">
+            <iframe src="hw3pt1.pdf"></iframe>
+        </div>
+        <br><br>
+    </article>
+
+    <footer>
+        <br>
+        <figure>
+            <div class="footer-text-container">
+                <img src="op.jpg" alt="self" width="80" class="rounded-image">
+                <p>Teresita Anselm<br>
+                    City College of San Francisco<br>
+                    tanselm@mail.ccsf.edu<br></p>
+            </div>
+        </figure>
+        <p class="right-text">Copyright of Teresita Anselm &copy; 2023</p>
+    </footer>
+
+</body>
+
+</html>

@@ -4,8 +4,8 @@
     <head>
         <meta charset="utf-8">
         <title>CNIT133</title>
- <!-- This is webpage that contains links to completed homework assignment for CNIT133 JavaScript, jQuery and AJAX -->
-        <meta name="description" content="This is main page that links to assingment for CNIT133 using HTML5 and inline CSS">
+ <!-- This is webpage that contains links to CNIT 133 Homework 3 - Functions -->
+        <meta name="description" content="This is homework 3 main page for CNIT133 using HTML5 and inline CSS">
         <style>
             .button {
                 width: 120px; height: 60px; background-color:#417bcb; border-radius: 20px; color: white; 
@@ -14,17 +14,27 @@
             }
             .button:hover, 
             .button:focus {
-                background-color: #e33c3c; border-color: #b64e57;  /* changes colors as user move mouse */ 
+                background-color: #e33c3c; border-color: #b64e57  /* changes colors as user move mouse */ 
+            }
+            .button-two { /* submenu button*/
+                width: 150px; background-color: aliceblue; border-radius: 20px; color: #417bcb; 
+                font-size: 22px; margin: 34px 3px; cursor: pointer; display: inline-block; 
+                padding: 10px; text-decoration: none; overflow: hidden;
+            }
+            .button-two:hover,
+            .button-two:focus {
+                background-color: #cccccc67; border-color: #1d0e6b  /* changes colors as user move mouse */
+            } 
+            .colored-section {
+                background-color: #e33c3c;
+                padding: 2px;
+                text-align: center;
             }
             .footer-text-container { /*footer*/
                 display:flex; align-items:center; /* vertically center items */
             } 
             .footer-text-container img {
                 max-width:100%; margin-right:10px  /*space between image and text */
-            }
-            .header-background {
-                background-color: #e33c3c;
-                text-align: center;
             }
             .header-container {
                 display: flex;
@@ -34,16 +44,7 @@
             .header-text {
                 color:#417bcb; font-size: 55px;
                 flex: 0 0 85%; /* set text to 85% available page width */
-                text-align: center;
-            }
-            .image-construction {
-                display: inline-block;
-            }
-            .image-text-container {
-                display:flex; align-items:center; /* vertically center items */
-            } 
-            .image-text-container img {
-                max-width:100%; margin-right:10px /* space between image and text */
+                text-align: center; text-decoration: none;
             }
             .menu-container {
                 background-color:#cccccc67; padding: 20px 50px; justify-content: center;
@@ -57,7 +58,7 @@
             }
             .rounded-image { /*photo*/
                 border-radius:50% /* round photo image */
-            }  
+            } 
             .solution-box header {
                 width: 100%; padding: 10px; color:brown; text-align:center;
             }
@@ -70,16 +71,30 @@
             .solution-frame iframe {    
                 width:180%; height: 100%; 
             } 
+            .submenu-button {
+                display: flex;
+                background-color: #e33c3c; justify-content: center;
+                height: 100px; width: 100%; align-items: center;
+            }
+            .submenu-container {
+                width: 100%; text-align: center; padding-top: 20px; background-color: #e33c3c;
+                font-weight: bolder;
+            }
+            .submenu-header {
+                color:aliceblue; background-color:#e33c3c;
+                height: 30px; font-size: 30px;
+            }
         </style>
     </head>
 
     <body >
-
         <header style="background-color:#e33c3c">
             <div class="header-container">
-                <h1 class="header-text">Functions</h1> 
+                <a class="header-text" href="hw3.html" target="_self">CNIT 133 Homework 3 - Functions</a> 
                 <figure>
+                <a href="https://www.ccsf.edu/" target="_self">
                 <img src="ccsf_ram.gif" alt="ccsf ram logo" width="139" class="right-image">
+                </a>
                 </figure>
             </div>     
         </header>
@@ -95,20 +110,114 @@
             <a href="hw8.html" target="_self" class="button">Ajax Applications</a>
             </nav>
         </div>
-                 
-        <article>
-            <br>
-            <div class="costruction-container">
-                <h2>Assignment available by 9/26/2023</h2>
-                <img class="image-construction" src="under_construction.jpg" alt="website coming soon" width="400"> 
+        <div class="submenu-container"> 
+            <div class="submenu-header">
+                Homework 3 Part:
             </div>
-            <br>
+            <div class="submenu-button">    
+            <nav>
+                <a href="hw3-description.html" target="_self" class="button-two">Description</a>
+                <a href="hw3-part1.html" target="_self" class="button-two">Part I</a>
+                <a href="hw3-part2.html" target="_self" class="button-two">Part II</a>
+                <a href="hw3-extra-credit.html" target="_self" class="button-two">Extra Credit</a>
+            </nav>
+            </div>
+        </div>            
+        <article>
+            <header>
+                <br>
+                <h2 style="color:brown">Homework 3 Instructions on Topic "Functions"</h2>
+            </header>
+            <section>
+            <h3>What you will do:</h3>
+            Create a web page with the heading CNIT 133 Homework 3 - Functions<br>
+            The contents of this page should be, besides the heading:
+                <ul class="square-list">
+                    <li>Hyperlink to Part 1 web page with a short description about what will be presented</li>
+                    <li>Hyperlink to Part 2 web page with a short description about what will be presented</li>
+                    <li>hyperlink to Extra credit (if you will develop it) with a short description about what will be presented</li>
+                    <li>Hyperlink to go back to the Homework 1 web page (the main page)</li>
+                </ul>
+                <br>
+            </section>
+            <section>    
+            <h3>Part I:</h3>
+                Create a webpage that contains:<br>
+                <ul>     
+                    <li>The heading Student Grades.</li>
+                    <li>A form with input boxes for Homework Average, Mid-Term Exam Score, Final Exam Score, and Participation -<br> 
+                        all those grades will be entered as integers.</li>
+                    <li>Button for submitting data and a button to clear the form.</li>
+                    <li>Textarea (or div or paragraph element) to present final results and/or error message.</li>
+                </ul>
+                Create a script that:<br>
+                <ul>     
+                    <li>Checks for valid input, input is between 0-100 and all numbers.</li>
+                    <li>If all input is valid then calculate and display the student's final average according to the formula:<br>
+                        final average = (.5 * hwAvg) + (.2 * midExam) + (.2 * finalExam) + (.1 * participation)</li>
+                    <li>In the output area, you will present the student's final average (rounded to an integer) and final letter grade using the following criteria:<br>
+                        90-100 A, 80-89 B, 70-79 C, 60-69 D, 0-59 F</li>
+                    <li>If the student's final grade is 'D' or 'F' then display "Student must retake the course".</li>
+                    <li>If the input of the user is invalid, you will present an error message and, of course, no result will be presented.</li>
+                    <li>Note: The user should be able to reuse that same form for another student!</li>
+                </ul>
+
+                <br>
+            </section>  
+            <section>
+            <h3>Part II:</h3>
+            <ul>
+            <li>A large company pays its salespeople on a commission basis. The salespeople receive $250 per week, plus 9% of their gross sales for the week.</li>
+            <li>You have been supplied with a list of the items that can be sold by each salesperson.</li>
+            <li>The page will contain a script that includes at the top of your form a text box for the salesperson's name for the user to enter. </li>
+            <li>When the user's mouse hovers over this name field, use the jQuery UI tooltip coding to display the message "Please make sure that the salesperson's name is spelled correctly".</li>
+            <li>The user will input the quantity of items sold, for each item.</li>
+            <li>You will use that input to calculate how much the salesperson sold and how much he/she will earn, and then output the results.</li>
+            <li>Use input boxes to input the number sold for each of the items 1-4.</li>
+            <li>You should also check for valid numeric input (make sure the number of items sold is never negative).</li>
+            <li>The results of total sold in dollars and the total money that will be received by the sale person should be right-justify.</li>
+            <li>The boxes for seller's name, and Item 1, Item 2, Item 3, Item 4 will be the boxes that the user will type data.</li>
+            <li>All the boxes below Qty Sold and Total should be readonly as you will present the values via your code.</li>
+            <li>In the box beside total earnings, you need to make sure that you first add all the values for each of the Total boxes (for item 1, item 2, item 3, item 4)</li>
+            <li>Then you calculate the 9% of that value and, finally, you add 250 to that result to give the total earnings of the seller!</li>
+            <li>Input type="text" for the seller's name, item 1, 2, 3, and 4, input type="number".</li>
+            </ul>
+                <br>
+            </section>
+            <section>
+            <h3>Extra Credit:</h3>    
+                Computers are playing an increasing role in education! There are many interesting educational games out there!<br>
+                <ul>  
+                    <li>Write a program that will help an elementary school student learn multiplication.</li>
+                    <li>Use Math.random to produce two one-digit integers (NO DECIMALS) from 0 to 9.</li>
+                    <li>With those two numbers, you should present a question such as: How much is X times Y? where X is one of the random numbers and Y is the other random number.</li>
+                    <li>The student then types the answer into an input box you will provide.</li>
+                    <li>The program checks the student's answer.</li> 
+                    <li>If it is correct, display the message "Very good!" in a text area or another part of the page, and then shows a question to the user to see whether he/she wants to keep playing. </li>
+                    <li>If the user responds YES (click on a button that says YES), you will then generate another question</li>
+                    <li>If the user responds NO (click on a button that says NO), you will present a message such as "Thanks for playing, see you next time" and you will NOT present another question.</li>
+                    <li>If the answer to the multiplication question is wrong, display the message "No. Please try again." in a textarea or another part of the page.</li> 
+                    <li>Let the student try the same question again repeatedly until the student finally gets it right.</li>
+                </ul>
+
+
+
+            </section>
+        </article>
+        <article class="solution-box">
+            <header>
+                <h2>Homework 3 Code Solution</h2>
+            </header>
+            <div class="solution-frame">
+            <iframe src="hw3.pdf"></iframe>
+            </div>
+            <br><br>    
         </article>
 
         <footer style="background-color:#cccccc67">
             <br>
             <figure>
-            <div class="image-text-container">
+            <div class="footer-text-container">
                 <img src="op.jpg" alt="self" width="80" class="rounded-image">
                 <p>Teresita Anselm<br>
                 City College of San Francisco<br>
