@@ -1,262 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <title>CNIT133 Homework 3 Part II</title>
-    <!-- This is a webpage that contains links to CNIT 133 Homework 2 - Basic Operations -->
-    <meta name="description" content="This is homework 3 Part 1 to compute student grade using fade in and fade out function from ajax">
-    <link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
+    <meta name="description" content="This is homework 3 Part 2 to compute seller's Commissions for 4 items">
+    <link rel="stylesheet" type="text/css" href="hw3pt2style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-
-    <!-- the following script is needed for jquery validation of input -->
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script> -->
-    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
-    <!-- <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script> -->
-    <script>
-        // just for the demos, avoids form submit
-        jQuery.validator.setDefaults({
-          debug: true,
-          success: "valid"
-        });
-        $( "#inputForm" ).validate({
-          rules: {
-            item: {
-              required: true,
-              number: true
-            }
-          }
-        });
-        </script>
-
-   
-
-    <style>
-        .blackBold {
-            font-weight: bolder;
-            font-size: 18px;
-            color: black;
-
-        }
-        .blackBold2 {
-            font-weight: bolder; width:25%;
-            font-size: 18px;
-            color: black;
-        }
-        .blackBold3 {
-            font-weight: bolder; width:30%;
-            font-size: 18px;
-            color: black;
-        }
-        .button-two {
-            width: 150px;
-            background-color: #417bcb;
-            border-radius: 20px;
-            color: white;
-            font-size: 22px;
-            margin: 34px 3px;
-            cursor: pointer;
-            display: inline-block;
-            padding: 10px;
-            text-decoration: none;
-            overflow: hidden;
-        }
-
-        .button-two:hover,
-        .button-two:focus {
-            background-color: #e33c3c;
-            border-color: #1d0e6b;
-            /* changes colors as user move mouse */
-        }
-        .buttonSubmit {
-            width:120px; color:aliceblue;
-            background-color: #417bcb; border-radius: 20px; padding: 2px
-        }
-        footer {
-            border: 2px solid #e20707;
-            background-color: #cccccc67;
-        }
-
-        .footer-text-container {
-            /* footer */
-            display: flex;
-            align-items: center;
-            /* vertically center items */
-        }
-
-        .footer-text-container img {
-            max-width: 100%;
-            margin-right: 10px;
-            /* space between image and text */
-        }
-
-        .header-background {
-            background-color: #e33c3c;
-            text-align: center;
-        }
-
-        .header-container {
-            /* header/top most */
-            display: flex;
-            align-items: center;
-            /* vertically center items */
-            justify-content: space-between;
-            /* push items to edges */
-        }
-
-        .header-text {
-            color: #417bcb;
-            font-size: 55px;
-            flex: 0 0 85%;
-            /* set text to 85% available page width */
-            text-decoration: none;
-        }
-
-        .header-text:hover {
-            color: white;
-            /* changes colors as user move mouse */
-        }
-
-        .hwk2box-box {
-            background-color: #e33c3c;
-            height: 275px;
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            /* vertically center align content */
-            justify-content: center;
-            /* horizontally center align content */
-        }
-
-        .hwk2box {
-            width: 100%;
-            background-color: white;
-         
-            text-align: center;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-        }
-
-        .input-box {
-            flex-grow: 1;
-            padding: 5px;
-            border-right: 1px solid red;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            
-        }
-        .input-box label{
-            font-weight: bolder;
-        }
-     
-        .left-table{
-            text-align: left; width: 70%; margin-right: 30px;
-        }
-        .nameField {
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-weight: bold;
-        }
-        .numField{
-            width:60%; text-align: center;
-        }
-
-        .output-box {
-            flex-grow: 1;
-            padding: 20px;
-            border: 1px solid pink;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .right-image {
-            max-width: 100%;
-            /* push image to the right */
-        }
-
-        .right-text {
-            text-align: right;
-            /* align text to the right */
-        }
-        .right-table {
-            width:90%;
-        }
-
-        .rounded-image {
-            /* photo */
-            border-radius: 50%;
-            /* round photo image */
-        }
-
-        .solution-box {
-            border: 2px solid #e20707;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            height: 70vh;
-        }
-
-        .solution-box header {
-            width: 100%;
-            padding: 10px;
-            color: brown;
-        }
-
-        .solution-frame {
-            width: 80%;
-            display: flex;
-            flex-grow: 1;
-            /* allow to grow and fill available vertical space */
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto;
-            /* center solution-frame within solution box */
-        }
-
-        .solution-frame iframe {
-            width: 180%;
-            height: 100%;
-        }
-
-        .submenu-container {
-            background-color: black;
-            text-align: center;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            /* vertically center align content */
-            justify-content: center;
-            /* horizontally center align content */
-        }
-        .submit-reset{
-            margin-top: 10px; display: flex; justify-content: space-between;
-            text-align: center;
-        }
-        .textResult {
-            text-align: center;
-        }
-
-        .title {
-            text-align: center;
-            font-family: Arial, Helvetica, sans-serif;
-            font-weight: bolder;
-            color: aliceblue;
-            font-size: 22px;
-        }
-
-    </style>
-
+    
 </head>
-
 <body>
     <header class="header-background">
         <div class="header-container">
@@ -279,39 +32,38 @@
     </div>
 
     <div class="hwk2box-box">
-
         <div>
             <header class="title">Sales Commissions</header>
-            
             <div class="hwk2box">
-                <div class="input-box">
-                    <form id="inputForm"> <br>
+                <form id="inputForm">
+                    <br>
                     <label for="sellerName">Seller's Name:</label>
                     <input type="text" id="sellerName" class="nameField" value="" required>
                     <br>
-                    <h4>For each item type the quantity sold by the seller</h4>
-                    
-                    <label for="item">Item 1: </label>
-                    <input class="left" id="item1" name="item">
-                    <br>
-                    <label for="item">Item 2: </label>
-                    <input class="left" id="item2" name="item">
-                    <br>
-                    <label for="item">Item 3: </label>
-                    <input class="left" id="item3" name="item">
-                    <br>
-                    <label for="item">Item 4: </label>
-                    <input class="left" id="item4" name="item"><br>
+                    <h4>&nbsp;&nbsp;For each item type the quantity sold by the seller&nbsp;&nbsp;</h4>
 
-                </form>
-                    
+                    <label for="item1">Item 1: </label>
+                    <input type="number" class="left" id="item1" name="item1" data-item="1">
+                    <br>
+                    <label for="item2">Item 2: </label>
+                    <input type="number" class="left" id="item2" name="item2" data-item="2">
+                    <br>
+                    <label for="item3">Item 3: </label>
+                    <input type="number" class="left" id="item3" name="item3" data-item="3">
+                    <br>
+                    <label for="item4">Item 4: </label>
+                    <input type="number" class="left" id="item4" name="item4" data-item="4"><br>
+
                     <div class="submit-reset">
-                    <input type="submit" class="buttonSubmit" value="SUBMIT"> &nbsp;&nbsp;
-                    <input type="reset" id="clear" class="buttonSubmit" value="CLEAR FORM">    
-                    </div>    
-                    <div id="messageOut">
-                    </div>          
-                </div>
+                        <div class="button-container">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              <input type="submit" class="buttonSubmit" value="SUBMIT">
+                            <input type="reset" id="clear" class="buttonSubmit" value="CLEAR FORM">
+                        </div>
+                    </div>
+                       
+       
+                </form>
                 <div class="output-box">
                     <table id="outputTable" class="outputTable">
                         <tr>
@@ -334,7 +86,7 @@
                         </tr>
                         <tr>
                             <td>3</td>
-                            <td>$9.95</td>
+                            <td>$&nbsp;&nbsp;&nbsp;9.95</td>
                             <td><input type="text" id="numSold3" class="numField" readonly></td>
                             <td><input type="text" id="total3" class="right-table" readonly></td>
                         </tr>
@@ -344,25 +96,17 @@
                             <td><input type="text" id="numSold4" class="numField" readonly></td>
                             <td><input type="text" id="total4" class="right-table" readonly></td>
                         </tr>
-                        
                     </table>
                     <table>
                         <tr>
-                            
-                          
                             <td class="left-table">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total Amount Sold:</td>
-                           
                             <td><input type="text" id="totalSold" class="right-table" readonly></td>
                         </tr>
                         <tr>
-                            
-                        
                             <td class="left-table">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total Weekly Earnings:</td>
-                           
                             <td><input type="text" id="totalEarn" class="right-table" readonly></td>
                         </tr>
                     </table>
-                   
                 </div>
             </div>
         </div>
@@ -377,7 +121,259 @@
         </div>
         <br><br>
     </article>
-
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>CNIT133 Homework 3 Part II</title>
+        <meta name="description" content="This is homework 3 Part 2 to compute seller's Commissions for 4 items">
+        <link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
+        <link rel="stylesheet" type="text/css" href="hw3pt2style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+        
+    </head>
+    <body>
+        <header class="header-background">
+            <div class="header-container">
+                <a href="hw3.html" target="_self" class="header-text">CNIT 133 Homework 3 - Functions</a>
+                <figure>
+                    <a href="https://www.ccsf.edu/" target="_self">
+                        <img src="ccsf_ram.gif" alt="ccsf ram logo" width="139" class="right-image">
+                    </a>
+                </figure>
+            </div>
+        </header>
+    
+        <div class="submenu-container">
+            <nav>
+                <a href="hw3-description.html" target="_self" class="button-two">Description</a>
+                <a href="hw3-part1.html" target="_self" class="button-two">Part I</a>
+                <a href="hw3-part2.html" target="_self" class="button-two">Part II</a>
+                <a href="hw3-extra-credit.html" target="_self" class="button-two">Extra Credit</a>
+            </nav>
+        </div>
+    
+        <div class="hwk2box-box">
+            <div>
+                <header class="title">Sales Commissions</header>
+                <div class="hwk2box">
+                    <form id="inputForm">
+                        <br>
+                        <label for="sellerName">Seller's Name:</label>
+                        <input type="text" id="sellerName" class="nameField" value="" required>
+                        <br>
+                        <h4>&nbsp;&nbsp;For each item type the quantity sold by the seller&nbsp;&nbsp;</h4>
+    
+                        <label for="item1">Item 1: </label>
+                        <input type="number" class="left" id="item1" name="item1" data-item="1" min="0">
+                        <br>
+                        <label for="item2">Item 2: </label>
+                        <input type="number" class="left" id="item2" name="item2" data-item="2" min="0">
+                        <br>
+                        <label for="item3">Item 3: </label>
+                        <input type="number" class="left" id="item3" name="item3" data-item="3" min="0">
+                        <br>
+                        <label for="item4">Item 4: </label>
+                        <input type="number" class="left" id="item4" name="item4" data-item="4" min="0"><br>
+    
+                        <div class="submit-reset">
+                            <div class="button-container">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                  <input type="submit" class="buttonSubmit" value="SUBMIT">
+                                <input type="reset" id="clear" class="buttonSubmit" value="CLEAR FORM">
+                            </div>
+                        </div>
+                           
+           
+                    </form>
+                    <div class="output-box">
+                        <table id="outputTable" class="outputTable">
+                            <tr>
+                                <td class="blackBold">Item #</td>
+                                <td class="blackBold">Price</td>
+                                <td class="blackBold2">Qty Sold</td>
+                                <td class="blackBold3">Total</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>$20.99</td>
+                                <td><input type="text" id="numSold1" class="numField" readonly></td>
+                                <td><input type="text" id="total1" class="right-table" readonly></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>$12.75</td>
+                                <td><input type="text" id="numSold2" class="numField" readonly></td>
+                                <td><input type="text" id="total2" class="right-table" readonly></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>$9.95</td>
+                                <td><input type="text" id="numSold3" class="numField" readonly></td>
+                                <td><input type="text" id="total3" class="right-table" readonly></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>$35.89</td>
+                                <td><input type="text" id="numSold4" class="numField" readonly></td>
+                                <td><input type="text" id="total4" class="right-table" readonly></td>
+                            </tr>
+                        </table>
+                        <table>
+                            <tr>
+                                <td class="left-table">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total Amount Sold:</td>
+                                <td><input type="text" id="totalSold" class="right-table" readonly></td>
+                            </tr>
+                            <tr>
+                                <td class="left-table">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total Weekly Earnings:</td>
+                                <td><input type="text" id="totalEarn" class="right-table" readonly></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <article class="solution-box">
+            <header>
+                <h2>Homework 3 Part I Function solution</h2>
+            </header>
+            <div class="solution-frame">
+                <iframe src="hw3pt1.pdf"></iframe>
+            </div>
+            <br><br>
+        </article>
+    
+        <footer>
+            <br>
+            <figure>
+                <div class="footer-text-container">
+                    <img src="op.jpg" alt="self" width="80" class="rounded-image">
+                    <p>Teresita Anselm<br>
+                        City College of San Francisco<br>
+                        tanselm@mail.ccsf.edu<br></p>
+                </div>
+            </figure>
+            <p class="right-text">Copyright of Teresita Anselm &copy; 2023</p>
+        </footer>
+    
+        <script>
+            // jQuery validation code
+            jQuery.validator.setDefaults({
+                debug: true,
+                success: "valid",
+                errorClass: "error-text" // Apply the "error-text" class to error messages
+            });
+        
+            // Custom error message for the sellerName field
+            var itemValidationMessages = {
+                "sellerName": "Please enter your name!"
+            };
+        
+            // Create an array of item field names
+            var itemFields = ["item1", "item2", "item3", "item4"];
+        
+            // Create an object to store validation rules for all item fields
+            var itemValidationRules = {};
+        
+            // Validation rules and messages for each item field
+            for (var i = 1; i <= 4; i++) {
+                var itemFieldName = "item" + i;
+                itemValidationRules[itemFieldName] = {
+                    required: true,
+                    number: true,
+                    min: 0
+                };
+                itemValidationMessages[itemFieldName] = {
+                    required: "Please enter a quantity for Item " + i + "!",
+                    number: "Numbers only for Item " + i + "!",
+                    min: "Positive number only for Item " + i + "!"
+                };
+            }
+        
+            $("#inputForm").validate({
+                rules: itemValidationRules,
+                messages: itemValidationMessages,
+                submitHandler: function(form) {
+                    // The form is valid, you can submit it here if needed.
+                    // For now, let's update the item totals.
+                    updateItemTotals();
+                    sumCommission();
+                    return false; // Prevent form submission
+                }
+            });
+        
+            // Click event handler for the "CLEAR FORM" button
+            $('#clear').click(function() {
+                // Reset the form
+                $('#inputForm')[0].reset();
+    
+                // Clear the numSold1-4 and total1-4 fields
+                for (var i = 1; i <= 4; i++) {
+                    $('#numSold' + i).val('');
+                    $('#total' + i).val('');
+                }
+    
+                // Clear the totalSold and totalEarn fields
+                $('#totalSold').val('');
+                $('#totalEarn').val('');
+            });
+        
+            // Listen for changes in item1-4 fields
+            $(document).ready(function() {
+                for (var i = 1; i <= 4; i++) {
+                    $('#item' + i).on('input', function() {
+                        var itemId = $(this).data('item'); // Get the item number from data-item attribute
+                        var quantity = parseFloat($(this).val()); // Parse the input value as a float
+                        if (!isNaN(quantity) && quantity >= 0) {
+                            // Check if the input is a valid number (not NaN) and positive
+                            $('#numSold' + itemId).val(quantity); // Update numSold1-4 with the valid quantity
+                        } else {
+                            $('#numSold' + itemId).val(''); // Clear numSold1-4 if the input is not valid
+                        }
+                        updateItemTotals(); // Recalculate item totals
+                    });
+                }
+            });
+        
+            // Function to update item totals
+            function updateItemTotals() {
+                let prices = [20.99, 12.75, 9.95, 35.89];
+                for (var i = 1; i <= 4; i++) {
+                    var itemId = i; // No need to get the data-item attribute again
+                    var quantity = parseFloat($('#item' + i).val());
+                    if (!isNaN(quantity) && quantity >= 0) {
+                        let total = (quantity * prices[i - 1]).toFixed(2);
+                        $('#total' + i).val('$ ' + total);
+                    } else {
+                        $('#total' + i).val('');
+                    }
+                }
+            }
+        
+            // Calculate and update the commission
+            function sumCommission() {
+                var totalSales = 0;
+        
+                // Loop through numSold1 to numSold4 and calculate the total sales
+                for (var i = 1; i <= 4; i++) {
+                    var quantity = parseFloat($('#numSold' + i).val()) || 0;
+                    totalSales += quantity;
+                }
+        
+                // Calculate the commission (9% of totalSales + 200)
+                var commission = (0.09 * totalSales) + 200;
+        
+                // Update the totalSold and commision for seller
+                $('#totalSold').val('$ ' + totalSales.toFixed(2)); // Add the "$" symbol before the totalSales value
+                $('#totalEarn').val('$ ' + commission.toFixed(2)); // Display with 2 decimal places
+            }
+        </script>
+    </body>
+    </html>
+    
     <footer>
         <br>
         <figure>
@@ -391,6 +387,113 @@
         <p class="right-text">Copyright of Teresita Anselm &copy; 2023</p>
     </footer>
 
-</body>
+    <script>
+        // jQuery validation code
+        jQuery.validator.setDefaults({
+            debug: true,
+            success: "valid",
+            errorClass: "error-text" // Apply the "error-text" class to error messages
+        });
+    
+        // Custom error message for the sellerName field
+        var itemValidationMessages = {
+            "sellerName": "Please enter your name!"
+        };
+    
+        // Create an array of item field names
+        var itemFields = ["item1", "item2", "item3", "item4"];
+    
+        // Create an object to store validation rules for all item fields
+        var itemValidationRules = {};
+    
+        // Validation rules and messages for each item field
+        for (var i = 1; i <= 4; i++) {
+            var itemFieldName = "item" + i;
+            itemValidationRules[itemFieldName] = {
+                required: true,
+                number: true,
+                min: 0
+            };
+            itemValidationMessages[itemFieldName] = {
+                required: "Please enter a quantity for Item " + i + "!",
+                number: "Numbers only for Item " + i + "!",
+                min: "Positive number only for Item " + i + "!"
+            };
+        }
+    
+        $("#inputForm").validate({
+            rules: itemValidationRules,
+            messages: itemValidationMessages,
+            submitHandler: function(form) {
+                // The form is valid, you can submit it here if needed.
+                // For now, let's update the item totals.
+                updateItemTotals();
+                sumCommission();
+                return false; // Prevent form submission
+            }
+        });
 
+        // Listen for changes in item1-4 fields
+        $(document).ready(function() {
+            for (var i = 1; i <= 4; i++) {
+                $('#item' + i).on('input', function() {
+                var itemId = $(this).data('item'); // Get the item number from data-item attribute
+                var quantity = parseFloat($(this).val()); // Parse the input value as a float
+                if (!isNaN(quantity) && quantity >= 0) {
+                // If the input is a valid positive number, update numSold1-4 with the valid quantity
+                    $('#numSold' + itemId).val(quantity);
+                } else {
+                // If the input is not valid (negative or non-numeric), reset it to 0 and clear numSold1-4
+                    $(this).val('0');
+                    $('#numSold' + itemId).val('');
+                }
+                updateItemTotals(); // Recalculate item totals
+        });
+    }
+});
+
+
+        
+    
+        // Function to update item totals
+        function updateItemTotals() {
+            let prices = [20.99, 12.75, 9.95, 35.89];
+            for (var i = 1; i <= 4; i++) {
+                var itemId = i; // No need to get the data-item attribute again
+                var quantity = parseFloat($('#item' + i).val());
+                if (!isNaN(quantity) && quantity >= 0) {
+                    var total = (quantity * prices[i - 1]).toFixed(2);
+                    $('#total' + i).val('$' + total);
+                } else {
+                    $('#total' + i).val('');
+                }
+            }
+        }
+    
+        // Calculate and update the commission
+        // Calculate and update the commission
+        function sumCommission() {
+            var totalSales = 0;
+
+        // Loop through total1 to total4 and calculate the total sales
+            for (var i = 1; i <= 4; i++) {
+                var total = parseFloat($('#total' + i).val().replace('$', '')) || 0;
+                totalSales += total;
+    }
+
+    // Calculate the commission (9% of totalSales + 200)
+            var commission = (0.09 * totalSales) + 200;
+
+    // Update the totalSold and commission for seller
+            $('#totalSold').val(totalSales.toFixed(2)); // Display with 2 decimal places
+            $('#totalEarn').val(commission.toFixed(2)); // Display with 2 decimal places
+}
+
+    </script>
+    
+    
+    
+    
+    
+</body>
 </html>
