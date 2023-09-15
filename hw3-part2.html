@@ -168,8 +168,6 @@
             rules: itemValidationRules,
             messages: itemValidationMessages,
             submitHandler: function (form) {
-                // The form is valid, you can submit it here if needed.
-                // For now, let's update the item totals.
                 updateItemTotals();
                 sumCommission();
                 return false; // Prevent form submission
