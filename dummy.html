@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <title>CNIT133 Homework 3 Part II</title>
     <meta name="description" content="This is homework 3 Part 2 to compute seller's Commissions for 4 items">
-    <link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
     <link rel="stylesheet" type="text/css" href="hw3pt2style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
     
 </head>
 <body>
@@ -116,7 +116,7 @@
             <h2>Homework 3 Part I Function solution</h2>
         </header>
         <div class="solution-frame">
-            <iframe src="hw3pt1.pdf"></iframe>
+            <iframe src="hw3pt2.pdf"></iframe>
         </div>
         <br><br>
     </article>
@@ -142,16 +142,12 @@
             errorClass: "error-text" // Apply the "error-text" class to error messages
         });
 
-        // Custom error message for the sellerName field
-        var itemValidationMessages = {
-            "sellerName": "Please enter your name!"
-        };
-
         // Create an array of item field names
         var itemFields = ["item1", "item2", "item3", "item4"];
+        var itemValidationMessages = {}
 
         // Create an object to store validation rules for all item fields
-        var itemValidationRules = {};
+        var itemValidationRules = {}; 
 
         // Validation rules and messages for each item field
         for (var i = 1; i <= 4; i++) {
@@ -161,7 +157,7 @@
                 number: true,
                 min: 0
             };
-            itemValidationMessages[itemFieldName] = {
+                itemValidationMessages[itemFieldName] = {
                 required: "Please enter a quantity for Item " + i + "!",
                 number: "Numbers only for Item " + i + "!",
                 min: "Positive number only for Item " + i + "!"
@@ -172,8 +168,6 @@
             rules: itemValidationRules,
             messages: itemValidationMessages,
             submitHandler: function (form) {
-                // The form is valid, you can submit it here if needed.
-                // For now, let's update the item totals.
                 updateItemTotals();
                 sumCommission();
                 return false; // Prevent form submission
@@ -232,8 +226,8 @@
                 totalSales += total;
             }
 
-            // Calculate the commission (9% of totalSales + 250)
-            var commission = (0.09 * totalSales) + 250;
+            // Calculate the commission (9% of totalSales + 200)
+            var commission = (0.09 * totalSales) + 200;
 
             // Update the totalSold and commission for seller
             $('#totalSold').val('$ ' + totalSales.toFixed(2)); // Add the "$" symbol before the totalSales value
