@@ -8,7 +8,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>   
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        $( function() {
+          $( document ).tooltip();
+        } );
+        </script>
     
 </head>
 <body>
@@ -226,8 +233,8 @@
                 totalSales += total;
             }
 
-            // Calculate the commission (9% of totalSales + 200)
-            var commission = (0.09 * totalSales) + 200;
+            // Calculate the commission (9% of totalSales + 250)
+            var commission = (0.09 * totalSales) + 250;
 
             // Update the totalSold and commission for seller
             $('#totalSold').val('$ ' + totalSales.toFixed(2)); // Add the "$" symbol before the totalSales value
