@@ -1,3 +1,4 @@
+// Script for homework 3 part I
 $(document).ready(function () {
     var resultTextArea = $("#result");
     var form2Button = $("#form2");
@@ -42,7 +43,7 @@ $(document).ready(function () {
         });
     });
 
-    // Student Grade validation
+    // Function for Student Grade validation
     function formValid() {
     // Get input values
         var number1 = document.getElementById("hwAvg").value;
@@ -123,5 +124,125 @@ $(document).ready(function () {
         // Change font to default if red text exists from prior condition
         resultTextArea.css("color", "");
         resultTextArea.css("font-weight", "");
+    }
+});
+
+        // Calculate and update the commission
+        function sumCommission() {
+            var totalSales = 0;
+
+            // Loop through total1 to total4 and calculate the total sales
+            for (var i = 1; i <= 4; i++) {
+                var total = parseFloat($('#total' + i).val().replace('$', '')) || 0;
+                totalSales += total;
+            }
+
+            // Calculate the commission (9% of totalSales + 250)
+            var commission = (0.09 * totalSales) + 250;
+
+            // Update the totalSold and commission for seller
+            $('#totalSold').val('$ ' + totalSales.toFixed(2)); // Add the "$" symbol before the totalSales value
+            $('#totalEarn').val('$ ' + commission.toFixed(2)); // Display with 2 decimal places
+        }
+
+
+
+//************************************************************************************ */
+// Script for hw3 extra credit
+ $(document).ready(function () {
+    $("#generateNums").on("click", function () {
+        generateNumbers(); // Call the generateNumbers() function
+    });
+
+    let num1;
+    let num2;
+    let answer;
+    let userAnswer;
+
+    // Resets outputs divs to empty.
+    function clear() {
+        $("#rightAnswer").html("");
+        $("#wrongAnswer").html("");
+    }
+
+    // Generates 2 random numbers using Math.random, displays a multiplication question,
+    // and shows the input field for the user's answer.
+    function generateNumbers() {
+      $("#questionBox").show();
+       
+        clear();
+        num1 = Math.floor(Math.random() * 10);
+        num2 = Math.floor(Math.random() * 10);
+        answer = num1 * num2;
+
+        // Hide the generateNums button
+        $("#generateNums").hide();
+
+        // Create the question element
+        const questionBox = $("#questionBox");
+        questionBox.empty(); // Clear previous content
+        questionBox.append(`<p>How much is ${num1} times ${num2}?</p>`);
+
+        // Create the input field and "Check Answer" button
+        const inputContainer = $('<div>');
+        inputContainer.append(`
+            <label for="userAnswer"><br><br>Fill in your answer here:</label>
+            <input type="number" id="userAnswer" name="userAnswer" size="10" autofocus>
+            <input type="button" id="checkAnswerButton" value="Check Answer"><br>
+        `);
+
+        // Attach the event handler to the "Check Answer" button
+        inputContainer.find('#checkAnswerButton').on('click', checkAnswer);
+
+        // Append the input container to the question box
+        questionBox.append(inputContainer);
+
+        // Set focus to the input field
+        $("#userAnswer").focus();
+    }
+
+    // If the answer is correct, display a "Very Good" message and prompt the user to continue or end.
+    // If incorrect, provide an error message.
+    function checkAnswer() {
+        clear();
+        userAnswer = $("#userAnswer").val();
+        if (parseInt(userAnswer) === answer) {
+            $("#questionBox").hide();
+            $("#rightAnswer").html('Very Good!<br>Keep practicing multiplication?<br><br>');
+            // Create "Yes" button
+            const yesButton = $('<input type="button" value="Yes">');
+            yesButton.on('click', generateNumbers); // Attach the click event handler
+            // Create "No" button
+            const noButton = $('<input type="button" value="No">');
+            noButton.on('click', endScript); // Attach the click event handler
+
+            // Append the buttons to the rightAnswer div
+            $("#rightAnswer").append(yesButton, noButton);
+        } else {
+            $("#wrongAnswer").html('<p style="color: red;">No. Please try again!</p>');
+            $("#userAnswer").val('').focus();
+        }
+    }
+
+    // When the user chooses to end multiplication, display a message and restart the game after a delay.
+    function endScript() {
+        clear();
+        $("#questionBox").html("");
+        // Display a message to the user
+        $("#theEnd").html(`<p>Thanks for playing, see you next time!</p>`);
+        // Delay for 2 seconds before calling the restartGame function
+        setTimeout(restartGame, 2000);
+    }
+
+    // Function to restart the game and redirect to the beginning page.
+    function restartGame() {
+        // Change the message to indicate a restart
+        $("#theEnd").html(`<p style="color: red;">Restarting...</p>`);
+
+        // Delay for 2 seconds before redirecting
+        setTimeout(function () {
+            // Redirect to the beginning page
+            window.location.href = "hw3-extra-credit.html";
+        }, 2000);
     }
 });

@@ -4,12 +4,9 @@
     <meta charset="utf-8">
     <title>CNIT133 Homework 3 Part II</title>
     <meta name="description" content="This is homework 3 Part 2 to compute seller's Commissions for 4 items">
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
+    <!-- external stylesheets -->
     <link rel="stylesheet" type="text/css" href="hw3style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>    
-    
 </head>
 <body>
     <header class="header-background">
@@ -32,34 +29,37 @@
         </nav>
     </div>
 
-    <div class="hwkbox-box">
+    <div class="hwk2box-box">
         <div>
             <header class="title">Sales Commissions</header>
-            <div class="hwkbox">
+            <div class="hwk2box">
                 <form id="inputForm">
-                    <br>
-                    <label for="sellerName">Seller's Name:</label>
-                    <input type="text" id="sellerName" title="Name required for accounting purposes." class="nameField" value="" required>
-                    <br>
+                    <div class="nameBlock">
+                        <label for="sellerName">Seller's Name:</label>
+                        <input name="sellerName" type="text" id="sellerName" title="Name for accounting purposes" class="nameField" value="" required>
+                    </div>
+                    
                     <h4>&nbsp;&nbsp;For each item type the quantity sold by the seller&nbsp;&nbsp;</h4>
-
-                    <label for="item1">Item 1: </label>
-                    <input type="number" class="left" id="item1" name="item1" data-item="1" min="0">
-                    <br>
-                    <label for="item2">Item 2: </label>
-                    <input type="number" class="left" id="item2" name="item2" data-item="2" min="0">
-                    <br>
-                    <label for="item3">Item 3: </label>
-                    <input type="number" class="left" id="item3" name="item3" data-item="3" min="0">
-                    <br>
-                    <label for="item4">Item 4: </label>
-                    <input type="number" class="left" id="item4" name="item4" data-item="4" min="0"><br>
-
-                    <div class="submit-reset">
-                        <div class="button-container">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <input type="submit" class="buttonSubmit" value="SUBMIT">
-                            <input type="reset" id="clearForm" class="buttonSubmit" value="CLEAR FORM">
+                    
+                    <div class="itemBlock">
+                        <label for="item1">Item 1:</label>
+                        <input type="number" class="left" id="item1" title="All item will default to 0 for non Number or negative value" name="item1" data-item="1" min="0">
+                        <br>
+                        <label for="item2">Item 2:</label>
+                        <input type="number" class="left" id="item2" title="All item will default to 0 for non Number or negative value" name="item2" data-item="2" min="0">
+                        <br>
+                        <label for="item3">Item 3:</label>
+                        <input type="number" class="left" id="item3" title="All item will default to 0 for non Number or negative value" name="item3" data-item="3" min="0">
+                        <br>
+                        <label for="item4">Item 4:</label>
+                        <input type="number" class="left" id="item4" title="All item will default to 0 for non Number or negative value" name="item4" data-item="4" min="0"><br>
+                    
+                        <div class="submit-reset">
+                            <div class="button-container">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input type="submit" class="buttonSubmit" value="SUBMIT">
+                                <input type="reset" id="clearForm" class="buttonSubmit" value="CLEAR FORM">
+                            </div>
                         </div>
                     </div>
                 </form>
@@ -85,7 +85,7 @@
                         </tr>
                         <tr>
                             <td>3</td>
-                            <td>$&nbsp;&nbsp;9.95</td>
+                            <td>$9.95</td>
                             <td><input type="text" id="numSold3" class="numField" readonly></td>
                             <td><input type="text" id="total3" class="right-table" readonly></td>
                         </tr>
@@ -131,38 +131,64 @@
                     tanselm@mail.ccsf.edu<br></p>
             </div>
         </figure>
-        <p class="right-text">Copyright of Teresita Anselm &copy; 2023&nbsp;</p>
+        <p class="right-text">Copyright of Teresita Anselm &copy; 2023</p>
     </footer>
 
+    <!-- jQuery and JavaScript libraries for validation -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+    
     <script>
         // jQuery validation code
         jQuery.validator.setDefaults({
-            debug: true,
+            debug: false, 
             success: "valid",
-            errorClass: "error-text" // Apply the "error-text" class to error messages
+            errorClass: "error-text"
         });
 
-        // Create an array of item field names
-        var itemFields = ["item1", "item2", "item3", "item4"];
+       // Create an array of item field names
+       var itemFields = ["item1", "item2", "item3", "item4"];
         var itemValidationMessages = {}
 
         // Create an object to store validation rules for all item fields
-        var itemValidationRules = {}; 
+       // Create an object to store validation rules for all item fields
+var itemValidationRules = {};
 
-        // Validation rules and messages for each item field
-        for (var i = 1; i <= 4; i++) {
-            var itemFieldName = "item" + i;
-            itemValidationRules[itemFieldName] = {
-                required: true,
-                number: true,
-                min: 0
-            };
-                itemValidationMessages[itemFieldName] = {
-                required: "Please enter a quantity for Item " + i + "!",
-                number: "Numbers only for Item " + i + "!",
-                min: "Positive number only for Item " + i + "!"
-            };
-        }
+// Validation rules and messages for each item field
+for (var i = 1; i <= 4; i++) {
+    var itemFieldName = "item" + i;
+    itemValidationRules[itemFieldName] = {
+        required: true,
+        number: true,
+        min: 0
+    };
+    itemValidationMessages[itemFieldName] = {
+        required: "&nbsp;Please enter a quantity for Item " + i + "!",
+        //number: "Numbers only for Item " + i + "!",
+        //min: "Positive number only for Item " + i + "!"
+    };
+}
+
+// Add validation rule and message for sellerName
+itemValidationRules["sellerName"] = {
+    required: true // Name required
+};
+itemValidationMessages["sellerName"] = {
+    required: "&nbsp;&nbsp;Please enter the seller's name!" // Customize message for name
+};
+
+$("#inputForm").validate({
+    rules: itemValidationRules,
+    messages: itemValidationMessages,
+    submitHandler: function (form) {
+        updateItemTotals();
+        sumCommission();
+        return false; // Prevent form submission
+    }
+});
+
 
         $("#inputForm").validate({
             rules: itemValidationRules,
@@ -182,17 +208,19 @@
             $('.numField, .right-table').val('');
         });
 
+
         // Listen for changes in item1-4 fields
         $(document).ready(function () {
+            $( document ).tooltip();
             for (var i = 1; i <= 4; i++) {
                 $('#item' + i).on('input', function () {
                     var itemId = $(this).data('item'); // Get the item number from data-item attribute
                     var quantity = parseFloat($(this).val()); // Parse the input value as a float
-                    if (!isNaN(quantity) && quantity >= 0) {
+                    if (!isNaN(quantity) && quantity > 0) {
                         // If the input is a valid positive number, update numSold1-4 with the valid quantity
                         $('#numSold' + itemId).val(quantity);
                     } else {
-                        // If the input is not valid (negative or non-numeric), reset it to 0 and clear numSold1-4
+                        // If the input is not valid (negative or non-numeric), reset it to 0
                         $(this).val('0');
                         $('#numSold' + itemId).val('0');
                     }
@@ -233,6 +261,7 @@
             $('#totalSold').val('$ ' + totalSales.toFixed(2)); // Add the "$" symbol before the totalSales value
             $('#totalEarn').val('$ ' + commission.toFixed(2)); // Display with 2 decimal places
         }
+    
     </script>
 </body>
 </html>

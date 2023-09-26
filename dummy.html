@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,7 @@
     <meta name="description" content="This is homework 3 Part 2 to compute seller's Commissions for 4 items">
     <meta name="viewport" content="width=device-width, initial-scale=1">  
     <!-- external stylesheets -->
-    <link rel="stylesheet" type="text/css" href="hw3pt2style.css">
+    <link rel="stylesheet" type="text/css" href="hw3style.css">
 </head>
 <body>
     <header class="header-background">
@@ -136,8 +137,7 @@
 
     <!-- jQuery and JavaScript libraries for validation -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
- <!--   <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script> --> 
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
     
@@ -153,6 +153,7 @@
        var itemFields = ["item1", "item2", "item3", "item4"];
         var itemValidationMessages = {}
 
+        // Create an object to store validation rules for all item fields
        // Create an object to store validation rules for all item fields
 var itemValidationRules = {};
 
@@ -166,8 +167,8 @@ for (var i = 1; i <= 4; i++) {
     };
     itemValidationMessages[itemFieldName] = {
         required: "&nbsp;Please enter a quantity for Item " + i + "!",
-        number: "Numbers only for Item " + i + "!",
-        min: "Positive numbers only for Item " + i + "!"
+        //number: "Numbers only for Item " + i + "!",
+        //min: "Positive number only for Item " + i + "!"
     };
 }
 
