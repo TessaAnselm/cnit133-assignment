@@ -4,87 +4,24 @@
     <head>
         <meta charset="utf-8">
         <title>CNIT133</title>
- <!-- This is webpage that contains links to completed homework assignment for CNIT133 JavaScript, jQuery and AJAX -->
-        <meta name="description" content="This is main page that links to assingment for CNIT133 using HTML5 and inline CSS">
-        <style>
-            .button {
-                width: 120px; height: 60px; background-color:#417bcb; border-radius: 20px; color: white; 
-                font-size: 22px; cursor: pointer; display: inline-block; text-align: center; 
-                padding: 10px; text-decoration: none; overflow: hidden;
-            }
-            .button:hover, 
-            .button:focus {
-                background-color: #e33c3c; border-color: #b64e57;  /* changes colors as user move mouse */ 
-            }
-            .footer-text-container { /*footer*/
-                display:flex; align-items:center; /* vertically center items */
-            } 
-            .footer-text-container img {
-                max-width:100%; margin-right:10px  /*space between image and text */
-            }
-            .header-background {
-                background-color: #e33c3c;
-                text-align: center;
-            }
-            .header-container {
-                display: flex;
-                align-items: center; /* vertically center items */
-                justify-content: space-between; /* push items to edges */
-            }
-            .header-text {
-                color:#417bcb; font-size: 55px;
-                flex: 0 0 85%; /* set text to 85% available page width */
-                text-align: center;
-            }
-            .image-construction {
-                display: inline-block;
-            }
-            .image-text-container {
-                display:flex; align-items:center; /* vertically center items */
-            } 
-            .image-text-container img {
-                max-width:100%; margin-right:10px /* space between image and text */
-            }
-            .menu-container {
-                background-color:#cccccc67; padding: 20px 50px; justify-content: center;
-                align-items: center;
-            }
-            .right-image {
-                max-width: 100%; /* push image to right */
-            }
-            .right-text {
-                text-align: right; /* align text to the right */
-            }
-            .rounded-image { /*photo*/
-                border-radius:50% /* round photo image */
-            }  
-            .solution-box header {
-                width: 100%; padding: 10px; color:brown; text-align:center;
-            }
-            .solution-frame {    
-                width: 80%; display: flex;
-                flex-grow: 1; /* allow to grow and fill available verticle space */
-                justify-content: center; align-items: center;
-                margin: 0 auto; /* center solution-frame within solution box */ 
-            }
-            .solution-frame iframe {    
-                width:180%; height: 100%; 
-            } 
-        </style>
+ <!-- This is webpage that contains links to CNIT 133 Homework 4 - Looping Statements -->
+        <meta name="description" content="This is homework 4 main page for CNIT133 using HTML5 and inline CSS">
+        <link rel="stylesheet" type="text/css" href="hw4style.css">   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     </head>
 
     <body >
-
-        <header class="header-background">
+        <header style="background-color:#e33c3c">
             <div class="header-container">
-                 <h1 class="header-text">CNIT 133 Homework</h1> 
-                 <figure>
-                     <a href="https://www.ccsf.edu/" target="_self">
-                     <img src="ccsf_ram.gif" alt="ccsf ram logo" width="139" class="right-image">
-                     </a>
-                     </figure>
-             </div>     
-         </header>
+                <a class="header-text" href="hw4.html" target="_self">CNIT 133 Homework 4 - Looping Statements</a> 
+                <figure>
+                <a href="https://www.ccsf.edu/" target="_self">
+                <img src="ccsf_ram.gif" alt="ccsf ram logo" width="139" class="right-image">
+                </a>
+                </figure>
+            </div>     
+        </header>
         <div class="menu-container">
             <nav>
             <a href="index.html" target="_self" class="button">Course Basics</a>
@@ -97,20 +34,148 @@
             <a href="hw8.html" target="_self" class="button">Ajax Applications</a>
             </nav>
         </div>
-                 
-        <article>
-            <br>
-            <div class="costruction-container">
-                <h2>Assignment available by 10/17/2023</h2>
-                <img class="image-construction" src="under_construction.jpg" alt="website coming soon" width="400"> 
+        <div class="submenu-container"> 
+            <div class="submenu-header">
+                Homework 4 Part:
             </div>
-            <br>
+            <div class="submenu-button">    
+            <nav>
+                <a href="hw4-description.html" target="_self" class="button-two">Description</a>
+                <a href="hw4-part1.html" target="_self" class="button-two">Part I</a>
+                <a href="hw4-part2.html" target="_self" class="button-two">Part II</a>
+                <a href="hw4-extra-credit.html" target="_self" class="button-two">Extra Credit</a>
+            </nav>
+            </div>
+        </div>            
+        <article>
+            <header>
+                <br>
+                <h2 style="color:brown">Homework 3 Instructions on Topic "Looping Statements"</h2>
+
+            </header>
+            <section>
+            <h3>What you will do:</h3>   
+            Create a web page that will be the main page for Homework 4 with the heading CNIT 133 Homework 4 - Looping Statements<br>
+            The contents of this page should be, besides the heading:
+                <ul class="square-list">
+                    <li>Hyperlink to Part 1 - with a short summary about that part</li>
+                    <li>Hyperlink to Part 2 - with a short summary about that part</li>
+                    <li>hyperlink to Extra credit (if you will do it) - with a short summary about the extra credit</li>
+                    <li>Hyperlink to Homework 1 which is the main page (front page) of your course</li>
+                </ul>
+                <br>
+            </section>
+            <section>    
+            <h3>Part I:</h3>
+            <p>Create a webpage for Part 1 that contains:</p>
+            <ul>     
+                <li>A script using the for looping statement.
+                Loop calculates the product sum of every fourth integer from 5 to 25 inclusive.
+                Displays the results along with some accompanying text.<br>
+                Presenting the results, you could show two lines such as: <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;The result of 5 * 9 * 13 * 17 * 21 * 25 is .... <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;The result of 5 + 9 + 13 + 17 + 21 + 25 is .... <br></li>
+                <li>A script using while or do while looping statement.
+                Loop will calculates the product and sum of every third integer from 3 to 18 inclusive.
+                Displays results, along with some accompanying text.<br>
+                Presenting the results, you could show two lines such as:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;The result of 3 * 6 * 9 * 12 * 15 * 18 is ....<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;The result of 3 + 6 + 9 + 12 + 15 + 18 is ....<br></li>
+                <li>Use toLocaleString() to present the result with the correct punctuation.</li>
+                <li>Use jQuery UI to allow the user to drag an element to any area of the page.</li>
+            </ul>
+            
+            </section><br>
+
+            <section>
+            <h3>Part II:</h3>
+            <p>Create a web page to show to interested clients how the compound interest works. Must include: </p>
+            <ul>
+                <li>Heading "Learn about compound interest".</li>
+                <li>Below the heading you will code a script to show 3 tables with the calculation of compound interest on a principal of $1000.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;The first table will be for the interest rate of 5%<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;The second table will be for the interest rate of 6%<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;The third table will be for the interest rate of 7%<br></li>
+                <li>Each of the tables will show the rows from year 1 through 5.</li>
+                <li>The formula to calculate the compound interest is: A = P(1 + r)<sup>n</sup><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;P is the principal (the initial amount you borrow or deposit)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;r is the annual rate of interest (percentage) that, for 5% for example, would be 0.05<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;n is the number of years the amount is deposited<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;A is the amount of money accumulated after n years, including interest<br></li>
+                <li>The table will look like what is shown here below (the table below is showing only the first 4 years and for only the 5% interest rate):<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;The first column will have the number for the year.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;The second column will have the Amount.<br> 
+                &nbsp;&nbsp;&nbsp;&nbsp;The third column will have the interest rate that is being used.<br><br></li>
+            </ul>
+                <table>
+                    <caption style="display: none;">Example amount and rate table</caption>
+                    <thead>
+                        <tr style="background-color: maroon; color: white;">
+                            <th scope="col">Year</th>
+                            <th scope="col">Amount on deposit</th>
+                            <th scope="col">Interest Rate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background-color: #ff7f50;">
+                            <td style="border: 1px solid gray;">1</td>
+                            <td style="border: 1px solid gray;">1050.00</td>
+                            <td style="border: 1px solid gray;">0.05</td>
+                        </tr>
+                        <tr style="background-color: yellow;">
+                            <td style="border: 1px solid gray;">2</td>
+                            <td style="border: 1px solid gray;">1102.50</td>
+                            <td style="border: 1px solid gray;">0.05</td>
+                        </tr>
+                        <tr style="background-color: #ff7f50;">
+                            <td style="border: 1px dotted gray;">3</td>
+                            <td style="border: 1px dotted gray;">1157.63</td>
+                            <td style="border: 1px dotted gray;">0.05</td>
+                        </tr>
+                        <tr style="background-color: yellow;">
+                            <td style="border: 1px dotted gray;">4</td>
+                            <td style="border: 1px dotted gray;">1215.51</td>
+                            <td style="border: 1px dotted gray;">0.05</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+           
+            </section><br>
+
+            <section>
+            <h3>Extra Credit:</h3>    
+            <p>Create a webpage with: </p>
+            <ul>  
+                <li>A heading.</li>
+                <li>A form with an input box that will allow the user to enter a number (integer), a button to process the script, and a button to clear the form.</li>
+                <li>A separated div or paragraph element below the form where you will present the result.</li>
+            </ul>
+            
+            <p>You will build a script that:</p>
+            <ul>
+                <li>Will read the number typed by the user that should be between 2 and 10.</li>
+                <li>Based on that number, you will display a hollow square with that size constructed of asterisks.</li>
+                <li>If the user entered an invalid number (not a number or outside the range of 2 to 10), you should present an error message in the div or paragraph element below the form and you should NOT present the square!</li>
+                <li>If the user entered a valid number, you should present the hollow square in. the div or paragraph element below the form.</li>
+            </ul>
+           
+            </section>
+        </article>
+        <article class="solution-box">
+            <header>
+                <h2>Homework 4 Code Solution</h2>
+            </header>
+            <div class="solution-frame">
+            <iframe src="hw4.pdf"></iframe>
+            </div>
+            <br><br>    
         </article>
 
         <footer style="background-color:#cccccc67">
             <br>
             <figure>
-            <div class="image-text-container">
+            <div class="footer-text-container">
                 <img src="op.jpg" alt="self" width="80" class="rounded-image">
                 <p>Teresita Anselm<br>
                 City College of San Francisco<br>
@@ -118,7 +183,7 @@
             </div>
             </figure>
             
-            <p class="right-text">Copyright of Teresita Anselm &copy; 2023&nbsp</p>
+            <p class="right-text">Copyright of Teresita Anselm &copy; 2023&nbsp;</p>
         </footer>
 
     </body>

@@ -32,6 +32,12 @@
     text-decoration: none;
     overflow: hidden;
 }
+.button-two:hover,
+.button-two:focus {
+    background-color: #e33c3c;
+    border-color: #1d0e6b
+                /* changes colors as user move mouse */
+}
 
 .button-play {
     width: 780px;
@@ -47,54 +53,44 @@
     overflow: hidden;
     border: 4px solid white; /* Set border color to white */
 }
-        
-        .button-play:hover,
-        .button-play:focus {
-            background-color: #e33c3c;
-            border-color: white;
+.button-play:hover,
+.button-play:focus {
+    background-color: #e33c3c;
+    border-color: white;
                 /* changes colors as user move mouse */
-        }
-        .buttonSubmit {
-            width: 120px;
-            color: aliceblue;
-            background-color: #417bcb;
-            border-radius: 20px;
-            padding: 2px; align-items: center;
-            text-align: center;
-        }
+}
+.buttonSubmit {
+    width: 120px;
+    color: aliceblue;
+    background-color: #417bcb;
+    border-radius: 20px;
+    padding: 2px; align-items: center;
+    text-align: center;
+}
         
-        .error-text {
-            color: red;
-        }
+.error-text {
+    color: red;
+}
 
-        .button-two:hover,
-        .button-two:focus {
-            background-color: #e33c3c;
-            border-color: #1d0e6b
-                /* changes colors as user move mouse */
-        }
+.centered-button-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100%; /* Set height to 100% of parent for vertical centering */
+    text-align: center; /* Center the text horizontally */
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 
-        .centered-button-container {
-            display: flex;
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
-            height: 100%; /* Set height to 100% of parent for vertical centering */
-            text-align: center; /* Center the text horizontally */
-            font-size: 20px;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-        }
+footer {
+    border: 2px solid #e20707;
+    background-color: #cccccc67
+}
 
-        footer {
-            border: 2px solid #e20707;
-            background-color: #cccccc67
-        }
-
-        .footer-text-container {
-            /*footer*/
-            display: flex;
-            align-items: center;
-            /* vertically center items */
-        }
+.footer-text-container {
+    display: flex;
+    align-items: center;
+}
 
         .footer-text-container img {
             max-width: 100%;
