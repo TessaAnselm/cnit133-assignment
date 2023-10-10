@@ -83,8 +83,8 @@
 }
 .hwkpt1boxBox {
     background-color: #e33c3c;
-    height: 250px;
-    padding: 20px;
+    height: 100%;
+    padding: 15px;
     display: flex;
     align-items: center;
     /* vertically center align content */
@@ -101,6 +101,31 @@
     justify-content: center; /* horizontally center align content */
 }
 
+.hwkpt2boxBox {
+    background-color: #e33c3c;
+    height: 250px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    /* vertically center align content */
+    justify-content: center;
+    /* horizontally center align content */
+}
+.hwkpt2box {
+    border: 1d0e6b; height: 100%; width: 830px; 
+    background-color: white; padding-bottom: 17px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items:center; /* vertically center align content */
+    justify-content: center; /* horizontally center align content */
+    padding-right: 30px;
+}
+
+.hwkpt2 {
+   margin-right: 20px;
+   align-items: center;
+} 
 @keyframes rainbow {
     0% { background-position: 0% 50%;}
     100% { background-position: 100% 50%;}
@@ -113,6 +138,11 @@
     text-align: center; display: flex;
     align-items:center; /* vertically center align content */
     justify-content: center; /* horizontally center align content */
+}
+h3 {
+    color: #1d0e6b;
+    font-weight: bold;
+
 }
 .rainbow-text {
     font-size: 20px;
@@ -172,6 +202,17 @@
     color:aliceblue; background-color:#e33c3c;
     height: 30px; font-size: 30px;
 }
+
+/* Change text color for table headers in thead */
+table thead th {
+    color: white;
+}
+
+/* Change text color for data cells in tbody */
+table tbody td {
+    color: white;
+}
+
 .title {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
