@@ -1,56 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <title>CNIT133 Homework 4 Description</title>
-    <meta name="description" content="This is homework 4 Description to show description of preceding parts">
+    <meta name="description" content="This is homework 4 Description to show the description of preceding parts">
     <link rel="stylesheet" type="text/css" href="hw4style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-    <script src="dummy.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+
+    <!--script src="dummy.js"></script-->
 </head>
-<body >
-    <header class = "header-background">
+<body>
+    <header class="header-background">
         <div class="header-container">
             <a href="hw4.html" target="_self" class="header-text">CNIT 133 Homework 4 - Looping Statements</a> 
             <figure>
-            <a href="https://www.ccsf.edu/" target="_self">
-            <img src="ccsf_ram.gif" alt="ccsf ram logo" width="139" class="right-image">
-            </a>
+                <a href="https://www.ccsf.edu/" target="_self">
+                    <img src="ccsf_ram.gif" alt="ccsf ram logo" width="139" class="right-image">
+                </a>
             </figure>
         </div>     
     </header>
 
     <div class="submenu-containerDesc">  
         <nav>
-        <a href="hw4-description.html" target="_self" class="button-two">Desciption</a>
-        <a href="hw4-part1.html" target="_self" class="button-two">Part I</a>
-        <a href="hw4-part2.html" target="_self" class="button-two">Part II</a>
-        <a href="hw4-extra-credit.html" target="_self" class="button-two">Extra Credit</a>
+            <a href="hw4-description.html" target="_self" class="button-two">Description</a>
+            <a href="hw4-part1.html" target="_self" class="button-two">Part I</a>
+            <a href="hw4-part2.html" target="_self" class="button-two">Part II</a>
+            <a href="hw4-extra-credit.html" target="_self" class="button-two">Extra Credit</a>
         </nav>
     </div>   
  
-    <div class="hwkpt2boxBox">
+    <div class="hwkptEboxBox">
         <div>
-            <header class="title">Part II: Learn About Compound Interest</header>
-            <div class="hwkpt2box" id="draggable-box">
-                <div id="draggable1" class="hwkpt2">
-                </div>
-                <div id="draggable2" class="hwkpt2">
-                </div>
-                <div id="draggable3" class="hwkpt2">
-                </div>
+            <header class="title">Extra Credit: Generate Square using Asterisks</header>
+            <div class="hwkptEbox">
+                <form class="asteriskBox" id="asteriskSquareForm">
+                    <div>
+                        <label for="userInput">Enter a number between 2-10:</label>
+                        <input type="text" id="userInput" name="userInput" placeholder="Enter here">
+                    </div>
+                    <div>
+                        <input class="button-two" type="button" value="Submit" id="submit">
+                        <input class="button-two" type="reset" value="Reset" id="reset">
+                    </div>
+                </form>
+            
+                <div id="asteriskSquareResult"></div>
             </div>
         </div>
     </div>
-    
             
     <article class="solution-box">
         <header>
-            <h2>Homework 4 II Code Solution</h2>
+            <h2>Homework 4 Extra Credit Code Solution</h2>
         </header>
         <div class="solution-frame">
-        <iframe src="hw4pt2.pdf"></iframe>
+            <iframe src="hw4extra.pdf"></iframe>
         </div>
         <br><br>    
     </article>
@@ -58,15 +64,64 @@
     <footer>
         <br>
         <figure>
-        <div class="footer-text-container">
-            <img src="op.jpg" alt="self" width="80" class="rounded-image">
-            <p>Teresita Anselm<br>
-            City College of San Francisco<br>
-            tanselm@mail.ccsf.edu<br></p>   
-        </div>
+            <div class="footer-text-container">
+                <img src="op.jpg" alt="self" width="80" class="rounded-image">
+                <p>Teresita Anselm<br>
+                City College of San Francisco<br>
+                tanselm@mail.ccsf.edu<br></p>   
+            </div>
         </figure>
         <p class="right-text">Copyright of Teresita Anselm &copy; 2023&nbsp;</p>
     </footer>
+
+    <script>
+        // Validate input
+$(document).ready(function(){
+    // Validation using jQuery Validation Plugin
+    $("#asteriskSquareForm").validate({
+        rules: {
+            userInput: {
+                required: true,
+                number: true,
+                range: [2,10]
+            }         
+        },
+        messages: {
+            userInput: {
+                required: "Please enter a number between 2-10!",
+                number: "Please enter numerical values only!",
+                range: "Please enter values 2-10 only!"
+            }  
+        },
+        submitHandler: function(form) {
+            // When form is valid, call CreateBox function to create asterisk box
+            const userInput = parseInt($("#userInput").val());
+            const boxHtml = createBox(userInput);
+            $("#asteriskSquareResult").html(boxHtml);
+
+        }
+})
+
+function createBox(number) {
+    console.log("Creating box for number: " + number); // Log the number we're creating a box for
+    let result = '';
+    for (let row = 0; row < number; row++) {
+        for (let column = 0; column < number; column++) {
+            if (row === 0 || row === (number - 1) || column === 0 || column === (number - 1)) {
+                result += '* '; // * for the first and last columns and the top and bottom rows
+            } else {
+                result += '&nbsp;&nbsp;'; // Empty space inside the box
+            }
+        }
+        result += '<br>'; // Move to the next line
+    }
+    console.log("Result: " + result); // Log the resulting box
+    return result;
+}
+
+
+});
+    </script>
 
 </body>
 </html>

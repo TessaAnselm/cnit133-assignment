@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CNIT133 Homework 4 Extra Credit</title>
+    <meta name="description" content="This is homework 4 Extra Credit to show square using asterisks based on user input">
+    <link rel="stylesheet" type="text/css" href="hw4style.css">
+</head>
+<body>
+    <header class="header-background">
+        <div class="header-container">
+            <a href="hw4.html" target="_self" class="header-text">CNIT 133 Homework 4 - Looping Statements</a>
+            <figure>
+                <a href="https://www.ccsf.edu/" target="_self">
+                    <img src="ccsf_ram.gif" alt="ccsf ram logo" width="139" class="right-image">
+                </a>
+            </figure>
+        </div>
+    </header>
+
+    <div class="submenu-containerDesc">
+        <nav>
+            <a href="hw4-description.html" target="_self" class="button-two">Description</a>
+            <a href="hw4-part1.html" target="_self" class="button-two">Part I</a>
+            <a href="hw4-part2.html" target="_self" class="button-two">Part II</a>
+            <a href="hw4-extra-credit.html" target="_self" class="button-two">Extra Credit</a>
+        </nav>
+    </div>
+
+    <div class="hwkptEboxBox">
+        <div>
+            <header class="title">Extra Credit: Generate Square using Asterisks</header>
+            <div class="hwkptEbox">
+                <form class="asteriskBox" id="asteriskSquareForm">
+                    <div>
+                        <label for="userInput">Enter a number between 2-10:</label>
+                        <input type="text" id="userInput" name="userInput" placeholder="Enter here">
+                    </div>
+                    <div>
+                        <input class="button-two" type="button" value="Submit" id="submit">
+                        <input class="button-two" type="reset" value="Reset" id="reset">
+                    </div>
+                </form>
+
+                <div id="asteriskSquareResult"></div>
+                <div id="errorText" class="errorMess"></div>
+               
+            </div>
+        </div>
+    </div>
+
+    <article class="solution-box">
+        <header>
+            <h2>Homework 4 Extra Credit Code Solution</h2>
+        </header>
+        <div class="solution-frame">
+            <iframe src="hw4extra.pdf"></iframe>
+        </div>
+        <br><br>
+    </article>
+
+    <footer>
+        <br>
+        <figure>
+            <div class="footer-text-container">
+                <img src="op.jpg" alt="self" width="80" class="rounded-image">
+                <p>Teresita Anselm<br>
+                City College of San Francisco<br>
+                tanselm@mail.ccsf.edu<br></p>
+            </div>
+        </figure>
+        <p class="right-text">Copyright of Teresita Anselm &copy; 2023&nbsp;</p>
+    </footer>
+
+    <script>
+        // Validate input and run the createBox function
+    document.getElementById("submit").addEventListener("click", function () {
+        // Clear the previous result
+        document.getElementById("asteriskSquareResult").innerHTML = "";
+        const userInput = parseInt(document.getElementById("userInput").value);
+        // Run function createBox only if there's input value and number value
+        if (!isNaN(userInput) && userInput >= 2 && userInput <= 10) {
+            const boxHtml = createBox(userInput);
+            document.getElementById("asteriskSquareResult").innerHTML = boxHtml;
+            document.getElementById("errorText").textContent = "";
+        } else { // Error message for user
+            document.getElementById("errorText").textContent = "Please enter a number between 2-10!";
+        }
+    });
+
+    // Clear the result when the "Reset" button is clicked
+    document.getElementById("reset").addEventListener("click", function () {
+        document.getElementById("asteriskSquareResult").innerHTML = "";
+        document.getElementById("errorText").textContent = "";
+    });
+    
+    // Function to create a box using asterisks
+        function createBox(number) {
+            let result = ''; // declare string variable
+            // Loop to run from 0 to number less than provided by userInput
+            for (let row = 0; row < number; row++) {
+                // Loop to run inside the row loop to display asterisks
+                for (let column = 0; column < number; column++) {
+                    if (row === 0 || row === (number - 1) || column === 0 || column === (number - 1)) {
+                        result += '* '; // * For first and last columns and top and bottom row
+                    } else {
+                        result += '&nbsp;&nbsp;&nbsp;'; // Empty space inside the box
+                    }
+                }
+                result += '<br>'; // Next line once  column loop ends
+            }
+            return result; // Display result to user
+        }
+    </script>
+</body>
+</html>

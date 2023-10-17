@@ -52,6 +52,11 @@
     padding: 2px;
     text-align: center;
 }
+.errorMess {
+    color: red;
+    font-weight: bold;
+    text-align: left;
+}
 .footer-text-container { /*footer*/
     display:flex; align-items:center; /* vertically center items */
 } 
@@ -126,6 +131,33 @@
    margin-right: 20px;
    align-items: center;
 } 
+
+.hwkptEboxBox {
+    background-color: #e33c3c;
+    height: 100%;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    /* vertically center align content */
+    justify-content: center;
+    /* horizontally center align content */
+}
+.hwkptEbox {
+    border: 1d0e6b; height: 100%; width: 800px; 
+    background-color: white; padding-top :17px;
+    text-align: center;
+    display: flex;
+    align-items:center; /* vertically center align content */
+    justify-content: center; /* horizontally center align content */
+}
+.asteriskBox {
+    margin: 10px;
+    text-align: center;
+    color: #e33c3c;
+    font-size: 25px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
 @keyframes rainbow {
     0% { background-position: 0% 50%;}
     100% { background-position: 100% 50%;}

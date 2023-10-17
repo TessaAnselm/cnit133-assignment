@@ -4,11 +4,10 @@ $(document).ready(function () {
     $( "#draggable" ).draggable();
 });
 
-
-// *****************Homework4 Pt I script*************************
 document.addEventListener("DOMContentLoaded", function() {
     // Get references to the click button and result elements
-    var calculateButton = document.getElementById("calculateButton");
+    var calculateButton1 = document.getElementById("calculateButton1");
+    var calculateButton2 = document.getElementById("calculateButton2");
     var resultDiv1 = document.getElementById("result1");
     var resultDiv2 = document.getElementById("result2");
 
