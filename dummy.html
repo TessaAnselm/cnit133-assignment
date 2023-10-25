@@ -5,10 +5,11 @@
     <title>CNIT133 Homework 4 Description</title>
     <meta name="description" content="This is homework 4 Description to show the description of preceding parts">
     <link rel="stylesheet" type="text/css" href="hw4style.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
 
-    <!--script src="dummy.js"></script-->
+    <script src="dummy.js"></script>
 </head>
 <body>
     <header class="header-background">
@@ -38,14 +39,14 @@
                 <form class="asteriskBox" id="asteriskSquareForm">
                     <div>
                         <label for="userInput">Enter a number between 2-10:</label>
-                        <input type="text" id="userInput" name="userInput" placeholder="Enter here">
+                        <input type="number" id="userInput" name="userInput" min="2" max="10" placeholder="Enter here">
                     </div>
                     <div>
-                        <input class="button-two" type="button" value="Submit" id="submit">
+                        <input class="button-two" type="submit" value="Submit" id="submit">
+
                         <input class="button-two" type="reset" value="Reset" id="reset">
                     </div>
                 </form>
-            
                 <div id="asteriskSquareResult"></div>
             </div>
         </div>
@@ -74,54 +75,7 @@
         <p class="right-text">Copyright of Teresita Anselm &copy; 2023&nbsp;</p>
     </footer>
 
-    <script>
-        // Validate input
-$(document).ready(function(){
-    // Validation using jQuery Validation Plugin
-    $("#asteriskSquareForm").validate({
-        rules: {
-            userInput: {
-                required: true,
-                number: true,
-                range: [2,10]
-            }         
-        },
-        messages: {
-            userInput: {
-                required: "Please enter a number between 2-10!",
-                number: "Please enter numerical values only!",
-                range: "Please enter values 2-10 only!"
-            }  
-        },
-        submitHandler: function(form) {
-            // When form is valid, call CreateBox function to create asterisk box
-            const userInput = parseInt($("#userInput").val());
-            const boxHtml = createBox(userInput);
-            $("#asteriskSquareResult").html(boxHtml);
-
-        }
-})
-
-function createBox(number) {
-    console.log("Creating box for number: " + number); // Log the number we're creating a box for
-    let result = '';
-    for (let row = 0; row < number; row++) {
-        for (let column = 0; column < number; column++) {
-            if (row === 0 || row === (number - 1) || column === 0 || column === (number - 1)) {
-                result += '* '; // * for the first and last columns and the top and bottom rows
-            } else {
-                result += '&nbsp;&nbsp;'; // Empty space inside the box
-            }
-        }
-        result += '<br>'; // Move to the next line
-    }
-    console.log("Result: " + result); // Log the resulting box
-    return result;
-}
-
-
-});
-    </script>
+    
 
 </body>
 </html>

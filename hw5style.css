@@ -52,11 +52,6 @@
     padding: 2px;
     text-align: center;
 }
-.errorMess {
-    color: red;
-    font-weight: bold;
-    text-align: left;
-}
 .footCont {
     background-color:#cccccc67;
 }
@@ -83,7 +78,7 @@
 .header-text:hover {
     color: white ; /* changes colors as user move mouse */
 }
-.hwk4dbox-box {
+.hwk5dbox-box {
     background-color:  #e33c3c; height: 250px; padding: 20px; 
     display: flex;
     align-items:center; /* vertically center align content */
@@ -165,7 +160,7 @@
     0% { background-position: 0% 50%;}
     100% { background-position: 100% 50%;}
 }
-.hwk4dbox {
+.hwk5dbox {
     border: #1d0e6b; height: 100%; width: 800px; 
     background-color: white; 
     font-size: larger; 
@@ -237,15 +232,21 @@ h3 {
     color:aliceblue; background-color:#e33c3c;
     height: 30px; font-size: 30px;
 }
-
-/* Change text color for table headers in thead */
-table thead th {
-    color: white;
+/* The following is table css*/
+table {
+    border-collapse: collapse;
+    width: 40%;
 }
-
-/* Change text color for data cells in tbody */
-table tbody td {
-    color: white;
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+th {
+    background-color: #f2f2f2;
+}
+td:last-child {
+    text-align: right;
 }
 
 .title {
