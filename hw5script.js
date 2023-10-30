@@ -117,3 +117,52 @@ function navigateOnClick() {
     }
 }
 
+//**************** script for Homework 5 Pt III ****************/
+//Array of 2019 Census Data based on given table
+const censusData = [
+    ["AL", "Alabama", "Montgomery", "4,903,185"],
+    ["AK", "Alaska", "Juneau", "731,545"],
+    ["AZ", "Arizona", "Phoenix", "7,278,717"],
+    ["AR", "Arkansas", "Little Rock", "3,017,825"],
+    ["CA", "California", "Sacramento", "39,512,223"],
+    ["CO", "Colorado", "Denver", "5,758,736"],
+];
+
+function getStateInfo() {
+    const input = $('#stateInput').val().trim();
+    const output = $('#output');
+    const errorMessage = $('#error-message');
+
+    // Validation: Check if the input is not empty
+    if (input === '') {
+        errorMessage.show();
+        output.html('');
+        return;
+    } else {
+        errorMessage.hide();
+    }
+
+    const inputLowerCase = input.toLowerCase();
+    const stateInfo = censusData.find(
+        (state) => state[0].toLowerCase() === inputLowerCase || state[1].toLowerCase() === inputLowerCase
+    );
+
+    if (stateInfo) {
+        const [abbr, name, capital, population] = stateInfo;
+        output.html(`
+            <p>Thanks for your inquiry, here is the information you requested:</p>
+            <p>State Abbreviation = ${abbr}</p>
+            <p>State Name = ${name}</p>
+            <p>Capital = ${capital}</p>
+            <p>Population = ${population}</p>
+        `);
+    } else {
+        output.html(`<p>Sorry, we do not have information about this state! <br> We only have information about ${censusData.map(state => state[1]).join(', ')}.</p>`);
+    }
+}
+
+function clearOutput() {
+    $('#output').html('');
+    $('#error-message').hide();
+    $('#stateInput').val('');
+}

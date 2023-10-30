@@ -1,16 +1,16 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
     <head>
         <meta charset="utf-8">
-        <title>CNIT133 Homework 5 Part II</title>
+        <title>CNIT133 Homework 5 Part III</title>
  <!-- This is webpage that contains links to CNIT 133 Homework 5 - Arrays -->
-        <meta name="Navigate" content="This is Homework 5 Part II to navigate to browser using onchange and onclick event handler">
+        <meta name="validate" content="This is Homework 5 Part III shows census data of chosen state by user.">
         <link rel="stylesheet" type="text/css" href="hw5style.css">   
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
         <script src="hw5script.js"></script>
-        
     </head>
 
     <body >
@@ -34,38 +34,33 @@
             </nav>
         </div>   
 
-        <div class="hwkpt2boxBox">
+        <div class="hwkpt3boxBox">
             
-            <header class="title">Part II: Navigate to a New Browser</header>
+            <header class="title">Part III: Display Census of Chosen State</header>
                
-            <div class="hwkpt2box">
-            
-                <form>
-                    <h3>Navigate using onChange event handler</h3>
-                    <label class="rainbow-textOne" for="menu1">Choose website 1:</label>
-                    <select name="destinationList" id="menu1" onChange="navigateToSelectedPage(this);">
-                        <option value="">--Select--</option>
-                    </select>
-                </form>
-                
-                <form>
-                    <h3>Navigate using onClick event handler&nbsp;</h3>
-                    <label class="rainbow-text" for="menu2">Choose website 2:</label>
-                    <select name="destinationList" id="menu2">
-                        <option value="">--Select--</option>
-                    </select>
-                    <input type="button" value="Go" onclick="navigateToSelectedPage(document.getElementById('menu2'));">
-                </form>                
+            <div class="hwkpt3box">  
+            <br>    
+            <p class="completeForm">Available state: Alabama, Alaska, Arizona, Arkansas, California, Colorado</p>
+            <br>
+
+            <form id="stateForm" onsubmit="event.preventDefault(); getStateInfo();">
+                <label for="stateInput">Enter Full Name or Abbreviation of State:</label>
+                <input type="text" id="stateInput" name="state">
+                <input type="submit" value="Get State Info">
+                <button type="reset" onclick="clearOutput()">Clear</button>
+                <div class="error-message" id="error-message">Please enter a state name or abbreviation</div>
+            </form>
+            <div id="output"></div>
       
             </div>
         </div> 
                 
         <article class="solution-box">
             <header>
-                <h2>Homework 5 Part II Code Solution</h2>
+                <h2>Homework 5 Part III Code Solution</h2>
             </header>
             <div class="solution-frame">
-            <iframe src="hw5pt2.pdf"></iframe>
+            <iframe src="hw5pt3.pdf"></iframe>
             </div>
             <br><br>    
         </article>
@@ -82,6 +77,8 @@
             </figure>
             <p class="right-text">Copyright of Teresita Anselm &copy; 2023&nbsp;</p>
         </footer>
+        
+        
 
     </body>
 </html>
