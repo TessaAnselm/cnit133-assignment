@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>CNIT133 Homework 5 Part II</title>
+ <!-- This is webpage that contains links to CNIT 133 Homework 5 - Arrays -->
+        <meta name="Navigate" content="This is Homework 5 Part II to navigate to browser using onchange and onclick event handler">
+        <link rel="stylesheet" type="text/css" href="hw5style.css">   
+    </head>
+
+    <body >
+        <header class = "header-background">
+            <div class="header-container">
+                <a href="hw5.html" target="_self" class="header-text">CNIT 133 Homework 5 - Arrays</a> 
+                <figure>
+                <a href="https://www.ccsf.edu/" target="_self">
+                <img src="ccsf_ram.gif" alt="ccsf ram logo" width="139" class="right-image">
+                </a>
+                </figure>
+            </div>     
+        </header>
+
+        <div class="submenu-containerDesc">  
+            <nav>
+            <a href="hw5-description.html" target="_self" class="button-two">Desciption</a>
+            <a href="hw5pt1.html" target="_self" class="button-two">Part I</a>
+            <a href="hw5pt2.html" target="_self" class="button-two">Part II</a>
+            <a href="hw5pt3.html" target="_self" class="button-two">Part III</a>
+            </nav>
+        </div>   
+
+        <div class="hwkpt2boxBox">
+            
+            <header class="title">Part II: Navigate to a new browser </header>
+               
+            <div class="hwkpt2box">
+            
+            <form> 
+                <h3>Navigate using onChange event handler</h3>
+                <label class="rainbow-textOne" for="menu1">Choose website 1:</label>
+                <select name="destinationList" id="menu1" onChange="goToNewPage(this.form);"">
+                    <option value="">--Select--</option>
+                    <option value="http://www.yahoo.com/">Yahoo</option>
+                    <option value="http://www.mozilla.com/">Firefox</option>
+                    <option value="https://www.google.com/">Google</option>
+                </select>
+            </form>
+            
+            <br>
+            
+            <form >
+                <h3>Navigate using onClick event handler&nbsp;</h3>
+                <label class="rainbow-text" for="menu2">Choose website 2:</label>
+                <select name="destinationList" id="menu2">
+                    <option value="">--Select--</option>
+                    <option value="http://www.yahoo.com/">Yahoo</option>
+                    <option value="http://www.mozilla.com/">Firefox</option>
+                    <option value="https://www.google.com/">Google</option>
+                </select>
+                <input type="button" value="Go" onclick="goToNewPage(this.form);">
+            </form>
+      
+            </div>
+        </div> 
+                
+        <article class="solution-box">
+            <header>
+                <h2>Homework 5 Part II Code Solution</h2>
+            </header>
+            <div class="solution-frame">
+            <iframe src="hw5pt2.pdf"></iframe>
+            </div>
+            <br><br>    
+        </article>
+
+        <footer class="footCont">
+            <br>
+            <figure>
+            <div class="footer-text-container">
+                <img src="op.jpg" alt="self" width="80" class="rounded-image">
+                <p>Teresita Anselm<br>
+                City College of San Francisco<br>
+                tanselm@mail.ccsf.edu<br></p>   
+            </div>
+            </figure>
+            <p class="right-text">Copyright of Teresita Anselm &copy; 2023&nbsp;</p>
+        </footer>
+
+        <script>
+            function goToNewPage(myForm) {
+                var myDestination = myForm.destinationList.options[myForm.destinationList.selectedIndex].value;
+                if (myDestination !== "") {
+                    window.open(myDestination, '_blank');
+                }
+            }
+
+        // Optional when using getElementById for onchange
+            function navigateOnChange() {
+                var url = document.getElementById("menu1").value;
+                if (url !== "") {
+                    window.open(url, '_blank');
+                }
+            }
+        // Optional when using getElementById for onclick
+            function navigateOnClick() {
+                var url = document.getElementById("menu2").value;
+                if (url !== "") {
+                    window.open(url, '_blank');
+                }
+            }
+        </script>
+
+    </body>
+</html>

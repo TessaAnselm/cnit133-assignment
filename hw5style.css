@@ -109,27 +109,20 @@
     height: 250px;
     padding: 20px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     /* vertically center align content */
     justify-content: center;
     /* horizontally center align content */
 }
 .hwkpt2box {
-    border: 1d0e6b; height: 100%; width: 830px; 
+    border: 1d0e6b; height: 100%; width: 800px; 
     background-color: white; padding-bottom: 17px;
     text-align: center;
     display: flex;
-    flex-direction: row;
-    align-items:center; /* vertically center align content */
+    flex-direction: column;
     justify-content: center; /* horizontally center align content */
-    padding-right: 30px;
 }
-
-.hwkpt2 {
-   margin-right: 20px;
-   align-items: center;
-} 
-
 .hwkptEboxBox {
     background-color: #e33c3c;
     height: 100%;
@@ -174,14 +167,27 @@ h3 {
     font-weight: bold;
 
 }
-.rainbow-text {
+
+.rainbow-text, .rainbow-textOne {
     font-size: 20px;
     background: linear-gradient(45deg, #f06, #3cf, #f06);
     background-size: 200% 200%;
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
-    animation:rainbow 5s linear infinite;
+    animation: rainbow 5s linear infinite;
 }
+
+.rainbow-textOne {
+    margin-left: -36px; 
+}
+
+@keyframes rainbow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 .menu-container {
     background-color:#cccccc67; padding: 20px 50px; justify-content: center;
     align-items: center;
