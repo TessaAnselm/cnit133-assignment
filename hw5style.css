@@ -149,7 +149,7 @@ input.valid, select.valid {
 }
 
 .hwkpt3box {
-    border: 1d0e6b; height: 100%; width: 800px; 
+    border: 1d0e6b; min-height: 200px; height: 100%; width: 800px; 
     background-color: white; padding-bottom: 17px;
     text-align: center;
     display: flex;
