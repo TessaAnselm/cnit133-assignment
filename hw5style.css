@@ -95,7 +95,7 @@
     align-items:center; /* vertically center align content */
     justify-content: center; /* horizontally center align content */
 }
-.hwkpt1boxBox {
+.hwkpt1boxBox, .hwkpt3boxBox {
     background-color: #e33c3c;
     min-height: 250px;
     padding: 20px;
@@ -128,7 +128,7 @@ input.valid, select.valid {
     border: 1px solid#417bcb;
 }
 
-.hwkpt2boxBox, .hwkpt3boxBox {
+.hwkpt2boxBox {
     background-color: #e33c3c;
     height: 250px;
     padding: 20px;
