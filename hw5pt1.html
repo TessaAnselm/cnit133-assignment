@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>CNIT133 Homework 5 Part I</title>
+ <!-- This is webpage that contains links to CNIT 133 Homework 5 - Arrays -->
+        <meta name="validate" content="This is Homework 5 Part I, static website that validates a form.">
+        <link rel="stylesheet" type="text/css" href="hw5style.css">   
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    </head>
+
+    <body >
+        <header class = "header-background">
+            <div class="header-container">
+                <a href="hw5.html" target="_self" class="header-text">CNIT 133 Homework 5 - Arrays</a> 
+                <figure>
+                <a href="https://www.ccsf.edu/" target="_self">
+                <img src="ccsf_ram.gif" alt="ccsf ram logo" width="139" class="right-image">
+                </a>
+                </figure>
+            </div>     
+        </header>
+
+        <div class="submenu-containerDesc">  
+            <nav>
+            <a href="hw5-description.html" target="_self" class="button-two">Desciption</a>
+            <a href="hw5pt1.html" target="_self" class="button-two">Part I</a>
+            <a href="hw5pt2.html" target="_self" class="button-two">Part II</a>
+            <a href="hw5pt3.html" target="_self" class="button-two">Part III</a>
+            </nav>
+        </div>   
+
+        <div class="hwkpt1boxBox">
+            
+            <header class="title">Part I: Validate a form using jQuery with arrays</header>
+               
+            <div class="hwkpt1box">  
+            <br>    
+            <form id="myForm">
+                <br><br>
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName">
+                <p></p>
+                <div id="ageGroup">
+                    <label>Age Group:</label>
+                </div>
+                <br>
+                <div id="browserGroup">
+                    <label>Browsers Used:</label>
+                </div>
+                <br>
+                <label for="movieType">Favorite Movie Type:</label>
+                <select id="movieType" name="movieType"></select>
+                <br><br>
+                <button type="submit">Submit</button>
+                <button type="button" id="clearButton">Clear</button>
+            </form>
+            <div id="output"></div>
+      
+            </div>
+        </div> 
+                
+        <article class="solution-box">
+            <header>
+                <h2>Homework 5 Part I Code Solution</h2>
+            </header>
+            <div class="solution-frame">
+            <iframe src="hw5pt1.pdf"></iframe>
+            </div>
+            <br><br>    
+        </article>
+
+        <footer class="footCont">
+            <br>
+            <figure>
+            <div class="footer-text-container">
+                <img src="op.jpg" alt="self" width="80" class="rounded-image">
+                <p>Teresita Anselm<br>
+                City College of San Francisco<br>
+                tanselm@mail.ccsf.edu<br></p>   
+            </div>
+            </figure>
+            <p class="right-text">Copyright of Teresita Anselm &copy; 2023&nbsp;</p>
+        </footer>
+        <script>
+            $(document).ready(function() {
+            // Define the options for the radio buttons, checkboxes, and select element
+            const ageGroups = ['Less than 21', '21 - 50', 'Older than 50'];
+            const browsers = ['Firefox', 'Edge', 'Chrome', 'Safari'];
+            const movieTypes = ['Action', 'Comedy', 'Drama', 'Documentary', 'Science Fiction'];
+
+            // Generate the radio buttons
+            ageGroups.forEach((ageGroup, index) => {
+                $('#ageGroup').append(
+                    `<input type="radio" id="ageGroup${index}" name="ageGroup" value="${ageGroup}">
+                    <label for="ageGroup${index}">${ageGroup}</label>`
+                );
+            });
+
+            // Generate the checkboxes
+            browsers.forEach((browser, index) => {
+                $('#browserGroup').append(
+                    `<input type="checkbox" id="browser${index}" name="browsers" value="${browser}">
+                    <label for="browser${index}">${browser}</label>`
+                );
+            });
+
+            // Generate the options for the select element
+            $('#movieType').append('<option value="">--Select--</option>');
+            movieTypes.forEach((movieType) => {
+                $('#movieType').append(`<option value="${movieType.toLowerCase()}">${movieType}</option>`);
+            });
+
+            // Set up form validation
+            $("#myForm").validate({
+                rules: {
+                    fullName: "required",
+                    ageGroup: "required",
+                    browsers: {
+                        required: true,
+                        minlength: 1
+                    },
+                    movieType: "required"
+                },
+                messages: {
+                    fullName: "Please enter your full name",
+                    ageGroup: "Please select your age group",
+                    browsers: "Please select at least one browser",
+                    movieType: "Please select your favorite movie type"
+                },
+                submitHandler: function(form) {
+                    setTimeout(function() {
+                        $('#output').html("<p class='completeForm'>Thanks, your data was submitted!</p>").hide().fadeIn(200);
+
+                    }, 1000); // Delay of 1 second
+                },
+                errorPlacement: function(error, element) {
+                    if (element.attr("type") === "radio") {
+                        error.insertAfter("#ageGroup").find('label.error').css('display', 'block');
+                    } else if (element.attr("type") === "checkbox") {
+                        error.insertAfter("#browserGroup").find('label.error').css('display', 'block');
+                    } else {
+                        error.insertAfter(element);
+                    }
+                }
+            });
+
+            // Clear button functionality
+            $('#clearButton').click(function() {
+                $('#output').html("");
+                $("#myForm")[0].reset(); // This will clear all the input fields
+                $("#myForm").validate().resetForm(); // This will clear all validation messages
+                $('input').removeClass('error'); // Remove the error class from inputs
+                $('select').removeClass('error'); // Remove the error class from select
+            });
+        });
+        </script>
+        
+
+    </body>
+</html>

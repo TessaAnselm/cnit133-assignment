@@ -52,6 +52,11 @@
     padding: 2px;
     text-align: center;
 }
+.completeForm{
+    color:#417bcb;
+    font-weight: bold;
+    font-size: medium;
+}
 .footCont {
     background-color:#cccccc67;
 }
@@ -86,22 +91,35 @@
 }
 .hwkpt1boxBox {
     background-color: #e33c3c;
-    height: 100%;
-    padding: 15px;
+    min-height: 250px;
+    padding: 20px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     /* vertically center align content */
     justify-content: center;
     /* horizontally center align content */
 }
 .hwkpt1box {
-    border: 1d0e6b; height: 100%; width: 800px; 
-    background-color: white; padding-top :17px; padding-bottom: 17px;
-    text-align: center;
+    border: 1d0e6b; min-height: 200px; width: 800px; 
+    background-color: white; padding-bottom: 17px;
+    text-align: left;
     display: flex;
-    flex-direction: column;
-    align-items:center; /* vertically center align content */
+    flex-direction: row;
     justify-content: center; /* horizontally center align content */
+}
+label.error {
+    color: red;
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+}
+input.error, select.error {
+    border: 1px solid red;
+}
+input.valid, select.valid {
+    margin-top: 5px;
+    border: 1px solid#417bcb;
 }
 
 .hwkpt2boxBox {
@@ -141,18 +159,6 @@
     align-items:center; /* vertically center align content */
     justify-content: center; /* horizontally center align content */
 }
-.asteriskBox {
-    margin: 10px;
-    text-align: center;
-    color: #e33c3c;
-    font-size: 25px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
-@keyframes rainbow {
-    0% { background-position: 0% 50%;}
-    100% { background-position: 100% 50%;}
-}
 .hwk5dbox {
     border: #1d0e6b; height: 100%; width: 800px; 
     background-color: white; 
@@ -165,9 +171,7 @@
 h3 {
     color: #1d0e6b;
     font-weight: bold;
-
 }
-
 .rainbow-text, .rainbow-textOne {
     font-size: 20px;
     background: linear-gradient(45deg, #f06, #3cf, #f06);
@@ -177,17 +181,14 @@ h3 {
     color: transparent;
     animation: rainbow 5s linear infinite;
 }
-
 .rainbow-textOne {
     margin-left: -36px; 
 }
-
 @keyframes rainbow {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
-
 .menu-container {
     background-color:#cccccc67; padding: 20px 50px; justify-content: center;
     align-items: center;

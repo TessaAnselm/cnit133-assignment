@@ -8,6 +8,7 @@
  <!-- This is webpage that contains links to CNIT 133 Homework 5 - Arrays -->
         <meta name="Navigate" content="This is Homework 5 Part II to navigate to browser using onchange and onclick event handler">
         <link rel="stylesheet" type="text/css" href="hw5style.css">   
+        <script src="hw5script.js"></script>
     </head>
 
     <body >
@@ -37,30 +38,22 @@
                
             <div class="hwkpt2box">
             
-            <form> 
-                <h3>Navigate using onChange event handler</h3>
-                <label class="rainbow-textOne" for="menu1">Choose website 1:</label>
-                <select name="destinationList" id="menu1" onChange="goToNewPage(this.form);"">
-                    <option value="">--Select--</option>
-                    <option value="http://www.yahoo.com/">Yahoo</option>
-                    <option value="http://www.mozilla.com/">Firefox</option>
-                    <option value="https://www.google.com/">Google</option>
-                </select>
-            </form>
-            
-            <br>
-            
-            <form >
-                <h3>Navigate using onClick event handler&nbsp;</h3>
-                <label class="rainbow-text" for="menu2">Choose website 2:</label>
-                <select name="destinationList" id="menu2">
-                    <option value="">--Select--</option>
-                    <option value="http://www.yahoo.com/">Yahoo</option>
-                    <option value="http://www.mozilla.com/">Firefox</option>
-                    <option value="https://www.google.com/">Google</option>
-                </select>
-                <input type="button" value="Go" onclick="goToNewPage(this.form);">
-            </form>
+                <form>
+                    <h3>Navigate using onChange event handler</h3>
+                    <label class="rainbow-textOne" for="menu1">Choose website 1:</label>
+                    <select name="destinationList" id="menu1" onChange="navigateToSelectedPage(this);">
+                        <option value="">--Select--</option>
+                    </select>
+                </form>
+                
+                <form>
+                    <h3>Navigate using onClick event handler&nbsp;</h3>
+                    <label class="rainbow-text" for="menu2">Choose website 2:</label>
+                    <select name="destinationList" id="menu2">
+                        <option value="">--Select--</option>
+                    </select>
+                    <input type="button" value="Go" onclick="navigateToSelectedPage(document.getElementById('menu2'));">
+                </form>                
       
             </div>
         </div> 
@@ -87,30 +80,6 @@
             </figure>
             <p class="right-text">Copyright of Teresita Anselm &copy; 2023&nbsp;</p>
         </footer>
-
-        <script>
-            function goToNewPage(myForm) {
-                var myDestination = myForm.destinationList.options[myForm.destinationList.selectedIndex].value;
-                if (myDestination !== "") {
-                    window.open(myDestination, '_blank');
-                }
-            }
-
-        // Optional when using getElementById for onchange
-            function navigateOnChange() {
-                var url = document.getElementById("menu1").value;
-                if (url !== "") {
-                    window.open(url, '_blank');
-                }
-            }
-        // Optional when using getElementById for onclick
-            function navigateOnClick() {
-                var url = document.getElementById("menu2").value;
-                if (url !== "") {
-                    window.open(url, '_blank');
-                }
-            }
-        </script>
 
     </body>
 </html>
