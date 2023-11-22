@@ -4,87 +4,22 @@
     <head>
         <meta charset="utf-8">
         <title>CNIT133</title>
- <!-- This is webpage that contains links to completed homework assignment for CNIT133 JavaScript, jQuery and AJAX -->
-        <meta name="description" content="This is main page that links to assingment for CNIT133 using HTML5 and inline CSS">
-        <style>
-            .button {
-                width: 120px; height: 60px; background-color:#417bcb; border-radius: 20px; color: white; 
-                font-size: 22px; cursor: pointer; display: inline-block; text-align: center; 
-                padding: 10px; text-decoration: none; overflow: hidden;
-            }
-            .button:hover, 
-            .button:focus {
-                background-color: #e33c3c; border-color: #b64e57;  /* changes colors as user move mouse */ 
-            }
-            .footer-text-container { /*footer*/
-                display:flex; align-items:center; /* vertically center items */
-            } 
-            .footer-text-container img {
-                max-width:100%; margin-right:10px  /*space between image and text */
-            }
-            .header-background {
-                background-color: #e33c3c;
-                text-align: center;
-            }
-            .header-container {
-                display: flex;
-                align-items: center; /* vertically center items */
-                justify-content: space-between; /* push items to edges */
-            }
-            .header-text {
-                color:#417bcb; font-size: 55px;
-                flex: 0 0 85%; /* set text to 85% available page width */
-                text-align: center;
-            }
-            .image-construction {
-                display: inline-block;
-            }
-            .image-text-container {
-                display:flex; align-items:center; /* vertically center items */
-            } 
-            .image-text-container img {
-                max-width:100%; margin-right:10px /* space between image and text */
-            }
-            .menu-container {
-                background-color:#cccccc67; padding: 20px 50px; justify-content: center;
-                align-items: center;
-            }
-            .right-image {
-                max-width: 100%; /* push image to right */
-            }
-            .right-text {
-                text-align: right; /* align text to the right */
-            }
-            .rounded-image { /*photo*/
-                border-radius:50% /* round photo image */
-            }  
-            .solution-box header {
-                width: 100%; padding: 10px; color:brown; text-align:center;
-            }
-            .solution-frame {    
-                width: 80%; display: flex;
-                flex-grow: 1; /* allow to grow and fill available verticle space */
-                justify-content: center; align-items: center;
-                margin: 0 auto; /* center solution-frame within solution box */ 
-            }
-            .solution-frame iframe {    
-                width:180%; height: 100%; 
-            } 
-        </style>
+ <!-- This is webpage that contains links to CNIT 133 Homework 6 - Objects -->
+        <meta name="description" content="This is homework 6 main page for CNIT133 using HTML5 and inline CSS">
+        <link rel="stylesheet" type="text/css" href="hw6style.css">   
     </head>
 
     <body >
-
-        <header class="header-background">
+        <header style="background-color:#e33c3c">
             <div class="header-container">
-                 <h1 class="header-text">Objects</h1> 
-                 <figure>
-                     <a href="https://www.ccsf.edu/" target="_self">
-                     <img src="ccsf_ram.gif" alt="ccsf ram logo" width="139" class="right-image">
-                     </a>
-                     </figure>
-             </div>     
-         </header>
+                <a class="header-text" href="hw6.html" target="_self">CNIT 133 Homework 6 - Objects</a> 
+                <figure>
+                <a href="https://www.ccsf.edu/" target="_self">
+                <img src="ccsf_ram.gif" alt="ccsf ram logo" width="139" class="right-image">
+                </a>
+                </figure>
+            </div>     
+        </header>
         <div class="menu-container">
             <nav>
             <a href="index.html" target="_self" class="button">Course Basics</a>
@@ -97,20 +32,125 @@
             <a href="hw8.html" target="_self" class="button">Ajax Applications</a>
             </nav>
         </div>
-                 
-        <article>
-            <br>
-            <div class="costruction-container">
-                <h2>Assignment available by 11/21/2023</h2>
-                <img class="image-construction" src="under_construction.jpg" alt="website coming soon" width="400"> 
+        <div class="submenu-container"> 
+            <div class="submenu-header">
+                Homework 6 Part:
             </div>
-            <br>
+            <div class="submenu-button">    
+            <nav>
+                <a href="hw6des.html" target="_self" class="button-two">Description</a>
+                <a href="hw6pt1.html" target="_self" class="button-two">Part I</a>
+                <a href="hw6pt2.html" target="_self" class="button-two">Part II</a>
+                <a href="hw6pt3.html" target="_self" class="button-two">Part III</a>
+            </nav>
+            </div>
+        </div>            
+        <article>
+            <header>
+                <br>
+                <h2 style="color:brown">Homework 6 Instructions on Topic "Objects"</h2>
+
+            </header>
+            <section>
+            <h3>What you will do:</h3>   
+            Create a main web page for Homework 6 with the following:
+                <ul class="square-list">
+                    <li>Heading CNIT 133 Homework 6 - Objects.</li>
+                    <li>Hyperlink to Part 1 and a short summary of that part.</li>
+                    <li>Hyperlink to Part 2 and a short summary of that part.</li>
+                    <li>Hyperlink to Part 3 and a short summary of that part.</li>
+                    <li>Hyperlink to go back to the main page of the course (Homework 1 web page).</li>
+                </ul>
+                <br>
+            </section>
+            <section>    
+            <h3>Part I:</h3>
+            <p>Create a web page with:</p>
+            <ul>
+                <li>A heading that you can choose.</li>     
+                <li>A form that will have:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;An input box for the user to enter a number with 4 decimals.<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;A button to submit the data.<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;A button to clear the form.<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;A textarea (or another element outside the form - div or paragraph) where you will write the output/result.<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;A hyperlink to go back to the main page of Homework 6.<br>
+                </li>
+                <li>If the user types a valid number (with 4 decimals and it is a number), you will use Math.round, Math.sqrt, Math.floor, toFixed() to obtain:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;A. Round the floating-point number to the nearest integer. <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;B. Calculate the square root of the floating-point number and round it to an integer.<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;C. Round the floating-point number to the nearest tenths position.<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;D. Round the floating-point number to the nearest hundredths position.<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;E. Round the floating-point number to the nearest thousandths position.<br>
+                </li>
+                <li>Present in the output/result area the original number typed by the user and the results you found for each calculation requested above.<br></li>
+                    
+            </ul>
+            </section><br>
+
+            <section>
+            <h3>Part II:</h3>
+            <p>Create a web page for part II with:</p>
+            <ul>
+                <li>A heading that you can choose.</li>     
+                <li>A form with:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;A textarea to allow the user to type a long content.<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;An input box to allow the user to type only one letter.<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;An input box or textarea, or an element outside the form (a div or paragraph) to present the output/result.<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;A hyperlink to go back to the main page of Homework 6.<br>
+                </li>
+            </ul>
+            <p>Write a script using some Script methods you learned, to solve the following:</p>  
+            <ul>
+                <li>The user will type whatever content he/she wants in the textarea for the long content, and the user will also type a single character in the input box you provided. <br>
+                    When the user clicks the submit button, you will:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Search for the character the user typed inside the content in the textarea and you will count how many times this character is shown in the big content. <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;If the character is found, you will present a message in the output/result area that says how many times the character X <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;shows up in the content where X is the single character typed by the user.<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;If the character is not found, you will present a new window (using the window.open() method you learned), the message: "Search character X not found<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;in the content you typed", where X is the single character typed by the user.<br>
+                </li>
+            </ul>
+            </section><br>
+
+            <section>
+            <h3>Part III:</h3>    
+            <p>Create a web page for part II with:</p>
+            <ul>
+                <li>A heading that you can choose.</li>     
+                <li>An input box for the user to type the phone number.</li>
+                <li>3 input boxes where you will present the result/output (area code, the first 3 digits of the phone number, the last 4 digits of the phone number).</li>
+                <li>A button to start the process.</li>
+                <li>A a button to start the process.</li>
+                <li>An element such as div or paragraph to present any error message you need.</li>
+                <li>A hyper link to go back to the main page of Homework 6.</li>
+            </ul>
+            <p>Create a script to resolve the following:</p>  
+            <ul>
+                <li>The user needs to type the telephone number, as a string, in this format (999) 999-9999.</li>
+                <li>Use the String method split or the match group related to regex to extract the area code; the first 3 digits of the phone number; and the last 4 digits of the <br>
+                    phone number.</li>
+                <li>Display in the 3 input boxes (that are read-only) you provided in the form, those separated numbers - ONLY THE NUMBERS, there should be no parentheses, no hyphen!</li>
+                <li>If the user does not type the phone number in the exact format requested, you should display in the other element (div or paragraph) an error message that clarifies <br>
+                    to the user how he should type the phone number and then, NONE OF THE 3 READ-ONLY INPUT BOXES SHOULD PRESENT A RESULT.</li>
+                <li>Use jQuery for extra credit.</li>
+            </ul>
+            </section><br><br>
+
+        </article>
+        <article class="solution-box">
+            <header>
+                <h2>Homework 6 Code Solution</h2>
+            </header>
+            <div class="solution-frame">
+            <iframe src="hw6.pdf"></iframe>
+            </div>
+            <br><br>    
         </article>
 
-        <footer style="background-color:#cccccc67">
+        <footer class="footCont">
             <br>
             <figure>
-            <div class="image-text-container">
+            <div class="footer-text-container">
                 <img src="op.jpg" alt="self" width="80" class="rounded-image">
                 <p>Teresita Anselm<br>
                 City College of San Francisco<br>
@@ -118,7 +158,7 @@
             </div>
             </figure>
             
-            <p class="right-text">Copyright of Teresita Anselm &copy; 2023&nbsp</p>
+            <p class="right-text">Copyright of Teresita Anselm &copy; 2023&nbsp;</p>
         </footer>
 
     </body>

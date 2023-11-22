@@ -1,0 +1,223 @@
+.button {
+    width: 120px; height: 60px; background-color:#417bcb; border-radius: 20px; color: white; 
+    font-size: 22px; cursor: pointer; display: inline-block; text-align: center; 
+    padding: 10px; text-decoration: none; overflow: hidden;
+}
+.button:hover, 
+.button:focus {
+    background-color: #e33c3c; border-color: #b64e57  /* changes colors as user move mouse */ 
+}
+.button-two {
+    width: 150px;
+    background-color: #417bcb;
+    border-radius: 20px;
+    color: white;
+    font-size: 22px;
+    margin: 34px 3px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    overflow: hidden;
+}
+.button-two:hover,
+.button-two:focus {
+    background-color: #e33c3c;
+    border-color: #1d0e6b
+                /* changes colors as user move mouse */
+} 
+.buttonCal {
+    width: 780px;
+    background-color: #417bcb;
+    border-radius: 20px;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 10px; /* Add vertical margin to separate buttons */
+    margin-top: 20px;
+    cursor: pointer;
+    display: block; /* Make the buttons display as block-level elements */
+    padding: 5px;
+    text-decoration: none;
+    overflow: hidden;
+    border: 4px solid white; /* Set border color to white */
+}
+.buttonCal:hover,
+.buttonCal:focus {
+            background-color: #e33c3c;
+            border-color: white;
+                /* changes colors as user move mouse */
+        }
+.colored-section {
+    background-color: #e33c3c;
+    padding: 2px;
+    text-align: center;
+}
+.completeForm{
+    color:#417bcb;
+    font-weight: bold;
+    font-size: medium;
+}
+.errorMessage {
+    color: red;
+    font-size: 12px;
+}
+.footCont {
+    background-color:#cccccc67;
+}
+.footer-text-container { /*footer*/
+    display:flex; align-items:center; /* vertically center items */
+} 
+.footer-text-container img {
+    max-width:100%; margin-right:10px  /*space between image and text */
+}
+.header-background {
+    background-color: #e33c3c;  text-align: center;
+}
+.header-container { /*header/top most */
+    display: flex;
+    align-items: center; /* vertically center items */
+    justify-content: space-between; /* push items to edges */
+}
+.header-text {
+    color:#417bcb; font-size: 55px;
+    flex: 0 0 85%; /* set text to 85% available page width */
+    text-decoration: none;
+    text-align: center;
+}
+.header-text:hover {
+    color: white ; /* changes colors as user move mouse */
+}
+.hwk6dbox-box {
+    background-color:  #e33c3c; height: 250px; padding: 20px; 
+    display: flex;
+    align-items:center; /* vertically center align content */
+    justify-content: center; /* horizontally center align content */
+}
+.hwkpt1boxBox, .hwkpt2boxBox, .hwkpt3boxBox {
+    background-color: #e33c3c;
+    min-height: 250px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* vertically center align content */
+    justify-content: center;
+    /* horizontally center align content */
+}
+.hwkpt1box, .hwkpt2box, .hwkpt3box {
+    border: 1d0e6b; min-height: 200px; height: 100%; width: 800px; 
+    background-color: white; padding-bottom: 17px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* horizontally center align content */
+}
+
+label.error {
+    color: red;
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+}
+input.error, select.error {
+    border: 1px solid red;
+}
+input.valid, select.valid {
+    margin-top: 5px;
+    border: 1px solid#417bcb;
+}
+
+.hwk6dbox {
+    border: #1d0e6b; height: 100%; width: 800px; 
+    background-color: white; 
+    font-size: larger; 
+    animation: rainbow 10s linear infinite; /* apply rainbow animation */ 
+    text-align: center; display: flex;
+    align-items:center; /* vertically center align content */
+    justify-content: center; /* horizontally center align content */
+}
+h3 {
+    color: #1d0e6b;
+    font-weight: bold;
+}
+.rainbow-text, .rainbow-textOne {
+    font-size: 20px;
+    background: linear-gradient(45deg, #f06, #3cf, #f06);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow 5s linear infinite;
+}
+.rainbow-textOne {
+    margin-left: -36px; 
+}
+@keyframes rainbow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.menu-container {
+    background-color:#cccccc67; padding: 20px 50px; justify-content: center;
+    align-items: center;
+}
+.right-image {
+    max-width: 100%; /* push image to right */
+}
+.right-text {
+    text-align: right; /* align text to the right */
+}
+.rounded-image { /*photo*/
+    border-radius:50% /* round photo image */
+} 
+.solution-box {
+    border: 2px solid #e20707; padding: 0; margin: 0; display: flex;
+    flex-direction: column;
+    align-items: center; text-align: center;
+    height: 70vh;
+}
+.solution-box header {
+    width: 100%; padding: 10px; color:brown;
+}
+.solution-frame {    
+    width: 80%; display: flex;
+    flex-grow: 1; /* allow to grow and fill available verticle space */
+    justify-content: center; align-items: center;
+    margin: 0 auto; /* center solution-frame within solution box */ 
+}
+.solution-frame iframe {    
+    width:180%; height: 100%; 
+}
+.submenu-containerDesc {
+    background-color: black; text-align: center; margin: 0;
+    display: flex;
+    align-items:center; /* vertically center align content */
+    justify-content: center; /* horizontally center align content */
+} 
+.submenu-button {
+    display: flex;
+    background-color: #e33c3c; justify-content: center;
+    height: 100px; width: 100%; align-items: center;
+}
+.submenu-container {
+    width: 100%; text-align: center; padding-top: 20px; background-color: #e33c3c;
+    font-weight: bolder;
+}
+.submenu-header {
+    color:aliceblue; background-color:#e33c3c;
+    height: 30px; font-size: 30px;
+}
+
+.title {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    color: aliceblue;
+    font-size: 22px;
+}
+#errorMessage {
+    color: red;
+}
+
+
+

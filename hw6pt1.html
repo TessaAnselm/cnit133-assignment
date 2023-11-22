@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <head>
+    <meta charset="utf-8">
+    <title>CNIT133 Homework 6 Part I</title>
+<!-- This is webpage that contains links to CNIT 133 Homework 6 - Objects -->
+    <meta name="description" content="This is Homework 6 Part I that validates and computes 4 decimal input.">
+    <link rel="stylesheet" type="text/css" href="hw6style.css">   
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+        <script src="hw6script.js"></script>
+    </head>
+
+    <body >
+        <header class = "header-background">
+            <div class="header-container">
+                <a href="hw6.html" target="_self" class="header-text">CNIT 133 Homework 6 - Objects</a> 
+                <figure>
+                <a href="https://www.ccsf.edu/" target="_self">
+                <img src="ccsf_ram.gif" alt="ccsf ram logo" width="139" class="right-image">
+                </a>
+                </figure>
+            </div>     
+        </header>
+
+        <div class="submenu-containerDesc">  
+            <nav>
+            <a href="hw6des.html" target="_self" class="button-two">Desciption</a>
+            <a href="hw6pt1.html" target="_self" class="button-two">Part I</a>
+            <a href="hw6pt2.html" target="_self" class="button-two">Part II</a>
+            <a href="hw6pt3.html" target="_self" class="button-two">Part III</a>
+            </nav>
+        </div>   
+
+        <div class="hwkpt1boxBox">
+            <header class="title">Part I: Validate and Compute 4 Decimal Numbers</header>
+            <div class="hwkpt1box">  
+            <br>    
+            <form id="numberForm">
+                <label for="numberInput">Enter a number with at least 4 decimals:</label><br>
+                <input type="text" id="numberInput" placeholder="e.g., 1234.5678"><br>
+                <button type="button" onclick="processNumber()">Submit</button>
+                <button type="reset" onclick="clearResults()">Clear</button>
+            </form>
+            <br>
+            <div id="result"></div>
+            <div id="errorMessage"></div>
+            </div>
+        </div> 
+                
+        <article class="solution-box">
+            <header>
+                <h2>Homework 6 Part I Code Solution</h2>
+            </header>
+            <div class="solution-frame">
+            <iframe src="hw6pt1.pdf"></iframe>
+            </div>
+            <br><br>    
+        </article>
+
+        <footer class="footCont">
+            <br>
+            <figure>
+            <div class="footer-text-container">
+                <img src="op.jpg" alt="self" width="80" class="rounded-image">
+                <p>Teresita Anselm<br>
+                City College of San Francisco<br>
+                tanselm@mail.ccsf.edu<br></p>   
+            </div>
+            </figure>
+            <p class="right-text">Copyright of Teresita Anselm &copy; 2023&nbsp;</p>
+        </footer>
+        
+        
+
+    </body>
+</html>

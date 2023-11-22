@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <head>
+    <meta charset="utf-8">
+    <title>CNIT133 Homework 6 Part III</title>
+<!-- This is webpage that contains links to CNIT 133 Homework 6 - Objects -->
+    <meta name="description" content="This is Homework 6 Part 3 that validates and splits phone number.">
+    <link rel="stylesheet" type="text/css" href="hw6style.css">   
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script src="hw6script.js"></script>
+    </head>
+
+    <body >
+        <header class = "header-background">
+            <div class="header-container">
+                <a href="hw6.html" target="_self" class="header-text">CNIT 133 Homework 6 - Objects</a> 
+                <figure>
+                <a href="https://www.ccsf.edu/" target="_self">
+                <img src="ccsf_ram.gif" alt="ccsf ram logo" width="139" class="right-image">
+                </a>
+                </figure>
+            </div>     
+        </header>
+
+        <div class="submenu-containerDesc">  
+            <nav>
+            <a href="hw6des.html" target="_self" class="button-two">Desciption</a>
+            <a href="hw6pt1.html" target="_self" class="button-two">Part I</a>
+            <a href="hw6pt2.html" target="_self" class="button-two">Part II</a>
+            <a href="hw6pt3.html" target="_self" class="button-two">Part III</a>
+            </nav>
+        </div>   
+
+        <div class="hwkpt3boxBox">
+            <header class="title">Part III: Phone Number Validator and Formatter</header>
+            <div class="hwkpt3box">  
+            <br>    
+            <form id="phoneNumberForm">
+                <label for="phoneNumberInput">Enter your phone number:</label><br>
+                <input type="text" id="phoneNumberInput" placeholder="(999) 999-9999"><br><br>
+                <label>&nbsp;&nbsp;&nbsp;&nbsp;Area Code:</label>
+                <input type="text" id="areaCode" readonly><br>
+                <label>First 3 Digits:</label>
+                <input type="text" id="firstThreeDigits" readonly><br>
+                <label>Last 4 Digits:</label>
+                <input type="text" id="lastFourDigits" readonly><br><br>
+                <button type="button" onclick="splitPhoneNumber()">Process</button>
+                <button type="reset">Clear</button>
+            </form>
+            <div id="errorMessage"></div>
+            </div>
+        </div> 
+                
+        <article class="solution-box">
+            <header>
+                <h2>Homework 6 Part III Code Solution</h2>
+            </header>
+            <div class="solution-frame">
+            <iframe src="hw6pt3.pdf"></iframe>
+            </div>
+            <br><br>    
+        </article>
+
+        <footer class="footCont">
+            <br>
+            <figure>
+            <div class="footer-text-container">
+                <img src="op.jpg" alt="self" width="80" class="rounded-image">
+                <p>Teresita Anselm<br>
+                City College of San Francisco<br>
+                tanselm@mail.ccsf.edu<br></p>   
+            </div>
+            </figure>
+            <p class="right-text">Copyright of Teresita Anselm &copy; 2023&nbsp;</p>
+        </footer>
+        
+        
+
+    </body>
+</html>
