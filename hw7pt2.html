@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <head>
+    <meta charset="utf-8">
+    <title>CNIT133 Homework 7 Part II</title>
+<!-- This is webpage that contains links to CNIT 133 Homework 7 - Object Model and Event Model -->
+    <meta name="description" content="This is Homework 7 Part II that navigates using dropdown menu.">
+    <link rel="stylesheet" type="text/css" href="hw7style.css">   
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".nav-item").hover(
+                function() {
+                    $(this).find('.dropdown').slideDown();
+                }, 
+                function() {
+                    $(this).find('.dropdown').slideUp();
+                }
+            );
+        });
+    </script>
+
+    </head>
+
+    <body >
+        <header class = "header-background">
+            <div class="header-container">
+                <a href="hw7.html" target="_self" class="header-text">CNIT 133 Homework  - Object Model and Event Model</a> 
+                <figure>
+                <a href="https://www.ccsf.edu/" target="_self">
+                <img src="ccsf_ram.gif" alt="ccsf ram logo" width="139" class="right-image">
+                </a>
+                </figure>
+            </div>     
+        </header>
+
+        <div class="submenu-containerDesc">  
+            <nav>
+            <a href="hw7des.html" target="_self" class="button-two">Desciption</a>
+            <a href="hw7pt1.html" target="_self" class="button-two">Part I</a>
+            <a href="hw7pt2.html" target="_self" class="button-two">Part II</a>
+            </nav>
+        </div>   
+
+        <div class="hwkpt2boxBox">
+            <header class="title">Part II: Navigate using Dropdown Menu</header>
+            <div class="hwkpt2box">  
+            <br>    
+            <div class="menu-container">
+                <nav>
+                    <div class="nav-item">
+                        <a href="hw2.html" target="_self" class="button">JS Basics</a>
+                        <div class="dropdown">
+                            <a href="hw2-description.html">Description</a>
+                            <a href="hw2-part1.html">Part 1</a>
+                            <a href="hw2-part2.html">Part 2</a>
+                            <a href="hw2-extra-credit.html">Extra Credit</a>
+                        </div>
+                    </div>
+                    <div class="nav-item">
+                        <a href="hw3.html" target="_self" class="button">Functions</a>
+                        <div class="dropdown">
+                            <a href="hw3-description.html">Description</a>
+                            <a href="hw3-part1.html">Part 1</a>
+                            <a href="hw3-part2.html">Part 2</a>
+                            <a href="hw3-extra-credit.html">Extra Credit</a>
+                        </div>
+                    </div>
+                    <div class="nav-item">
+                        <a href="hw4.html" target="_self" class="button">Looping Statements</a>
+                        <div class="dropdown">
+                            <a href="hw4-description.html">Description</a>
+                            <a href="hw4-part1.html">Part 1</a>
+                            <a href="hw4-part2.html">Part 2</a>
+                            <a href="hw4-extra-credit.html">Extra Credit</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            </div>
+        </div> 
+                
+        <article class="solution-box">
+            <header>
+                <h2>Homework 7 Part II Code Solution</h2>
+            </header>
+            <div class="solution-frame">
+            <iframe src="hw7pt2.pdf"></iframe>
+            </div>
+            <br><br>    
+        </article>
+
+        <footer class="footCont">
+            <br>
+            <figure>
+            <div class="footer-text-container">
+                <img src="op.jpg" alt="self" width="80" class="rounded-image">
+                <p>Teresita Anselm<br>
+                City College of San Francisco<br>
+                tanselm@mail.ccsf.edu<br></p>   
+            </div>
+            </figure>
+            <p class="right-text">Copyright of Teresita Anselm &copy; 2023&nbsp;</p>
+        </footer>
+        
+        
+
+    </body>
+</html>

@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>CNIT133 Homework 7 Description</title>
+ <!-- This is webpage that contains links to CNIT 133 Homework 7 - Object Model and Event Model -->
+        <meta name="description" content="This is Homework 7 Description to show description of preceeding homewrok parts.">
+        <link rel="stylesheet" type="text/css" href="hw7style.css">   
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#togglePart1').click(function() {
+                    $(this).next('.description').slideToggle();
+                });
+
+                $('#togglePart2').click(function() {
+                    $(this).next('.description').slideToggle();
+                });
+            });
+        </script>
+    </head>
+
+    <body >
+        <header class = "header-background">
+            <div class="header-container">
+                <a href="hw7.html" target="_self" class="header-text">CNIT 133 Homework 7 - Object Model and Event Model</a> 
+                <figure>
+                <a href="https://www.ccsf.edu/" target="_self">
+                <img src="ccsf_ram.gif" alt="ccsf ram logo" width="139" class="right-image">
+                </a>
+                </figure>
+            </div>     
+        </header>
+
+        <div class="submenu-containerDesc">  
+            <nav>
+            <a href="hw7des.html" target="_self" class="button-two">Desciption</a>
+            <a href="hw7pt1.html" target="_self" class="button-two">Part I</a>
+            <a href="hw7pt2.html" target="_self" class="button-two">Part II</a>
+            </nav>
+        </div>   
+
+        <div class="hwk7dbox-box">      
+            <div class="hwk7dbox">
+             
+                <p class="rainbow-text">
+                    Click below to toggle description and navigation link:<br><br>
+                    <span id="togglePart1">Part I:</span>
+                    <span class="description" style="display: none;">
+                        Script that changes user desired setting in real-time.
+                        <a href="hw7pt1.html" target="_self">Part I link</a>
+                    </span><br><br>
+                    <span id="togglePart2">Part II:</span>
+                    <span class="description" style="display: none;">
+                        User navigate to chosen drop down menu.
+                        <a href="hw7pt2.html" target="_self">Part II link</a>
+                    </span><br>
+                </p>
+            </div>
+        </div> 
+                
+        <article class="solution-box">
+            <header>
+                <h2>Homework 7 Description Code Solution</h2>
+            </header>
+            <div class="solution-frame">
+            <iframe src="hw7desc.pdf"></iframe>
+            </div>
+            <br><br>    
+        </article>
+
+        <footer class="footCont">
+            <br>
+            <figure>
+            <div class="footer-text-container">
+                <img src="op.jpg" alt="self" width="80" class="rounded-image">
+                <p>Teresita Anselm<br>
+                City College of San Francisco<br>
+                tanselm@mail.ccsf.edu<br></p>   
+            </div>
+            </figure>
+            <p class="right-text">Copyright of Teresita Anselm &copy; 2023&nbsp;</p>
+        </footer>
+
+    </body>
+</html>
