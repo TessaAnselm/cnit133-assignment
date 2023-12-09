@@ -82,7 +82,7 @@ button:focus {
     justify-content: center;
     /* horizontally center align content */
 }
-.hwkpt1box {
+.hwkpt1box{
     border: 1d0e6b; min-height: 200px; height: 100%; width: 800px;
     font-size: 18px;
     background-color: white; padding-bottom: 17px;
@@ -178,21 +178,9 @@ h3 {
 }
 .submenu-header2 {
     color:aliceblue; background-color:#e33c3c;
-    height: 30px; font-size: 30px;
-}
-.submenu-header2 button {
-    display: block; /* Makes the button a block element */
-    width: fit-content; /* Adjusts the width of the button to fit its content */
-    margin: 0 auto; /* Centers the button horizontally */
-    margin-bottom: 20px; /* Adds space below the button */
+    min-height: 30px; font-size: 30px;
 }
 
-#demo {
-    display: block; /* Makes the table a block element */
-    width: 100%; /* The table takes the full width of its container */
-    margin-top: 20px; /* Adds space above the table */
-    /* Add any additional styling you need for your table */
-}
 .title {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
@@ -234,4 +222,3 @@ table,th,td {
     padding: 5px;
   }
 
-  
