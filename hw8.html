@@ -4,87 +4,22 @@
     <head>
         <meta charset="utf-8">
         <title>CNIT133</title>
- <!-- This is webpage that contains links to completed homework assignment for CNIT133 JavaScript, jQuery and AJAX -->
-        <meta name="description" content="This is main page that links to assingment for CNIT133 using HTML5 and inline CSS">
-        <style>
-            .button {
-                width: 120px; height: 60px; background-color:#417bcb; border-radius: 20px; color: white; 
-                font-size: 22px; cursor: pointer; display: inline-block; text-align: center; 
-                padding: 10px; text-decoration: none; overflow: hidden;
-            }
-            .button:hover, 
-            .button:focus {
-                background-color: #e33c3c; border-color: #b64e57;  /* changes colors as user move mouse */ 
-            }
-            .footer-text-container { /*footer*/
-                display:flex; align-items:center; /* vertically center items */
-            } 
-            .footer-text-container img {
-                max-width:100%; margin-right:10px  /*space between image and text */
-            }
-            .header-background {
-                background-color: #e33c3c;
-                text-align: center;
-            }
-            .header-container {
-                display: flex;
-                align-items: center; /* vertically center items */
-                justify-content: space-between; /* push items to edges */
-            }
-            .header-text {
-                color:#417bcb; font-size: 55px;
-                flex: 0 0 85%; /* set text to 85% available page width */
-                text-align: center;
-            }
-            .image-construction {
-                display: inline-block;
-            }
-            .image-text-container {
-                display:flex; align-items:center; /* vertically center items */
-            } 
-            .image-text-container img {
-                max-width:100%; margin-right:10px /* space between image and text */
-            }
-            .menu-container {
-                background-color:#cccccc67; padding: 20px 50px; justify-content: center;
-                align-items: center;
-            }
-            .right-image {
-                max-width: 100%; /* push image to right */
-            }
-            .right-text {
-                text-align: right; /* align text to the right */
-            }
-            .rounded-image { /*photo*/
-                border-radius:50% /* round photo image */
-            }  
-            .solution-box header {
-                width: 100%; padding: 10px; color:brown; text-align:center;
-            }
-            .solution-frame {    
-                width: 80%; display: flex;
-                flex-grow: 1; /* allow to grow and fill available verticle space */
-                justify-content: center; align-items: center;
-                margin: 0 auto; /* center solution-frame within solution box */ 
-            }
-            .solution-frame iframe {    
-                width:180%; height: 100%; 
-            } 
-        </style>
+ <!-- This is webpage that contains links to CNIT 133 Homework 8 - Ajax Applications -->
+        <meta name="description" content="This is homework 8 main page for CNIT133 about applying Ajax Application">
+        <link rel="stylesheet" type="text/css" href="hw8style.css">   
     </head>
 
     <body >
-
-        <header class="header-background">
+        <header style="background-color:#e33c3c">
             <div class="header-container">
-                 <h1 class="header-text">Ajax Applications</h1> 
-                 <figure>
-                     <a href="https://www.ccsf.edu/" target="_self">
-                     <img src="ccsf_ram.gif" alt="ccsf ram logo" width="139" class="right-image">
-                     </a>
-                     </figure>
-             </div>     
-         </header>
+                <a class="header-text" href="hw8.html" target="_self">CNIT 133 Homework 8 - Ajax Applications</a> 
+                <figure>
+                <a href="https://www.ccsf.edu/" target="_self">
+                <img src="ccsf_ram.gif" alt="ccsf ram logo" width="139" class="right-image">
+                </a>
+                </figure>
+            </div>     
+        </header>
         <div class="menu-container">
             <nav>
             <a href="index.html" target="_self" class="button">Course Basics</a>
@@ -93,24 +28,60 @@
             <a href="hw4.html" target="_self" class="button">Looping Statements</a>
             <a href="hw5.html" target="_self" class="button">Arrays</a>
             <a href="hw6.html" target="_self" class="button">Objects</a>
-            <a href="hw7.html" target="_self" class="button">DOM and jQuery</a>
+            <a href="hw7.html" target="_self" class="button">Object and Event Model</a>
             <a href="hw8.html" target="_self" class="button">Ajax Applications</a>
             </nav>
         </div>
-                 
-        <article>
-            <br>
-            <div class="costruction-container">
-                <h2>Assignment available by 12/19/2023</h2>
-                <img class="image-construction" src="under_construction.jpg" alt="website coming soon" width="400"> 
+        <div class="submenu-container"> 
+            <div class="submenu-header">
+                Click below to navigate to Homework 8 Solution:
             </div>
-            <br>
+            <div class="submenu-button">    
+            <nav>
+                <a href="hw8sol.html" target="_self" class="button-two">Ajax Applications Solution</a>
+            </nav>
+            </div>
+        </div>            
+        <article>
+            <header>
+                <br>
+                <h2 style="color:brown">Homework 8 Instructions on Topic "Ajax Applications"</h2>
+
+            </header>
+            <section>
+            <h3>What you will do:</h3>   
+            
+                <ul class="square-list">
+                    <li>You will use the zipped folder - Ajax Assignment containing the .html file and the .xml file.</li>
+                    <li>Edit the .html file to make it valid and include a heading, right after the opening body tag, that says "Homework 8 - AJAX Application."</li>
+                    <li>Make sure you include a hyperlink so the user can go back to the main page of the course - Homework 1.</li>
+                    <li>Open the .xml file in your web editor, follows structure, include information for a new CD with your name as the ARTIST and YEAR.</li>
+                    <li>Upload both files to server and open the HTML page on the browser.</li>
+                    <li>Click on the button that shows in the browser and make sure to see a table with all the CDs listed in the XML file, including the new one with your name and the year.</li>
+                    <li>Create a subheading with "Explanation of AJAX".</li>
+                    <li>Below heading, explain what is happening with the JavaScript, AJAX code you see in the .html file.</li>
+                    <li>Below the paragraphs of your explanation, create another header with REST API.</li>
+                    <li>Below that heading, write about a chosen REST API from the List of API's.</li>
+                    <li>The paragraphs will be a REPORT about the API you chose.</li>
+                    <li>The report will be read by a group of developers that you would like to convince to use the API.</li> 
+                    <li>You can even create a name of a company that you and the other developers would be working for and why the web application should be using the API you chose to explain.</li>
+                    <li>In that report, you will include information about the following:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;What type of response file you get (JSON, XML, etc.)?<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Do you need any type of key to access and use the API?<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Do the companies need to pay any fee to use the API and if they need, how is that charged?<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;You need also to provide a link to any type of documentation that would help the developer use the API.<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Do not use the URL as the words for the hyperlink, use meaningful words to make your hyperlink accessible for users using screen readers!</li>
+                </ul>
+                <br>
+            </section>
+            
+
         </article>
 
-        <footer style="background-color:#cccccc67">
+        <footer class="footCont">
             <br>
             <figure>
-            <div class="image-text-container">
+            <div class="footer-text-container">
                 <img src="op.jpg" alt="self" width="80" class="rounded-image">
                 <p>Teresita Anselm<br>
                 City College of San Francisco<br>
@@ -118,7 +89,7 @@
             </div>
             </figure>
             
-            <p class="right-text">Copyright of Teresita Anselm &copy; 2023&nbsp</p>
+            <p class="right-text">Copyright of Teresita Anselm &copy; 2023&nbsp;</p>
         </footer>
 
     </body>
