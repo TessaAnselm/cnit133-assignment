@@ -175,6 +175,7 @@ h3 {
     min-height: 220px;
     width: 100%; text-align: center; padding-top: 20px; background-color: #e33c3c;
     font-weight: bolder;
+    margin-bottom: 20px;
 }
 .submenu-header2 {
     color: aliceblue; 
@@ -182,7 +183,7 @@ h3 {
     min-height: 30px; 
     font-size: 30px; 
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 /* Styling for the table with ID 'demo' */
