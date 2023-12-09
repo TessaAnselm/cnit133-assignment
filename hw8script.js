@@ -140,8 +140,8 @@ document.getElementById('calculateCalories').addEventListener('click', function(
         // Calculating the total calories by summing up the calories of each ingredient
         const calories = data.items.reduce((total, item) => total + item.calories, 0);
 
-        // Displaying the total calories in the element with the ID 'calorieResult'
-        document.getElementById('calorieResult').innerText = `Total Calories for Mushroom Pizza: ${calories.toFixed(2)}`;
+        // Displaying the total calories in the element with the ID 'calorieResult', dynamically showing the pizza type
+        document.getElementById('calorieResult').innerText = `Total Calories for ${ingredients}: ${calories.toFixed(2)}`;
     })
     .catch(error => {
         // Logging any errors to the console and displaying an error message to the user
@@ -149,10 +149,3 @@ document.getElementById('calculateCalories').addEventListener('click', function(
         document.getElementById('calorieResult').innerText = 'Failed to calculate calories.';
     });
 });
-
-
-
-
-
-
-
