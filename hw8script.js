@@ -55,6 +55,29 @@ function displayCdData(xmlDoc) {
     document.getElementById("cdData").innerHTML = table;
 }
 */
+//Following Code Copied from given ajaxassignment code  making changes in year from title
+function loadDoc() {
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload = function() {
+    myFunction(this);
+    }
+    xhttp.open("GET", "AjaxAssignment/cd_catalog.xml");
+    xhttp.send();
+}
+function myFunction(xml) {
+    const xmlDoc = xml.responseXML;
+    const x = xmlDoc.getElementsByTagName("CD");
+    let table="<tr><th>Artist</th><th>Year</th></tr>";
+    for (let i = 0; i <x.length; i++) { 
+    table += "<tr><td>" +
+    x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("YEAR")[0].childNodes[0].nodeValue +
+    "</td></tr>";
+    }
+    document.getElementById("demo").innerHTML = table;
+}
+            
 
 // Function to create and display an ordered list of process steps
 document.getElementById('showProcess').addEventListener('click', function() {
