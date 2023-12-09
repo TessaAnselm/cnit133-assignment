@@ -1,8 +1,8 @@
 
 //****************************Homework 8************************************** */
 // Function to handle the AJAX process for loading CD data
-// Function to load CD data using the Fetch API
-function loadCDData() {
+// Function to load CD data using the Fetch API - Failed to work!
+/*function loadCDData() {
     // Making a GET request to the specified URL
     fetch("AjaxAssignment/cd_catalog.xml")
     .then(response => {
@@ -35,7 +35,7 @@ function loadCDData() {
     });    
 }
 
-/* Function to update the table with CD data
+Function to update the table with CD data
 function updateTable(xmlDoc) {
     // Getting all CD elements from the XML document
     const cds = xmlDoc.getElementsByTagName("CD");
@@ -54,6 +54,7 @@ function updateTable(xmlDoc) {
     // Setting the inner HTML of the table element to the constructed table
     document.getElementById("demo").innerHTML = table;
 }
+*/
 
 //Following Code Copied from given ajaxassignment code  making changes in year from title
 function loadDoc() {
@@ -77,7 +78,7 @@ function myFunction(xml) {
     }
     document.getElementById("demo").innerHTML = table;
 }
-*/            
+    
 
 // Function to create and display an ordered list of process steps
 document.getElementById('showProcess').addEventListener('click', function() {
