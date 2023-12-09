@@ -1,60 +1,60 @@
 
 //****************************Homework 8************************************** */
 // Function to handle the AJAX process for loading CD data
-/*function loadDoc() {
-    // Create a new XMLHttpRequest object
-    const xhttp = new XMLHttpRequest();
-
-    // Define what happens on successful data submission
-    xhttp.onload = function() {
-        // Check if the request was successful
-        if (this.status === 200) {
-            try {
-                // Call the function to display the CD data, passing the XML response
-                displayCdData(this.responseXML);
-            } catch (error) {
-                // Log an error message if there's an issue processing the XML
-                displayError('Error processing XML', error);
-            }
-        } else {
-            // Log an error message if the request was not successful
-            displayError('Error loading XML', this.statusText);
+// Function to load CD data using the Fetch API
+function loadCDData() {
+    // Making a GET request to the specified URL
+    fetch("AjaxAssignment/cd_catalog.xml")
+    .then(response => {
+        // Checking if the response is successful
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
         }
-    };
-
-    // Initialize a GET request to fetch the cd_catalog.xml file
-    xhttp.open("GET", "AjaxAssignment/cd_catalog.xml");
-
-    // Send the request
-    xhttp.send();
+        // Parsing the response as text
+        return response.text();
+    })
+    .then(str => {
+        // Parsing the string response to an XML Document
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(str, "application/xml");
+        // Updating the table with data from the XML
+        updateTable(xmlDoc);
+    })
+    .catch(error => {
+        console.error('There has been a problem with your fetch operation:', error);
+    
+        // Selecting the element where the error message will be displayed
+        const errorMessageElement = document.getElementById("demo");
+    
+        // Setting the inner HTML to the error message
+        errorMessageElement.innerHTML = 'Failed to load CD data.';
+    
+        // Changing the style of the element to have white text
+        errorMessageElement.style.color = 'white';
+        // Additional styling can be added here if needed
+    });    
 }
 
-// Function to display error messages
-function displayError(errorMessage, errorDetail) {
-    const errorContainer = document.getElementById("cdData");
-    errorContainer.innerHTML = `<p class="error-message">${errorMessage}: ${errorDetail}</p>`;
-    console.error(errorMessage, errorDetail);
-}
+/* Function to update the table with CD data
+function updateTable(xmlDoc) {
+    // Getting all CD elements from the XML document
+    const cds = xmlDoc.getElementsByTagName("CD");
+    // Starting the table HTML with headers
+    let table = "<tr><th>Artist</th><th>Year</th></tr>";
 
-// Function to display CD data in a table format
-function displayCdData(xmlDoc) {
-    const cds = xmlDoc.getElementsByTagName("CD"); // Get all CD elements
-    let table = "<tr><th>Artist</th><th>Title</th></tr>"; // Start the table with headers
-
-    // Loop through each CD element
-    for (const cd of cds) {
-        // Extract artist and title text
+    // Looping through each CD element and adding its data to the table
+    for (let cd of cds) {
+        // Getting the artist and year from the CD element
         const artist = cd.getElementsByTagName("ARTIST")[0].textContent;
-        const title = cd.getElementsByTagName("YEAR")[0].textContent;
-
-        // Append a row to the table for each CD
+        const year = cd.getElementsByTagName("YEAR")[0].textContent;
+        // Appending a table row for each CD
         table += `<tr><td>${artist}</td><td>${year}</td></tr>`;
     }
 
-    // Update the innerHTML of the 'cdData' element with the constructed table
-    document.getElementById("cdData").innerHTML = table;
+    // Setting the inner HTML of the table element to the constructed table
+    document.getElementById("demo").innerHTML = table;
 }
-*/
+
 //Following Code Copied from given ajaxassignment code  making changes in year from title
 function loadDoc() {
     const xhttp = new XMLHttpRequest();
@@ -77,7 +77,7 @@ function myFunction(xml) {
     }
     document.getElementById("demo").innerHTML = table;
 }
-            
+*/            
 
 // Function to create and display an ordered list of process steps
 document.getElementById('showProcess').addEventListener('click', function() {
