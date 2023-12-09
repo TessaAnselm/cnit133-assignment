@@ -93,7 +93,7 @@ button:focus {
 }
 
 h2 {
-    color:white;
+    color:white; font-size: 40px;
 }
 h3 {
     color: #1d0e6b;
