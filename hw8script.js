@@ -45,10 +45,10 @@ function displayCdData(xmlDoc) {
     for (const cd of cds) {
         // Extract artist and title text
         const artist = cd.getElementsByTagName("ARTIST")[0].textContent;
-        const title = cd.getElementsByTagName("TITLE")[0].textContent;
+        const title = cd.getElementsByTagName("YEAR")[0].textContent;
 
         // Append a row to the table for each CD
-        table += `<tr><td>${artist}</td><td>${title}</td></tr>`;
+        table += `<tr><td>${artist}</td><td>${year}</td></tr>`;
     }
 
     // Update the innerHTML of the 'cdData' element with the constructed table
