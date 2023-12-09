@@ -174,7 +174,7 @@ h3 {
 .submenu-container2 {
     min-height: 220px;
     width: 100%; text-align: center; padding-top: 20px; background-color: #e33c3c;
-    font-weight: bolder;
+    font-weight: bolder; padding-bottom: 20px;
 }
 .submenu-header2 {
     color: aliceblue; 
