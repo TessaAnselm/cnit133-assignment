@@ -178,7 +178,7 @@ h3 {
 }
 .submenu-header2 {
     color:aliceblue; background-color:#e33c3c;
-    min-height: 30px; font-size: 30px;
+    min-height: 30px; font-size: 30px; align-content: center; text-align: center;
 }
 
 .title {
